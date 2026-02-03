@@ -89,7 +89,7 @@
       border:2px solid var(--brand);
       box-shadow:none;
     }
-    .menuBtn{display:none; background:transparent; border:0; font-size:22px; color:var(--ink)}
+    .menuBtn{display:none; background:transparent; border:0; font-size:22px; color:var(--ink); cursor:pointer}
 
     main{padding:60px 0 80px; background:var(--panel)}
     .pageIntro{
@@ -245,12 +245,12 @@
             <li><a href="/#our-story">Our Story</a></li>
             <li><a href="/#what-is-it">What Is It?</a></li>
             <li><a href="/#testimonials">Testimonials</a></li>
-            <li><a href="/#blog">Blog</a></li>
+            <li><a href="/blog/">Blog</a></li>
           </ul>
         </nav>
 
         <div style="display:flex; gap:12px; align-items:center;">
-          <button class="menuBtn" id="menuBtn" aria-label="Open menu">☰</button>
+          <button class="menuBtn" id="menuBtn" aria-label="Open menu" aria-expanded="false">☰</button>
           <a class="btn" href="/apply/">APPLY NOW</a>
         </div>
       </div>
@@ -385,37 +385,46 @@
     </div>
   </footer>
 
-  <script>
-    const menuBtn = document.getElementById("menuBtn");
-    const menu = document.getElementById("menu");
-    if (menuBtn && menu) {
-      menuBtn.addEventListener("click", () => {
-        const open = menu.style.display === "flex";
-        menu.style.display = open ? "none" : "flex";
-        menu.style.flexDirection = "column";
-        menu.style.background = "#fff";
-        menu.style.position = "absolute";
-        menu.style.top = "64px";
-        menu.style.right = "24px";
-        menu.style.padding = "14px";
-        menu.style.border = "1px solid #e8ecf6";
-        menu.style.borderRadius = "12px";
-        menu.style.boxShadow = "0 12px 30px rgba(0,0,0,.08)";
-      });
-    }
+<script>
+  const menuBtn = document.getElementById("menuBtn");
+  const menu = document.getElementById("menu");
 
-    (function(){
-      const items = document.querySelectorAll(".qa");
-      items.forEach((qa) => {
-        const btn = qa.querySelector(".q");
-        btn.addEventListener("click", () => {
-          const isOpen = qa.classList.contains("open");
-          items.forEach(i => i.classList.remove("open"));
-          if (!isOpen) qa.classList.add("open");
-        });
-      });
-      if (items[0]) items[0].classList.add("open");
-    })();
-  </script>
+  if (menuBtn && menu) {
+    const closeMenu = () => {
+      menu.style.display = "none";
+      menuBtn.setAttribute("aria-expanded", "false");
+    };
+
+    const openMenu = () => {
+      menu.style.display = "flex";
+      menu.style.flexDirection = "column";
+      menu.style.background = "#fff";
+      menu.style.position = "absolute";
+      menu.style.top = "64px";
+      menu.style.right = "24px";
+      menu.style.padding = "14px";
+      menu.style.border = "1px solid #e8ecf6";
+      menu.style.borderRadius = "12px";
+      menu.style.boxShadow = "0 12px 30px rgba(0,0,0,.08)";
+      menuBtn.setAttribute("aria-expanded", "true");
+    };
+
+    menuBtn.addEventListener("click", (e) => {
+      e.stopPropagation();
+      const open = menu.style.display === "flex";
+      open ? closeMenu() : openMenu();
+    });
+
+    document.addEventListener("click", (e) => {
+      const isButton = e.target === menuBtn;
+      const insideMenu = menu.contains(e.target);
+      if (!isButton && !insideMenu) closeMenu();
+    });
+
+    document.addEventListener("keydown", (e) => {
+      if (e.key === "Escape") closeMenu();
+    });
+  }
+</script>
 </body>
 </html>
