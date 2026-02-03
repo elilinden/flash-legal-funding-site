@@ -260,6 +260,23 @@
       background:#f1f3ff;
     }
 
+    /* “Page animation” video: autoplay + no interaction UI */
+    .videoAnim{
+      width: 100%;
+      height: 320px;
+      border-radius: 18px;
+      display: block;
+      background: #f1f3ff;
+      object-fit: cover;
+      pointer-events: none;      /* prevents click/tap from pausing */
+      user-select: none;
+      -webkit-user-select: none;
+      -webkit-touch-callout: none;
+    }
+    @media (max-width: 980px){
+      .videoAnim{ height: 240px; }
+    }
+
     /* Testimonials */
     .testimonials{
       background:#2f33b8;
@@ -390,27 +407,20 @@
       .animate-fade, .animate-drop, .quote{transition:none}
     }
 
-/* --- MOBILE HEADER FIX --- */
+    /* --- MOBILE HEADER FIX --- */
     @media (max-width: 600px) {
-      /* Shrink logo slightly more to prevent crowding */
       .brand img { height: 28px; }
-      
-      /* Tighten the nav container */
       .nav { padding: 8px 0; gap: 4px; }
-
-      /* FIX THE BUTTON: Smaller, centered text, compact */
-      .nav .btn { 
-        padding: 6px 14px;      /* Smaller padding */
-        font-size: 12px;        /* Smaller text */
-        min-height: 34px;       /* Consistent height */
-        line-height: 1;         /* Forces text to center vertically */
-        white-space: nowrap;    /* Prevents text wrapping */
-        display: inline-flex;   /* Ensures flex centering works */
-        align-items: center;    
+      .nav .btn {
+        padding: 6px 14px;
+        font-size: 12px;
+        min-height: 34px;
+        line-height: 1;
+        white-space: nowrap;
+        display: inline-flex;
+        align-items: center;
         justify-content: center;
       }
-
-      /* Adjust hamburger menu to match */
       .menuBtn { font-size: 24px; padding: 4px; }
     }
   </style>
@@ -524,12 +534,22 @@
               costs while they wait for their cases to be resolved.
             </p>
           </div>
+
           <div class="mediaCard animate-drop" data-animate="drop">
-            <video autoplay loop muted playsinline preload="metadata" style="width:100%; border-radius:18px;">
-            <source src="./assets/videoflf.mp4" type="video/mp4" />
-            Your browser does not support the video tag.
-          </video>
-        </div>
+            <video
+              class="videoAnim"
+              autoplay
+              loop
+              muted
+              playsinline
+              preload="auto"
+              tabindex="-1"
+              aria-hidden="true"
+            >
+              <source src="./assets/videoflf.mp4" type="video/mp4" />
+              Your browser does not support the video tag.
+            </video>
+          </div>
         </div>
       </div>
     </section>
@@ -631,30 +651,30 @@
     document.querySelectorAll("[data-animate]").forEach((el) => observer.observe(el));
 
     // Rotating hero word: Bills → Rent → Life
-const rotWordEl = document.getElementById("rotWord");
-const rotWords = ["Bills", "Rent", "Life"];
-let rotIdx = 2; // starts on "Life"
+    const rotWordEl = document.getElementById("rotWord");
+    const rotWords = ["Bills", "Rent", "Life"];
+    let rotIdx = 2; // starts on "Life"
 
-if (rotWordEl) {
-  const reduced = window.matchMedia && window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+    if (rotWordEl) {
+      const reduced = window.matchMedia && window.matchMedia("(prefers-reduced-motion: reduce)").matches;
 
-  setInterval(() => {
-    rotIdx = (rotIdx + 1) % rotWords.length;
+      setInterval(() => {
+        rotIdx = (rotIdx + 1) % rotWords.length;
 
-    if (reduced) {
-      rotWordEl.textContent = rotWords[rotIdx];
-      return;
+        if (reduced) {
+          rotWordEl.textContent = rotWords[rotIdx];
+          return;
+        }
+
+        rotWordEl.classList.add("is-out");
+        setTimeout(() => {
+          rotWordEl.textContent = rotWords[rotIdx];
+          rotWordEl.classList.remove("is-out");
+          rotWordEl.classList.add("is-in");
+          setTimeout(() => rotWordEl.classList.remove("is-in"), 360);
+        }, 220);
+      }, 3000);
     }
-
-    rotWordEl.classList.add("is-out");
-    setTimeout(() => {
-      rotWordEl.textContent = rotWords[rotIdx];
-      rotWordEl.classList.remove("is-out");
-      rotWordEl.classList.add("is-in");
-      setTimeout(() => rotWordEl.classList.remove("is-in"), 360);
-    }, 220);
-  }, 3000);
-}
 
     // Testimonials fade between quotes
     const quotes = Array.from(document.querySelectorAll(".quote"));
