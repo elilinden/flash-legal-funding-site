@@ -1,0 +1,562 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Blog | Flash Legal Funding</title>
+  <meta name="description" content="Helpful guides about pre-settlement funding and what to expect during the process." />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;600;700;800&display=swap" rel="stylesheet" />
+
+  <style>
+    /* --- MAIN SITE THEME --- */
+    :root{
+      --ink:#11153a;
+      --ink-soft:#2a2f57;
+      --brand:#3b5bff;
+      --brand-dark:#2a35d9;
+      --accent:#00a59c;
+      --sky:#cfeeff;
+      --sky-2:#e9f6ff;
+      --nav:#ffffff;
+      --nav-border:#e8ecf6;
+      --muted:#6a6f90;
+      --panel:#f7f8fc;
+      --dark:#1a1b4d;
+      --dark-2:#141539;
+      --card:#ffffff;
+      --shadow:0 18px 50px rgba(22,26,64,.12);
+      --radius:22px;
+      --max:1100px;
+    }
+
+    *{box-sizing:border-box}
+    html{scroll-behavior:smooth}
+    body{
+      margin:0;
+      font-family: "Manrope", ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial;
+      color:var(--ink);
+      background:#fff;
+      line-height:1.6;
+    }
+
+    a{color:inherit; text-decoration:none}
+    img, video{max-width:100%; display:block}
+    .container{max-width:var(--max); margin:0 auto; padding:0 24px}
+
+    /* --- HEADER STYLES --- */
+    .topbar{
+      background: #b7dcff;
+      border-bottom:1px solid #9dc7ff;
+      color:#1c2357;
+      font-weight:600;
+      text-align:center;
+      padding:8px 12px;
+      font-size:14px;
+    }
+
+    header{
+      position:sticky; top:0; z-index:50;
+      background:var(--nav);
+      border-bottom:1px solid var(--nav-border);
+    }
+    .nav{
+      display:flex; align-items:center; justify-content:space-between;
+      gap:16px;
+      padding:14px 0;
+    }
+    .brand{
+      display:flex; align-items:center; gap:12px;
+      font-weight:800; letter-spacing:.3px;
+      color:#111;
+    }
+    .brand img{height:42px; width:auto}
+    
+    nav ul{
+      list-style:none; margin:0; padding:0;
+      display:flex; gap:22px;
+      color:var(--ink-soft);
+      font-weight:600; font-size:15px;
+    }
+    nav a:hover{color:var(--brand)}
+    
+    .btn{
+      display:inline-flex; align-items:center; justify-content:center;
+      padding:12px 24px;
+      border-radius:999px;
+      background:var(--brand);
+      color:#fff;
+      font-weight:700;
+      border:0;
+      box-shadow:0 10px 24px rgba(59,91,255,.25);
+      transition:transform .15s ease, box-shadow .15s ease;
+    }
+    .btn:hover{transform:translateY(-1px); box-shadow:0 14px 28px rgba(59,91,255,.28)}
+    .menuBtn{display:none; background:transparent; border:0; font-size:22px; color:var(--ink)}
+
+    /* --- BLOG SPECIFIC STYLES --- */
+    main {
+      padding: 60px 0 80px;
+      background: var(--panel);
+      width: 100%;
+    }
+
+    .pageIntro{ text-align:center; margin-bottom:28px; }
+    .pageIntro h1{ margin:0 0 10px; font-size:36px; color:#0f1540; }
+    .pageIntro p{ margin:0 auto; color:var(--muted); max-width:75ch; font-size:16px; }
+
+    .toolbar{
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      gap:12px;
+      flex-wrap:wrap;
+      margin:0 auto 22px;
+      max-width:980px;
+    }
+
+    .search{
+      flex:1 1 340px;
+      display:flex;
+      align-items:center;
+      gap:10px;
+      background:#fff;
+      border:1px solid #eef1fa;
+      border-radius:999px;
+      padding:10px 14px;
+      box-shadow:0 10px 26px rgba(22,26,64,.06);
+    }
+    .search input{
+      border:0;
+      outline:none;
+      width:100%;
+      font-family:inherit;
+      font-size:14px;
+      color:var(--ink);
+      background:transparent;
+    }
+    .search .hint{
+      color:var(--muted);
+      font-weight:800;
+      font-size:12px;
+      letter-spacing:.08em;
+    }
+
+    .chips{
+      display:flex;
+      gap:10px;
+      flex-wrap:wrap;
+      justify-content:center;
+    }
+    .chip{
+      display:inline-flex;
+      align-items:center;
+      justify-content:center;
+      padding:8px 12px;
+      border-radius:999px;
+      background:#fff;
+      border:1px solid #eef1fa;
+      color:var(--ink-soft);
+      font-weight:700;
+      font-size:13px;
+      cursor:pointer;
+      user-select:none;
+      transition:transform .15s ease, box-shadow .15s ease, border-color .15s ease;
+    }
+    .chip:hover{ transform:translateY(-1px); box-shadow:0 12px 26px rgba(22,26,64,.08); }
+    .chip.active{ border-color:rgba(59,91,255,.35); color:#0f1540; }
+
+    .grid{
+      display:grid;
+      grid-template-columns: repeat(3, minmax(0,1fr));
+      gap:20px;
+    }
+
+    .post{
+      background:#fff;
+      border-radius:22px;
+      padding:20px;
+      box-shadow:0 18px 50px rgba(22,26,64,.12);
+      border:1px solid #eef1fa;
+      display:flex;
+      flex-direction:column;
+      gap:10px;
+      min-height:240px;
+      transition:transform .18s ease, box-shadow .18s ease;
+    }
+    .post:hover{ transform:translateY(-2px); box-shadow:0 22px 60px rgba(22,26,64,.14); }
+
+    .postTop{
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      gap:10px;
+      color:var(--muted);
+      font-size:13px;
+      font-weight:700;
+    }
+    .tag{
+      display:inline-flex;
+      align-items:center;
+      gap:8px;
+      padding:6px 10px;
+      border-radius:999px;
+      border:1px solid #eef1fa;
+      background:#f6f8ff;
+      color:#1c2357;
+      font-size:12px;
+      font-weight:800;
+      letter-spacing:.06em;
+      text-transform:uppercase;
+      white-space:nowrap;
+    }
+
+    .post h2{
+      margin:0;
+      font-size:18px;
+      line-height:1.25;
+      color:#0f1540;
+      letter-spacing:-.2px;
+    }
+    .post p{
+      margin:0;
+      color:var(--muted);
+      font-size:14px;
+      line-height:1.7;
+      flex:1;
+    }
+
+    .post a.read{
+      color:var(--ink-soft);
+      text-decoration:underline;
+      text-underline-offset:3px;
+      font-weight:800;
+      font-size:14px;
+      align-self:flex-start;
+    }
+    .post a.read:hover{ color:var(--brand); }
+
+    .comingSoon{
+      max-width:980px;
+      margin:22px auto 0;
+      background:#fff;
+      border:1px solid #eef1fa;
+      border-radius:22px;
+      padding:18px 20px;
+      color:var(--muted);
+      box-shadow:0 10px 26px rgba(22,26,64,.06);
+      text-align:center;
+      font-size:14px;
+    }
+
+    footer{
+      padding:24px 0;
+      text-align:center;
+      color:#6e7396;
+      font-size:13px;
+      background:#fff;
+      border-top: 1px solid var(--nav-border);
+    }
+    footer a{color:inherit; text-decoration:underline; text-underline-offset:3px}
+    footer a:hover{color:var(--brand)}
+
+    @media (max-width: 980px){
+      .grid{ grid-template-columns:1fr; }
+      .pageIntro h1{ font-size:30px; }
+      nav ul{display:none}
+      .menuBtn{display:inline-block}
+    }
+  </style>
+</head>
+
+<body>
+  <div class="topbar">CALL US NOW: (859) 81-FLASH</div>
+
+  <header>
+    <div class="container">
+      <div class="nav" id="nav">
+        <a class="brand" href="/">
+          <img src="/assets/logo.png" alt="Flash Legal Funding">
+        </a>
+
+        <nav aria-label="Primary">
+          <ul id="menu">
+            <li><a href="/">Home</a></li>
+            <li><a href="/#services">Services</a></li>
+            <li><a href="/#our-story">Our Story</a></li>
+            <li><a href="/#what-is-it">What Is It?</a></li>
+            <li><a href="/#testimonials">Testimonials</a></li>
+            <li><a href="/blog/">Blog</a></li>
+          </ul>
+        </nav>
+
+        <div style="display:flex; gap:12px; align-items:center;">
+          <button class="menuBtn" id="menuBtn" aria-label="Open menu">☰</button>
+          <a class="btn" href="/apply/">APPLY NOW</a>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <div class="container">
+      <div class="pageIntro">
+        <h1>Blog</h1>
+        <p>Short, clear guides about pre‑settlement funding, what we review, and what to expect while your case is in progress.</p>
+      </div>
+
+      <div class="toolbar">
+        <div class="search" role="search" aria-label="Search blog posts">
+          <span class="hint">SEARCH</span>
+          <input id="q" type="search" placeholder="Search posts" autocomplete="off" />
+        </div>
+
+        <div class="chips" aria-label="Filter by topic">
+          <span class="chip active" data-tag="all">All</span>
+          <span class="chip" data-tag="funding">Funding Basics</span>
+          <span class="chip" data-tag="process">Process</span>
+          <span class="chip" data-tag="attorneys">For Attorneys</span>
+        </div>
+      </div>
+
+      <div class="grid" id="posts" aria-live="polite"><article class="post" data-tag="attorneys" data-title="how pre-settlement funding increases case value">
+          <div class="postTop">
+            <span class="tag">For Attorneys</span>
+            <span>Tue May 19 2026</span>
+          </div>
+          <h2>How Pre-Settlement Funding Increases Case Value</h2>
+          <p>Stop settling for less because your client is desperate. See how funding gives you the leverage to fight for policy limits.</p>
+          <a class="read" href="/posts/how-funding-increases-case-value/">Read More</a>
+        </article><article class="post" data-tag="process" data-title="what happens after you are approved? from contract to cash">
+          <div class="postTop">
+            <span class="tag">Process</span>
+            <span>Thu May 14 2026</span>
+          </div>
+          <h2>What Happens After You Are Approved? From Contract to Cash</h2>
+          <p>You&#39;ve been approved! Now what? Learn about the final steps to get your cash, including digital contracts and payment options.</p>
+          <a class="read" href="/posts/what-happens-after-approval/">Read More</a>
+        </article><article class="post" data-tag="process" data-title="how to speed up your lawsuit funding application">
+          <div class="postTop">
+            <span class="tag">Process</span>
+            <span>Sat May 09 2026</span>
+          </div>
+          <h2>How to Speed Up Your Lawsuit Funding Application</h2>
+          <p>Need cash fast? Here are the 3 simple steps you can take to ensure your funding request gets approved in 24 hours or less.</p>
+          <a class="read" href="/posts/how-to-speed-up-application/">Read More</a>
+        </article><article class="post" data-tag="funding" data-title="how much pre-settlement funding can i get?">
+          <div class="postTop">
+            <span class="tag">Funding Basics</span>
+            <span>Mon May 04 2026</span>
+          </div>
+          <h2>How Much Pre-Settlement Funding Can I Get?</h2>
+          <p>Wondering how much cash you qualify for? Learn about the &#39;10% Rule&#39; and how we calculate a safe amount for your case.</p>
+          <a class="read" href="/posts/how-much-funding-can-i-get/">Read More</a>
+        </article><article class="post" data-tag="funding" data-title="broker vs. direct lender: why cutting out the middleman saves you money">
+          <div class="postTop">
+            <span class="tag">Funding Basics</span>
+            <span>Thu Apr 30 2026</span>
+          </div>
+          <h2>Broker vs. Direct Lender: Why Cutting Out the Middleman Saves You Money</h2>
+          <p>Don&#39;t pay extra fees to a middleman. Learn the critical difference between lawsuit funding brokers and direct lenders like Flash Legal Funding.</p>
+          <a class="read" href="/posts/broker-vs-direct-lender/">Read More</a>
+        </article><article class="post" data-tag="attorneys" data-title="why partner with a funding company? a strategic asset for your firm">
+          <div class="postTop">
+            <span class="tag">For Attorneys</span>
+            <span>Fri Apr 24 2026</span>
+          </div>
+          <h2>Why Partner with a Funding Company? A Strategic Asset for Your Firm</h2>
+          <p>Client financial pressure is the enemy of maximum value. Learn how partnering with the right funding company buys you the time to litigate properly.</p>
+          <a class="read" href="/posts/why-partner-with-us/">Read More</a>
+        </article><article class="post" data-tag="funding" data-title="is a lawsuit loan actually a loan?">
+          <div class="postTop">
+            <span class="tag">Funding Basics</span>
+            <span>Sun Apr 19 2026</span>
+          </div>
+          <h2>Is a Lawsuit Loan Actually a Loan?</h2>
+          <p>It is technically a non-recourse advance, not a loan. Learn the critical difference that protects you from debt if you lose your case.</p>
+          <a class="read" href="/posts/is-a-lawsuit-loan-a-loan/">Read More</a>
+        </article><article class="post" data-tag="process" data-title="what is the process for pre-settlement funding?">
+          <div class="postTop">
+            <span class="tag">Process</span>
+            <span>Tue Apr 14 2026</span>
+          </div>
+          <h2>What Is the Process for Pre-Settlement Funding?</h2>
+          <p>Getting funding shouldn&#39;t be as hard as the lawsuit itself. Learn our simple 4-step process to get cash in as little as 24 hours.</p>
+          <a class="read" href="/posts/process-for-pre-settlement-funding/">Read More</a>
+        </article><article class="post" data-tag="funding" data-title="how does a compounding interest rate work?">
+          <div class="postTop">
+            <span class="tag">Funding Basics</span>
+            <span>Thu Apr 09 2026</span>
+          </div>
+          <h2>How Does a Compounding Interest Rate Work?</h2>
+          <p>Compound interest acts like a snowball, turning a small loan into a large debt. Learn how the math works before you sign.</p>
+          <a class="read" href="/posts/how-compounding-interest-works/">Read More</a>
+        </article><article class="post" data-tag="funding" data-title="how will interest rates be calculated on a lawsuit loan?">
+          <div class="postTop">
+            <span class="tag">Funding Basics</span>
+            <span>Sat Apr 04 2026</span>
+          </div>
+          <h2>How Will Interest Rates Be Calculated on a Lawsuit Loan?</h2>
+          <p>Confused by interest rates? We break down the difference between simple interest and fixed fees so you don&#39;t get overcharged.</p>
+          <a class="read" href="/posts/how-interest-rates-are-calculated/">Read More</a>
+        </article><article class="post" data-tag="funding" data-title="the truth about &#39;fixed fees&#39; in lawsuit funding">
+          <div class="postTop">
+            <span class="tag">Funding Basics</span>
+            <span>Sun Mar 29 2026</span>
+          </div>
+          <h2>The Truth About &#39;Fixed Fees&#39; in Lawsuit Funding</h2>
+          <p>Some lenders claim 0% interest but charge massive fixed fees. Learn how these multipliers work and why they can cost you thousands.</p>
+          <a class="read" href="/posts/how-does-the-fixed-fee-work/">Read More</a>
+        </article><article class="post" data-tag="legal" data-title="what is a motor vehicle accident (mva)? a guide for victims">
+          <div class="postTop">
+            <span class="tag">Legal Guide</span>
+            <span>Tue Mar 24 2026</span>
+          </div>
+          <h2>What Is a Motor Vehicle Accident (MVA)? A Guide for Victims</h2>
+          <p>From defining an MVA to the immediate steps you must take after a crash, this guide covers everything you need to know to protect your rights.</p>
+          <a class="read" href="/posts/what-is-a-mva/">Read More</a>
+        </article><article class="post" data-tag="funding" data-title="5 common misconceptions about lawsuit funding">
+          <div class="postTop">
+            <span class="tag">Funding Basics</span>
+            <span>Thu Mar 19 2026</span>
+          </div>
+          <h2>5 Common Misconceptions About Lawsuit Funding</h2>
+          <p>Think you need good credit or a massive case to qualify? Think again. We debunk the biggest myths about pre-settlement funding.</p>
+          <a class="read" href="/posts/5-common-misconceptions/">Read More</a>
+        </article><article class="post" data-tag="funding" data-title="how to choose the right lawsuit funding company for your needs">
+          <div class="postTop">
+            <span class="tag">Funding Basics</span>
+            <span>Sat Mar 14 2026</span>
+          </div>
+          <h2>How to Choose the Right Lawsuit Funding Company for Your Needs</h2>
+          <p>Not all funding companies are created equal. Learn exactly what to look for—from reputation to fee structures—before you sign.</p>
+          <a class="read" href="/posts/how-to-choose-the-right-company/">Read More</a>
+        </article><article class="post" data-tag="funding" data-title="understanding the benefits of pre-settlement funding">
+          <div class="postTop">
+            <span class="tag">Funding Basics</span>
+            <span>Mon Mar 09 2026</span>
+          </div>
+          <h2>Understanding the Benefits of Pre-Settlement Funding</h2>
+          <p>Explore how pre-settlement funding provides financial stability, covers living expenses, and levels the playing field during your lawsuit.</p>
+          <a class="read" href="/posts/benefits-of-pre-settlement-funding/">Read More</a>
+        </article><article class="post" data-tag="funding" data-title="what happens if you lose your case after getting funding?">
+          <div class="postTop">
+            <span class="tag">Funding Basics</span>
+            <span>Wed Mar 04 2026</span>
+          </div>
+          <h2>What Happens If You Lose Your Case After Getting Funding?</h2>
+          <p>Worried about repayment risks? Learn how non-recourse funding protects you if your lawsuit doesn&#39;t go the way you planned.</p>
+          <a class="read" href="/posts/what-happens-if-you-lose/">Read More</a>
+        </article><article class="post" data-tag="process" data-title="top tips for getting approved for lawsuit funding">
+          <div class="postTop">
+            <span class="tag">Process</span>
+            <span>Sat Feb 28 2026</span>
+          </div>
+          <h2>Top Tips for Getting Approved for Lawsuit Funding</h2>
+          <p>Discover the key steps to increasing your chances of getting approved for lawsuit funding, from hiring an experienced attorney to demonstrating financial need.</p>
+          <a class="read" href="/posts/tips-for-approval/">Read More</a>
+        </article><article class="post" data-tag="funding" data-title="how flash legal funding can help you succeed in your legal battle">
+          <div class="postTop">
+            <span class="tag">Funding Basics</span>
+            <span>Tue Feb 24 2026</span>
+          </div>
+          <h2>How Flash Legal Funding Can Help You Succeed in Your Legal Battle</h2>
+          <p>Discover how Flash Legal Funding offers quick, non-recourse funding solutions to help you focus on winning your case without financial stress.</p>
+          <a class="read" href="/posts/how-flash-helps/">Read More</a>
+        </article><article class="post" data-tag="funding" data-title="can i get a loan from my attorney? insights for clients">
+          <div class="postTop">
+            <span class="tag">Funding Basics</span>
+            <span>Thu Feb 19 2026</span>
+          </div>
+          <h2>Can I Get a Loan from My Attorney? Insights for Clients</h2>
+          <p>Explore the possibilities and legalities of getting a loan from your attorney and discover alternative solutions with Flash Legal Funding.</p>
+          <a class="read" href="/posts/can-i-get-a-loan-from-my-attorney/">Read More</a>
+        </article><article class="post" data-tag="funding" data-title="is a lawsuit loan legal? understanding the legality of litigation financing">
+          <div class="postTop">
+            <span class="tag">Funding Basics</span>
+            <span>Sat Feb 14 2026</span>
+          </div>
+          <h2>Is a Lawsuit Loan Legal? Understanding the Legality of Litigation Financing</h2>
+          <p>A clear guide to the legality of litigation financing, state regulations, and how Flash Legal Funding ensures compliance.</p>
+          <a class="read" href="/posts/is-a-lawsuit-loan-legal/">Read More</a>
+        </article><article class="post" data-tag="funding" data-title="how do lawsuit loans work? a comprehensive guide">
+          <div class="postTop">
+            <span class="tag">Funding Basics</span>
+            <span>Mon Feb 09 2026</span>
+          </div>
+          <h2>How Do Lawsuit Loans Work? A Comprehensive Guide</h2>
+          <p>Demystify the workings of lawsuit loans with our in-depth guide. Discover how Flash Legal Funding can support your legal journey.</p>
+          <a class="read" href="/posts/how-funding-works/">Read More</a>
+        </article></div>
+
+      <div class="comingSoon">
+        Want these posts published first? Email
+        <a href="mailto:info@flashlegalfunding.com" style="text-decoration:underline; text-underline-offset:3px;">info@flashlegalfunding.com</a>
+        and tell us what topics you’d like.
+      </div>
+    </div>
+  </main>
+
+  <footer>
+    <div class="container">
+      2026 Flash Legal Funding. All Rights Reserved.
+      <br />
+      <a href="/terms-of-use/">Terms of Use</a> | <a href="/privacy-policy/">Privacy Policy</a> | <a href="/sitemap">Sitemap</a>
+    </div>
+  </footer>
+
+  <script>
+    // Mobile menu toggle (from header)
+    const menuBtn = document.getElementById("menuBtn");
+    const menu = document.getElementById("menu");
+    if (menuBtn && menu) {
+      menuBtn.addEventListener("click", () => {
+        const open = menu.style.display === "flex";
+        menu.style.display = open ? "none" : "flex";
+        menu.style.flexDirection = "column";
+        menu.style.background = "#fff";
+        menu.style.position = "absolute";
+        menu.style.top = "64px";
+        menu.style.right = "24px";
+        menu.style.padding = "14px";
+        menu.style.border = "1px solid #e8ecf6";
+        menu.style.borderRadius = "12px";
+        menu.style.boxShadow = "0 12px 30px rgba(0,0,0,.08)";
+      });
+    }
+
+    // Blog Filter Logic
+    const chips = Array.from(document.querySelectorAll(".chip"));
+    const posts = Array.from(document.querySelectorAll(".post"));
+    const q = document.getElementById("q");
+
+    function applyFilters() {
+      const active = document.querySelector(".chip.active");
+      const tag = active ? active.getAttribute("data-tag") : "all";
+      const query = (q && q.value ? q.value.trim().toLowerCase() : "");
+
+      posts.forEach((post) => {
+        const postTag = post.getAttribute("data-tag");
+        const title = (post.getAttribute("data-title") || "").toLowerCase();
+
+        const matchTag = tag === "all" || postTag === tag;
+        const matchQuery = !query || title.includes(query);
+
+        post.style.display = (matchTag && matchQuery) ? "flex" : "none";
+      });
+    }
+
+    chips.forEach((chip) => {
+      chip.addEventListener("click", () => {
+        chips.forEach((c) => c.classList.remove("active"));
+        chip.classList.add("active");
+        applyFilters();
+      });
+    });
+
+    if (q) q.addEventListener("input", applyFilters);
+  </script>
+</body>
+</html>

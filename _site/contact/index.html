@@ -1,0 +1,377 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Contact | Flash Legal Funding</title>
+  <meta name="description" content="Contact Flash Legal Funding." />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;600;700;800&display=swap" rel="stylesheet" />
+
+  <style>
+    :root{
+      --ink:#11153a;
+      --ink-soft:#2a2f57;
+      --brand:#3b5bff;
+      --nav:#ffffff;
+      --nav-border:#e8ecf6;
+      --muted:#6a6f90;
+      --panel:#f7f8fc;
+      --card:#ffffff;
+      --shadow:0 18px 50px rgba(22,26,64,.12);
+      --radius:22px;
+      --max:1100px;
+    }
+
+    *{box-sizing:border-box}
+    html{scroll-behavior:smooth}
+    body{
+      margin:0;
+      font-family: "Manrope", ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial;
+      color:var(--ink);
+      background:#fff;
+      line-height:1.6;
+    }
+    a{color:inherit; text-decoration:none}
+    .container{max-width:var(--max); margin:0 auto; padding:0 24px}
+
+    .topbar{
+      background:#b7dcff;
+      border-bottom:1px solid #9dc7ff;
+      color:#1c2357;
+      font-weight:600;
+      text-align:center;
+      padding:8px 12px;
+      font-size:14px;
+    }
+
+    header{
+      position:sticky; top:0; z-index:50;
+      background:var(--nav);
+      border-bottom:1px solid var(--nav-border);
+    }
+    .nav{
+      display:flex; align-items:center; justify-content:space-between;
+      gap:16px;
+      padding:14px 0;
+    }
+    .brand{
+      display:flex; align-items:center; gap:12px;
+      font-weight:800; letter-spacing:.3px;
+      color:#111;
+    }
+    .brand img{height:42px; width:auto}
+    nav ul{
+      list-style:none; margin:0; padding:0;
+      display:flex; gap:22px;
+      color:var(--ink-soft);
+      font-weight:600; font-size:15px;
+    }
+    nav a:hover{color:var(--brand)}
+    .btn{
+      display:inline-flex; align-items:center; justify-content:center;
+      padding:12px 24px;
+      border-radius:999px;
+      background:var(--brand);
+      color:#fff;
+      font-weight:700;
+      border:0;
+      box-shadow:0 10px 24px rgba(59,91,255,.25);
+      transition:transform .15s ease, box-shadow .15s ease;
+      cursor:pointer;
+    }
+    .btn:hover{transform:translateY(-1px); box-shadow:0 14px 28px rgba(59,91,255,.28)}
+    .btn.ghost{
+      background:#fff;
+      color:var(--brand);
+      border:2px solid var(--brand);
+      box-shadow:none;
+    }
+    .menuBtn{display:none; background:transparent; border:0; font-size:22px; color:var(--ink)}
+
+    main{padding:60px 0 80px; background:var(--panel)}
+    .pageIntro{
+      text-align:center;
+      margin-bottom:28px;
+    }
+    .pageIntro h1{
+      margin:0 0 10px;
+      font-size:36px;
+      color:#0f1540;
+    }
+    .pageIntro p{
+      margin:0 auto;
+      color:var(--muted);
+      max-width:70ch;
+      font-size:16px;
+    }
+    .badgeRow{
+      display:flex; gap:10px; flex-wrap:wrap; justify-content:center;
+      margin-top:16px;
+    }
+    .badge{
+      padding:6px 12px;
+      border-radius:999px;
+      background:#eef2ff;
+      color:var(--brand);
+      font-size:13px;
+      font-weight:700;
+    }
+
+    .grid{
+      display:grid;
+      grid-template-columns: 1fr 1fr;
+      gap:28px;
+      align-items:start;
+    }
+    .card{
+      background:var(--card);
+      border-radius:var(--radius);
+      padding:28px;
+      box-shadow:var(--shadow);
+      border:1px solid #eef1fa;
+    }
+    .card h2{
+      margin:0 0 12px;
+      font-size:18px;
+      color:#0f1540;
+    }
+    .card p{margin:0 0 12px; color:var(--muted)}
+
+    .kv{
+      display:grid;
+      gap:10px;
+      color:var(--muted);
+      font-size:14px;
+    }
+    .kv div{display:flex; gap:10px; align-items:baseline; flex-wrap:wrap}
+    .kv span{color:#8b91ad; min-width:90px}
+    .kv a{color:var(--brand); text-decoration:underline; text-underline-offset:3px}
+
+    .hours{
+      display:grid;
+      grid-template-columns: 1fr 1fr;
+      gap:8px;
+      margin-top:12px;
+      color:var(--muted);
+      font-size:14px;
+    }
+    .hours div{
+      display:flex; justify-content:space-between; gap:10px;
+      padding:8px 10px;
+      border:1px solid #e3e7f2;
+      border-radius:10px;
+      background:#f8f9fd;
+    }
+    .hours strong{color:#0f1540; font-weight:700}
+
+    .callout{
+      margin-top:14px;
+      padding:12px 14px;
+      border-radius:12px;
+      border:1px solid #e3e7f2;
+      background:#f5f6fb;
+      color:var(--muted);
+      font-size:13px;
+    }
+
+    form{display:grid; gap:14px}
+    .row2{display:grid; grid-template-columns:1fr 1fr; gap:12px}
+    label{font-size:13px; color:var(--muted); font-weight:700}
+    input, textarea, select{
+      width:100%;
+      padding:12px 12px;
+      border-radius:12px;
+      border:1px solid #e3e7f2;
+      background:#f8f9fd;
+      color:var(--ink);
+      outline:none;
+      font-family:inherit;
+    }
+    input:focus, textarea:focus, select:focus{border-color:var(--brand)}
+    textarea{min-height:120px; resize:vertical}
+    .fine{font-size:12px; color:#7a809a; margin-top:6px}
+
+    footer{
+      padding:24px 0;
+      text-align:center;
+      color:#6e7396;
+      font-size:13px;
+      background:#fff;
+    }
+
+    @media (max-width: 980px){
+      nav ul{display:none}
+      .menuBtn{display:inline-block}
+      .grid{grid-template-columns:1fr}
+      .row2{grid-template-columns:1fr}
+      .pageIntro h1{font-size:30px}
+    }
+  </style>
+</head>
+
+<body>
+  <div class="topbar">CALL US NOW: (859) 81-FLASH</div>
+
+  <header>
+    <div class="container">
+      <div class="nav" id="nav">
+        <a class="brand" href="/">
+          <img src="/assets/logo.png" alt="Flash Legal Funding">
+        </a>
+
+        <nav aria-label="Primary">
+          <ul id="menu">
+            <li><a href="/">Home</a></li>
+            <li><a href="/#services">Services</a></li>
+            <li><a href="/#our-story">Our Story</a></li>
+            <li><a href="/#what-is-it">What Is It?</a></li>
+            <li><a href="/#testimonials">Testimonials</a></li>
+            <li><a href="/#blog">Blog</a></li>
+          </ul>
+        </nav>
+
+        <div style="display:flex; gap:12px; align-items:center;">
+          <button class="menuBtn" id="menuBtn" aria-label="Open menu">☰</button>
+          <a class="btn" href="/apply/">APPLY NOW</a>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <div class="container">
+      <div class="pageIntro">
+        <h1>Contact Us</h1>
+        <p>Have a question? Prefer the phone? We’re happy to talk.</p>
+        <div class="badgeRow" aria-label="Contact options">
+          <span class="badge">Phone</span>
+          <span class="badge">Email</span>
+          <span class="badge">Fast response</span>
+        </div>
+      </div>
+
+      <div class="grid">
+        <div class="card">
+          <h2>Contact</h2>
+          <div class="kv">
+            <div><span>Tel:</span>
+              <a href="tel:+18598135274">(859) 81‑FLASH</a>
+              <span style="color:#8b91ad">/</span>
+              <a href="tel:+18598135274">(859) 813‑5274</a>
+            </div>
+            <div><span>Fax:</span> <a href="tel:+18596055274">(859) 605‑5274</a></div>
+            <div><span>Email:</span> <a href="mailto:info@flashlegalfunding.com">info@flashlegalfunding.com</a></div>
+          </div>
+
+          <h2 style="margin-top:18px;">Our Hours</h2>
+          <div class="hours" aria-label="Business hours">
+            <div><strong>Sunday</strong> <span>Closed</span></div>
+            <div><strong>Monday</strong> <span>8:00 - 5:00 PT</span></div>
+            <div><strong>Tuesday</strong> <span>8:00 - 5:00 PT</span></div>
+            <div><strong>Wednesday</strong> <span>8:00 - 5:00 PT</span></div>
+            <div><strong>Thursday</strong> <span>8:00 - 5:00 PT</span></div>
+            <div><strong>Friday</strong> <span>8:00 - 5:00 PT</span></div>
+            <div><strong>Saturday</strong> <span>Closed</span></div>
+          </div>
+
+          <div class="callout">
+            For funding requests, the fastest path is the full application:
+            <a href="/apply/" style="text-decoration:underline; text-underline-offset:3px;">Apply here</a>.
+          </div>
+        </div>
+
+        <div class="card">
+          <h2>Send a Message</h2>
+          <p>Fill this out and we’ll follow up. (To make it send, paste your Basin/Formspree endpoint below.)</p>
+
+          <!-- IMPORTANT:
+               Replace ACTION_URL with your Basin or Formspree endpoint.
+               Example:
+               action="https://usebasin.com/f/xxxxxxxxxxxx"
+               or
+               action="https://formspree.io/f/xxxxxxx"
+          -->
+          <form method="POST" action="https://formspree.io/f/xvzqyqba">
+            <div class="row2">
+              <div>
+                <label for="name">Name</label>
+                <input id="name" name="name" autocomplete="name" required />
+              </div>
+              <div>
+                <label for="phone">Phone</label>
+                <input id="phone" name="phone" autocomplete="tel" />
+              </div>
+            </div>
+
+            <div class="row2">
+              <div>
+                <label for="email">Email</label>
+                <input id="email" name="email" type="email" autocomplete="email" required />
+              </div>
+              <div>
+                <label for="topic">Topic</label>
+                <select id="topic" name="topic">
+                  <option value="">Select</option>
+                  <option>General question</option>
+                  <option>Existing application</option>
+                  <option>Attorney / firm inquiry</option>
+                  <option>Other</option>
+                </select>
+              </div>
+            </div>
+
+            <div>
+              <label for="message">Message</label>
+              <textarea id="message" name="message" placeholder="How can we help?"></textarea>
+            </div>
+
+            <input type="text" name="_gotcha" style="display:none" tabindex="-1" autocomplete="off">
+
+            <button class="btn" type="submit">Submit</button>
+
+            <p class="fine">
+              By submitting, you agree we may contact you about your inquiry. See our
+              <a href="/privacy/" style="text-decoration:underline;">Privacy Policy</a>.
+            </p>
+          </form>
+
+          <div class="callout" style="margin-top:14px;">
+            Prefer the phone? Call <a href="tel:+18598135274" style="text-decoration:underline;">(859) 81‑FLASH</a>.
+          </div>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <footer>
+    <div class="container">
+      2026 Flash Legal Funding. All Rights Reserved.
+      <br />
+      <a href="/terms-of-use/">Terms of Use</a> | <a href="/privacy-policy/">Privacy Policy</a> | <a href="/sitemap">Sitemap</a>
+    </div>
+  </footer>
+
+  <script>
+    const menuBtn = document.getElementById("menuBtn");
+    const menu = document.getElementById("menu");
+    if (menuBtn && menu) {
+      menuBtn.addEventListener("click", () => {
+        const open = menu.style.display === "flex";
+        menu.style.display = open ? "none" : "flex";
+        menu.style.flexDirection = "column";
+        menu.style.background = "#fff";
+        menu.style.position = "absolute";
+        menu.style.top = "64px";
+        menu.style.right = "24px";
+        menu.style.padding = "14px";
+        menu.style.border = "1px solid #e8ecf6";
+        menu.style.borderRadius = "12px";
+        menu.style.boxShadow = "0 12px 30px rgba(0,0,0,.08)";
+      });
+    }
+  </script>
+</body>
+</html>

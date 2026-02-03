@@ -1,0 +1,406 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Blog | Flash Legal Funding</title>
+  <meta name="description" content="Helpful guides about pre-settlement funding and what to expect during the process." />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;600;700;800&display=swap" rel="stylesheet" />
+
+  <style>
+    /* --- MAIN SITE THEME --- */
+    :root{
+      --ink:#11153a;
+      --ink-soft:#2a2f57;
+      --brand:#3b5bff;
+      --brand-dark:#2a35d9;
+      --accent:#00a59c;
+      --sky:#cfeeff;
+      --sky-2:#e9f6ff;
+      --nav:#ffffff;
+      --nav-border:#e8ecf6;
+      --muted:#6a6f90;
+      --panel:#f7f8fc;
+      --dark:#1a1b4d;
+      --dark-2:#141539;
+      --card:#ffffff;
+      --shadow:0 18px 50px rgba(22,26,64,.12);
+      --radius:22px;
+      --max:1100px;
+    }
+
+    *{box-sizing:border-box}
+    html{scroll-behavior:smooth}
+    body{
+      margin:0;
+      font-family: "Manrope", ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial;
+      color:var(--ink);
+      background:#fff;
+      line-height:1.6;
+    }
+
+    a{color:inherit; text-decoration:none}
+    img, video{max-width:100%; display:block}
+    .container{max-width:var(--max); margin:0 auto; padding:0 24px}
+
+    /* --- HEADER STYLES --- */
+    .topbar{
+      background: #b7dcff;
+      border-bottom:1px solid #9dc7ff;
+      color:#1c2357;
+      font-weight:600;
+      text-align:center;
+      padding:8px 12px;
+      font-size:14px;
+    }
+
+    header{
+      position:sticky; top:0; z-index:50;
+      background:var(--nav);
+      border-bottom:1px solid var(--nav-border);
+    }
+    .nav{
+      display:flex; align-items:center; justify-content:space-between;
+      gap:16px;
+      padding:14px 0;
+    }
+    .brand{
+      display:flex; align-items:center; gap:12px;
+      font-weight:800; letter-spacing:.3px;
+      color:#111;
+    }
+    .brand img{height:42px; width:auto}
+    
+    nav ul{
+      list-style:none; margin:0; padding:0;
+      display:flex; gap:22px;
+      color:var(--ink-soft);
+      font-weight:600; font-size:15px;
+    }
+    nav a:hover{color:var(--brand)}
+    
+    .btn{
+      display:inline-flex; align-items:center; justify-content:center;
+      padding:12px 24px;
+      border-radius:999px;
+      background:var(--brand);
+      color:#fff;
+      font-weight:700;
+      border:0;
+      box-shadow:0 10px 24px rgba(59,91,255,.25);
+      transition:transform .15s ease, box-shadow .15s ease;
+    }
+    .btn:hover{transform:translateY(-1px); box-shadow:0 14px 28px rgba(59,91,255,.28)}
+    .menuBtn{display:none; background:transparent; border:0; font-size:22px; color:var(--ink)}
+
+    /* --- BLOG SPECIFIC STYLES --- */
+    main {
+      padding: 60px 0 80px;
+      background: var(--panel);
+      width: 100%;
+    }
+
+    .pageIntro{ text-align:center; margin-bottom:28px; }
+    .pageIntro h1{ margin:0 0 10px; font-size:36px; color:#0f1540; }
+    .pageIntro p{ margin:0 auto; color:var(--muted); max-width:75ch; font-size:16px; }
+
+    .toolbar{
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      gap:12px;
+      flex-wrap:wrap;
+      margin:0 auto 22px;
+      max-width:980px;
+    }
+
+    .search{
+      flex:1 1 340px;
+      display:flex;
+      align-items:center;
+      gap:10px;
+      background:#fff;
+      border:1px solid #eef1fa;
+      border-radius:999px;
+      padding:10px 14px;
+      box-shadow:0 10px 26px rgba(22,26,64,.06);
+    }
+    .search input{
+      border:0;
+      outline:none;
+      width:100%;
+      font-family:inherit;
+      font-size:14px;
+      color:var(--ink);
+      background:transparent;
+    }
+    .search .hint{
+      color:var(--muted);
+      font-weight:800;
+      font-size:12px;
+      letter-spacing:.08em;
+    }
+
+    .chips{
+      display:flex;
+      gap:10px;
+      flex-wrap:wrap;
+      justify-content:center;
+    }
+    .chip{
+      display:inline-flex;
+      align-items:center;
+      justify-content:center;
+      padding:8px 12px;
+      border-radius:999px;
+      background:#fff;
+      border:1px solid #eef1fa;
+      color:var(--ink-soft);
+      font-weight:700;
+      font-size:13px;
+      cursor:pointer;
+      user-select:none;
+      transition:transform .15s ease, box-shadow .15s ease, border-color .15s ease;
+    }
+    .chip:hover{ transform:translateY(-1px); box-shadow:0 12px 26px rgba(22,26,64,.08); }
+    .chip.active{ border-color:rgba(59,91,255,.35); color:#0f1540; }
+
+    .grid{
+      display:grid;
+      grid-template-columns: repeat(3, minmax(0,1fr));
+      gap:20px;
+    }
+
+    .post{
+      background:#fff;
+      border-radius:22px;
+      padding:20px;
+      box-shadow:0 18px 50px rgba(22,26,64,.12);
+      border:1px solid #eef1fa;
+      display:flex;
+      flex-direction:column;
+      gap:10px;
+      min-height:240px;
+      transition:transform .18s ease, box-shadow .18s ease;
+    }
+    .post:hover{ transform:translateY(-2px); box-shadow:0 22px 60px rgba(22,26,64,.14); }
+
+    .postTop{
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      gap:10px;
+      color:var(--muted);
+      font-size:13px;
+      font-weight:700;
+    }
+    .tag{
+      display:inline-flex;
+      align-items:center;
+      gap:8px;
+      padding:6px 10px;
+      border-radius:999px;
+      border:1px solid #eef1fa;
+      background:#f6f8ff;
+      color:#1c2357;
+      font-size:12px;
+      font-weight:800;
+      letter-spacing:.06em;
+      text-transform:uppercase;
+      white-space:nowrap;
+    }
+
+    .post h2{
+      margin:0;
+      font-size:18px;
+      line-height:1.25;
+      color:#0f1540;
+      letter-spacing:-.2px;
+    }
+    .post p{
+      margin:0;
+      color:var(--muted);
+      font-size:14px;
+      line-height:1.7;
+      flex:1;
+    }
+
+    .post a.read{
+      color:var(--ink-soft);
+      text-decoration:underline;
+      text-underline-offset:3px;
+      font-weight:800;
+      font-size:14px;
+      align-self:flex-start;
+    }
+    .post a.read:hover{ color:var(--brand); }
+
+    .comingSoon{
+      max-width:980px;
+      margin:22px auto 0;
+      background:#fff;
+      border:1px solid #eef1fa;
+      border-radius:22px;
+      padding:18px 20px;
+      color:var(--muted);
+      box-shadow:0 10px 26px rgba(22,26,64,.06);
+      text-align:center;
+      font-size:14px;
+    }
+
+    footer{
+      padding:24px 0;
+      text-align:center;
+      color:#6e7396;
+      font-size:13px;
+      background:#fff;
+      border-top: 1px solid var(--nav-border);
+    }
+    footer a{color:inherit; text-decoration:underline; text-underline-offset:3px}
+    footer a:hover{color:var(--brand)}
+
+    @media (max-width: 980px){
+      .grid{ grid-template-columns:1fr; }
+      .pageIntro h1{ font-size:30px; }
+      nav ul{display:none}
+      .menuBtn{display:inline-block}
+    }
+  </style>
+</head>
+
+<body>
+  <div class="topbar">CALL US NOW: (859) 81-FLASH</div>
+
+  <header>
+    <div class="container">
+      <div class="nav" id="nav">
+        <a class="brand" href="/">
+          <img src="/assets/logo.png" alt="Flash Legal Funding">
+        </a>
+
+        <nav aria-label="Primary">
+          <ul id="menu">
+            <li><a href="/">Home</a></li>
+            <li><a href="/#services">Services</a></li>
+            <li><a href="/#our-story">Our Story</a></li>
+            <li><a href="/#what-is-it">What Is It?</a></li>
+            <li><a href="/#testimonials">Testimonials</a></li>
+            <li><a href="/blog/">Blog</a></li>
+          </ul>
+        </nav>
+
+        <div style="display:flex; gap:12px; align-items:center;">
+          <button class="menuBtn" id="menuBtn" aria-label="Open menu">☰</button>
+          <a class="btn" href="/apply/">APPLY NOW</a>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <div class="container">
+      <div class="pageIntro">
+        <h1>Blog</h1>
+        <p>Short, clear guides about pre‑settlement funding, what we review, and what to expect while your case is in progress.</p>
+      </div>
+
+      <div class="toolbar">
+        <div class="search" role="search" aria-label="Search blog posts">
+          <span class="hint">SEARCH</span>
+          <input id="q" type="search" placeholder="Search posts" autocomplete="off" />
+        </div>
+
+        <div class="chips" aria-label="Filter by topic">
+          <span class="chip active" data-tag="all">All</span>
+          <span class="chip" data-tag="funding">Funding Basics</span>
+          <span class="chip" data-tag="process">Process</span>
+          <span class="chip" data-tag="attorneys">For Attorneys</span>
+        </div>
+      </div>
+
+      <div class="grid" id="posts" aria-live="polite">
+        {%- for post in collections.blog | reverse -%}
+        <article class="post" data-tag="{{ post.data.category }}" data-title="{{ post.data.title | lower }}">
+          <div class="postTop">
+            <span class="tag">{{ post.data.tagName }}</span>
+            <span>{{ post.date.toDateString() }}</span>
+          </div>
+          <h2>{{ post.data.title }}</h2>
+          <p>{{ post.data.description }}</p>
+          <a class="read" href="{{ post.url }}">Read More</a>
+        </article>
+        {%- endfor -%}
+      </div>
+
+      <div class="comingSoon">
+        Want these posts published first? Email
+        <a href="mailto:info@flashlegalfunding.com" style="text-decoration:underline; text-underline-offset:3px;">info@flashlegalfunding.com</a>
+        and tell us what topics you’d like.
+      </div>
+    </div>
+  </main>
+
+  <footer>
+    <div class="container">
+      2026 Flash Legal Funding. All Rights Reserved.
+      <br />
+      <a href="/terms-of-use/">Terms of Use</a> | <a href="/privacy-policy/">Privacy Policy</a> | <a href="/sitemap">Sitemap</a>
+    </div>
+  </footer>
+
+  <script>
+    // Mobile menu toggle (from header)
+    const menuBtn = document.getElementById("menuBtn");
+    const menu = document.getElementById("menu");
+    if (menuBtn && menu) {
+      menuBtn.addEventListener("click", () => {
+        const open = menu.style.display === "flex";
+        menu.style.display = open ? "none" : "flex";
+        menu.style.flexDirection = "column";
+        menu.style.background = "#fff";
+        menu.style.position = "absolute";
+        menu.style.top = "64px";
+        menu.style.right = "24px";
+        menu.style.padding = "14px";
+        menu.style.border = "1px solid #e8ecf6";
+        menu.style.borderRadius = "12px";
+        menu.style.boxShadow = "0 12px 30px rgba(0,0,0,.08)";
+      });
+    }
+
+    // Blog Filter Logic
+    const chips = Array.from(document.querySelectorAll(".chip"));
+    const posts = Array.from(document.querySelectorAll(".post"));
+    const q = document.getElementById("q");
+
+    function applyFilters() {
+      const active = document.querySelector(".chip.active");
+      const tag = active ? active.getAttribute("data-tag") : "all";
+      const query = (q && q.value ? q.value.trim().toLowerCase() : "");
+
+      posts.forEach((post) => {
+        const postTag = post.getAttribute("data-tag");
+        const title = (post.getAttribute("data-title") || "").toLowerCase();
+
+        const matchTag = tag === "all" || postTag === tag;
+        const matchQuery = !query || title.includes(query);
+
+        post.style.display = (matchTag && matchQuery) ? "flex" : "none";
+      });
+    }
+
+    chips.forEach((chip) => {
+      chip.addEventListener("click", () => {
+        chips.forEach((c) => c.classList.remove("active"));
+        chip.classList.add("active");
+        applyFilters();
+      });
+    });
+
+    if (q) q.addEventListener("input", applyFilters);
+  </script>
+</body>
+</html>

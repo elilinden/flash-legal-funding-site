@@ -1,0 +1,648 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Flash Legal Funding | Pre-Settlement Funding</title>
+  <meta name="description" content="Bills won’t wait for your settlement. Neither should you. No credit check. Get cash fast. If you don’t win, pay $0." />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;600;700;800&display=swap" rel="stylesheet" />
+
+  <style>
+    :root{
+      --ink:#11153a;
+      --ink-soft:#2a2f57;
+      --brand:#3b5bff;
+      --brand-dark:#2a35d9;
+      --accent:#00a59c;
+      --sky:#cfeeff;
+      --sky-2:#e9f6ff;
+      --nav:#ffffff;
+      --nav-border:#e8ecf6;
+      --muted:#6a6f90;
+      --panel:#f7f8fc;
+      --dark:#1a1b4d;
+      --dark-2:#141539;
+      --shadow:0 18px 50px rgba(22,26,64,.12);
+      --radius:22px;
+      --max:1100px;
+    }
+
+    *{box-sizing:border-box}
+    html{scroll-behavior:smooth}
+    body{
+      margin:0;
+      font-family: "Manrope", ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial;
+      color:var(--ink);
+      background:#fff;
+      line-height:1.6;
+    }
+
+    a{color:inherit; text-decoration:none}
+    img, video{max-width:100%; display:block}
+    .container{max-width:var(--max); margin:0 auto; padding:0 24px}
+    main, section{scroll-margin-top:96px}
+
+    .topbar{
+      background: #b7dcff;
+      border-bottom:1px solid #9dc7ff;
+      color:#1c2357;
+      font-weight:600;
+      text-align:center;
+      padding:8px 12px;
+      font-size:14px;
+    }
+
+    header{
+      position:sticky; top:0; z-index:50;
+      background:var(--nav);
+      border-bottom:1px solid var(--nav-border);
+    }
+    .nav{
+      display:flex; align-items:center; justify-content:space-between;
+      gap:16px;
+      padding:14px 0;
+    }
+    .brand{
+      display:flex; align-items:center; gap:12px;
+      font-weight:800; letter-spacing:.3px;
+      color:#111;
+    }
+    .brand img{height:42px; width:auto}
+    nav ul{
+      list-style:none; margin:0; padding:0;
+      display:flex; gap:22px;
+      color:var(--ink-soft);
+      font-weight:600; font-size:15px;
+    }
+    nav a:hover{color:var(--brand)}
+    .btn{
+      display:inline-flex; align-items:center; justify-content:center;
+      padding:12px 24px;
+      border-radius:999px;
+      background:var(--brand);
+      color:#fff;
+      font-weight:700;
+      border:0;
+      box-shadow:0 10px 24px rgba(59,91,255,.25);
+      transition:transform .15s ease, box-shadow .15s ease;
+    }
+    .btn:hover{transform:translateY(-1px); box-shadow:0 14px 28px rgba(59,91,255,.28)}
+    .menuBtn{display:none; background:transparent; border:0; font-size:22px; color:var(--ink)}
+
+    /* Hero */
+    .hero{
+      background: linear-gradient(180deg, var(--sky-2) 0%, var(--sky) 100%);
+      padding:60px 0 70px;
+      position:relative;
+      overflow:hidden;
+    }
+    .hero:after{
+      content:"";
+      position:absolute; inset:auto -20% -40% -20%;
+      height:280px;
+      background:
+        radial-gradient(60% 60% at 50% 50%, rgba(59,91,255,.18), transparent 60%),
+        radial-gradient(50% 50% at 70% 30%, rgba(0,165,156,.2), transparent 60%);
+      pointer-events:none;
+      transform:translateY(70px);
+    }
+    .heroGrid{
+      display:grid;
+      grid-template-columns: 1.1fr .9fr;
+      gap:40px;
+      align-items:center;
+      position:relative;
+      z-index:2;
+    }
+    .hero h1{
+      font-size:48px;
+      line-height:1.1;
+      margin:0 0 14px;
+      color:#0e1440;
+    }
+    .hero h1 span{color:var(--brand)}
+    .hero p{
+      margin:0 0 18px;
+      color:var(--ink-soft);
+      font-size:18px;
+      max-width:48ch;
+    }
+    .hero .features{
+      display:flex; gap:16px; flex-wrap:wrap;
+      color:#1a2359;
+      font-weight:700;
+      margin:14px 0 24px;
+      font-size:15px;
+    }
+    .hero .features span{display:inline-flex; align-items:center; gap:6px}
+    .hero .ctaRow{display:flex; gap:12px; flex-wrap:wrap; align-items:center}
+    .hero .ctaRow .ghost{
+      background:#fff;
+      color:var(--brand);
+      border:2px solid var(--brand);
+      box-shadow:none;
+    }
+    .heroMedia{
+      position:relative;
+      width:100%;
+      min-height:280px;
+      display:flex;
+      align-items:center;
+      justify-content:center;
+    }
+    .heroMedia .card{
+      background:#fff;
+      border-radius:26px;
+      padding:26px;
+      box-shadow:var(--shadow);
+      width:100%;
+      max-width:460px;
+    }
+    .heroMedia h3{margin:0 0 8px; font-size:18px}
+    .heroMedia p{margin:0; color:var(--muted)}
+
+    /* Section headers */
+    section{padding:70px 0}
+    .eyebrow{
+      text-transform:uppercase;
+      letter-spacing:.28em;
+      color:var(--brand);
+      font-weight:800;
+      font-size:12px;
+      text-align:center;
+      margin-bottom:10px;
+    }
+    .sectionTitle{
+      text-align:center;
+      font-size:34px;
+      margin:0 0 36px;
+      color:#0f1540;
+    }
+
+    /* Services */
+    .services{
+      background:#fff;
+    }
+    .servicesGrid{
+      display:grid;
+      grid-template-columns: repeat(3, minmax(0,1fr));
+      gap:28px;
+      text-align:center;
+    }
+    .service{
+      padding:20px 10px;
+    }
+    .serviceIcon{
+      width:86px; height:86px; margin:0 auto 16px;
+      border-radius:50%;
+      display:grid; place-items:center;
+      background:#f1f4ff;
+      color:var(--brand);
+      font-weight:800;
+      font-size:32px;
+    }
+    .service h3{
+      margin:0 0 10px;
+      font-size:16px;
+      letter-spacing:.06em;
+      text-transform:uppercase;
+      color:#151a45;
+    }
+    .service p{margin:0; color:var(--muted)}
+
+    /* Story */
+    .story{
+      background:var(--dark);
+      color:#e8edff;
+      text-align:center;
+    }
+    .story .sectionTitle{color:#fff}
+    .story p{
+      margin:0 auto;
+      max-width:72ch;
+      color:#c7cff7;
+      font-size:16px;
+    }
+
+    /* What is it */
+    .explain{
+      background:#fff;
+    }
+    .explainGrid{
+      display:grid;
+      grid-template-columns: 1.1fr .9fr;
+      gap:36px;
+      align-items:center;
+    }
+    .explain h2{
+      font-size:34px;
+      margin:0 0 14px;
+      color:#0f1540;
+    }
+    .explain p{
+      margin:0;
+      color:var(--muted);
+      font-size:16px;
+    }
+    .mediaCard{
+      background:#fff;
+      border-radius:24px;
+      padding:14px;
+      border:1px solid #eef1fa;
+      box-shadow:var(--shadow);
+    }
+    .mediaCard video{
+      width:100%;
+      border-radius:18px;
+      background:#f1f3ff;
+    }
+
+    /* Testimonials */
+    .testimonials{
+      background:#2f33b8;
+      color:#fff;
+      text-align:center;
+      position:relative;
+    }
+    .testimonials .eyebrow{color:#d7dcff}
+    .testimonials .quoteWrap{
+      position:relative;
+      max-width:860px;
+      margin:0 auto;
+      min-height:200px;
+    }
+    .quote{
+      position:absolute; inset:0;
+      opacity:0;
+      transition:opacity .8s ease;
+      display:flex; flex-direction:column; gap:16px;
+      justify-content:center;
+    }
+    .quote.active{opacity:1}
+    .quote p{
+      font-size:32px;
+      line-height:1.3;
+      margin:0;
+    }
+    .quote span{
+      font-weight:700;
+      color:#eef1ff;
+    }
+
+    /* Contact */
+    .contact{
+      background:#f2f3f8;
+      padding-top:80px;
+      padding-bottom:80px;
+    }
+    .contactGrid{
+      display:grid;
+      grid-template-columns: repeat(3, minmax(0,1fr));
+      gap:0;
+      border-radius:28px;
+      overflow:hidden;
+      box-shadow:var(--shadow);
+    }
+    .contactCol{
+      padding:38px 34px;
+      text-align:center;
+    }
+    .contactCol h3{
+      margin:0 0 12px;
+      letter-spacing:.2em;
+      text-transform:uppercase;
+      font-size:14px;
+    }
+    .contactCol .title{
+      font-size:28px;
+      margin:0 0 18px;
+      letter-spacing:.1em;
+    }
+    .contactCol p{
+      margin:0 0 10px;
+      color:#dfe4ff;
+      font-size:15px;
+    }
+    .contactCol.dark{
+      background:#0f0f10;
+      color:#fff;
+    }
+    .contactCol.mid{
+      background:#6c6f86;
+      color:#fff;
+    }
+    .contactCol.light{
+      background:#c8cad6;
+      color:#1e223e;
+    }
+    .contactCol.light p{color:#2a2f57}
+    .contactCol a{color:inherit}
+    .formGrid{
+      display:grid;
+      grid-template-columns: 1fr 1fr;
+      gap:10px;
+      margin-top:10px;
+    }
+    .formGrid input, .formGrid textarea{
+      width:100%;
+      padding:10px 10px;
+      border:1px solid #9aa1c0;
+      background:#eef0f8;
+      border-radius:6px;
+      font-family:inherit;
+    }
+    .formGrid textarea{grid-column:1 / -1; min-height:90px; resize:vertical}
+    .formGrid button{
+      grid-column:1 / -1;
+      padding:10px 14px;
+      border:0;
+      background:#2f33b8;
+      color:#fff;
+      border-radius:6px;
+      font-weight:700;
+      cursor:pointer;
+    }
+
+    footer{
+      padding:24px 0;
+      text-align:center;
+      color:#6e7396;
+      font-size:13px;
+    }
+
+    /* Animations */
+    .animate-fade{opacity:0; transform:translateY(18px); transition:opacity .8s ease, transform .8s ease}
+    .animate-drop{opacity:0; transform:translateY(-30px); transition:opacity .8s ease, transform .8s ease}
+    .in-view{opacity:1; transform:translateY(0)}
+
+    @media (max-width: 980px){
+      .heroGrid, .explainGrid{grid-template-columns:1fr}
+      .servicesGrid{grid-template-columns:1fr}
+      .contactGrid{grid-template-columns:1fr}
+      nav ul{display:none}
+      .menuBtn{display:inline-block}
+    }
+    @media (prefers-reduced-motion: reduce){
+      html{scroll-behavior:auto}
+      .animate-fade, .animate-drop, .quote{transition:none}
+    }
+  </style>
+</head>
+<body>
+  <div class="topbar">CALL US NOW: (859) 81-FLASH</div>
+
+  <header>
+    <div class="container">
+      <div class="nav" id="nav">
+        <a class="brand" href="/">
+          <img src="/assets/logo.png" alt="Flash Legal Funding">
+        </a>
+
+        <nav aria-label="Primary">
+          <ul id="menu">
+            <li><a href="#home">Home</a></li>
+            <li><a href="#services">Services</a></li>
+            <li><a href="#our-story">Our Story</a></li>
+            <li><a href="#what-is-it">What Is It?</a></li>
+            <li><a href="#testimonials">Testimonials</a></li>
+            <li><a href="/blog/">Blog</a></li>
+          </ul>
+        </nav>
+
+        <div style="display:flex; gap:12px; align-items:center;">
+          <button class="menuBtn" id="menuBtn" aria-label="Open menu">☰</button>
+          <a class="btn" href="/apply/">APPLY NOW</a>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <main id="home">
+    <section class="hero">
+      <div class="container">
+        <div class="heroGrid">
+          <div>
+            <h1><span class="rotWord" id="rotWord" aria-live="polite">Life</span> won’t wait for your settlement.<br><span>Neither should you.</span></h1>
+            <p>Fast, non-recourse pre-settlement funding for personal injury cases. No credit check. If you don’t win, pay $0.</p>
+            <div class="features">
+              <span>✓ No Credit Check</span>
+              <span>✓ Lowest Rate</span>
+              <span>✓ Get Cash Fast</span>
+              <span>✓ If you don’t win pay $0</span>
+            </div>
+            <div class="ctaRow">
+              <a class="btn" href="/apply/">Apply Now</a>
+              <a class="btn ghost" href="#services">Learn More</a>
+            </div>
+          </div>
+
+          <div class="heroMedia">
+            <div class="card animate-drop" data-animate="drop">
+              <h3>Need help right now?</h3>
+              <p>Call (859) 81-FLASH or email info@flashlegalfunding.com. We’ll walk you through it.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="services" class="services">
+      <div class="container">
+        <div class="eyebrow">SERVICES</div>
+        <h2 class="sectionTitle animate-fade" data-animate="fade">How it works</h2>
+
+        <div class="servicesGrid">
+          <div class="service animate-fade" data-animate="fade">
+            <div class="serviceIcon">✓</div>
+            <h3>YOU APPLY</h3>
+            <p>Apply online quick and easy.</p>
+          </div>
+          <div class="service animate-fade" data-animate="fade">
+            <div class="serviceIcon">✔</div>
+            <h3>WE REVIEW</h3>
+            <p>We work together with your law firm to review your case.</p>
+          </div>
+          <div class="service animate-fade" data-animate="fade">
+            <div class="serviceIcon">$</div>
+            <h3>GET FUNDS</h3>
+            <p>We send you cash directly within 24 hours of approval.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="our-story" class="story">
+      <div class="container">
+        <div class="eyebrow" style="color:#a9b6ff;">OUR STORY</div>
+        <h2 class="sectionTitle animate-fade" data-animate="fade">Our Story</h2>
+        <p class="animate-fade" data-animate="fade">
+          Flash Legal Funding was founded in 2022 in Los Angeles, California to meet the needs of personal injury accident case lawyers and their clients.
+          This funding helps injured clients pay their bills before their case is settled, while giving lawyers the time they need to properly settle the case.
+          Attorneys need the proper amount of time to administer and settle their cases and benefit by referring their clients to a trustworthy solution for their
+          pre-settlement legal funding needs.
+        </p>
+      </div>
+    </section>
+
+    <section id="what-is-it" class="explain">
+      <div class="container">
+        <div class="explainGrid">
+          <div>
+            <div class="eyebrow" style="text-align:left;">WHAT IS IT?</div>
+            <h2>What is pre-settlement funding?</h2>
+            <p>
+              Pre-settlement funding refers to the practice of providing financial support to individuals who have filed a lawsuit and are waiting for a settlement
+              or judgment to be reached. The funding company pays the claimant a portion of the expected settlement amount in advance, in exchange for a portion of
+              the eventual settlement or judgment. This type of funding is often used by plaintiffs who need money to cover living expenses, medical bills, or other
+              costs while they wait for their cases to be resolved.
+            </p>
+          </div>
+          <div class="mediaCard animate-drop" data-animate="drop">
+            <!-- Replace /assets/money-in-hand.mp4 with your real video -->
+            <video controls playsinline muted poster="/assets/money-in-hand.jpg">
+              <source src="/assets/money-in-hand.mp4" type="video/mp4" />
+              Your browser does not support the video tag.
+            </video>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="testimonials" class="testimonials">
+      <div class="container">
+        <div class="eyebrow">TESTIMONIALS</div>
+        <div class="quoteWrap" aria-live="polite">
+          <div class="quote active">
+            <p>“Needed a loan and Best Legal Funding was there. The money helped me get back on track!”</p>
+            <span>Gabriella S.</span>
+          </div>
+          <div class="quote">
+            <p>“They approved me super fast with no hassles.”</p>
+            <span>Katie J.</span>
+          </div>
+          <div class="quote">
+            <p>“The process was simple, and the team kept me updated.”</p>
+            <span>Marko S.</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="contact" class="contact">
+      <div class="container">
+        <div class="contactGrid">
+          <div class="contactCol dark">
+            <div class="title">CONTACT US</div>
+            <p>Tel: (859) 81-FLASH</p>
+            <p>Tel: (859) 813-5274</p>
+            <p>Fax: (859) 605-5274</p>
+            <p>Email: info@flashlegalfunding.com</p>
+          </div>
+          <div class="contactCol mid">
+            <div class="title">OUR HOURS</div>
+            <p>Sunday: Closed</p>
+            <p>Monday: 8:00 - 5:00 PT</p>
+            <p>Tuesday: 8:00 - 5:00 PT</p>
+            <p>Wednesday: 8:00 - 5:00 PT</p>
+            <p>Thursday: 8:00 - 5:00 PT</p>
+            <p>Friday: 8:00 - 5:00 PT</p>
+            <p>Saturday: Closed</p>
+          </div>
+          <div class="contactCol light">
+            <div class="title">TELL US</div>
+            <form action="https://formspree.io/f/xvzqyqba" method="POST">
+              <div class="formGrid">
+                <input name="name" placeholder="Name" required />
+                <input name="email" type="email" placeholder="Email" required />
+                <textarea name="message" placeholder="Type your message here..."></textarea>
+                <button type="submit">Submit</button>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="container">
+      2026 Flash Legal Funding. All Rights Reserved.
+      <br />
+      <a href="/terms-of-use/">Terms of Use</a> | <a href="/privacy-policy/">Privacy Policy</a> | <a href="/sitemap">Sitemap</a>
+    </div>
+  </footer>
+
+  <script>
+    // Mobile menu toggle
+    const nav = document.getElementById("nav");
+    const menuBtn = document.getElementById("menuBtn");
+    const menu = document.getElementById("menu");
+    if (menuBtn && nav && menu) {
+      menuBtn.addEventListener("click", () => {
+        const open = menu.style.display === "flex";
+        menu.style.display = open ? "none" : "flex";
+        menu.style.flexDirection = "column";
+        menu.style.background = "#fff";
+        menu.style.position = "absolute";
+        menu.style.top = "64px";
+        menu.style.right = "24px";
+        menu.style.padding = "14px";
+        menu.style.border = "1px solid #e8ecf6";
+        menu.style.borderRadius = "12px";
+        menu.style.boxShadow = "0 12px 30px rgba(0,0,0,.08)";
+      });
+    }
+
+    // Fade / drop-in on scroll
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add("in-view");
+        }
+      });
+    }, { threshold: 0.2 });
+
+    document.querySelectorAll("[data-animate]").forEach((el) => observer.observe(el));
+
+    // Rotating hero word: Bills → Rent → Life
+const rotWordEl = document.getElementById("rotWord");
+const rotWords = ["Bills", "Rent", "Life"];
+let rotIdx = 2; // starts on "Life"
+
+if (rotWordEl) {
+  const reduced = window.matchMedia && window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+
+  setInterval(() => {
+    rotIdx = (rotIdx + 1) % rotWords.length;
+
+    if (reduced) {
+      rotWordEl.textContent = rotWords[rotIdx];
+      return;
+    }
+
+    rotWordEl.classList.add("is-out");
+    setTimeout(() => {
+      rotWordEl.textContent = rotWords[rotIdx];
+      rotWordEl.classList.remove("is-out");
+      rotWordEl.classList.add("is-in");
+      setTimeout(() => rotWordEl.classList.remove("is-in"), 360);
+    }, 220);
+  }, 3000);
+}
+
+    // Testimonials fade between quotes
+    const quotes = Array.from(document.querySelectorAll(".quote"));
+    let idx = 0;
+    if (quotes.length > 1) {
+      setInterval(() => {
+        quotes[idx].classList.remove("active");
+        idx = (idx + 1) % quotes.length;
+        quotes[idx].classList.add("active");
+      }, 5000);
+    }
+  </script>
+</body>
+</html>

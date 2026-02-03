@@ -1,0 +1,369 @@
+/* /assets/style.css
+   Flash Legal Funding — Shared site styles
+   Works with the HTML templates we've been using.
+*/
+
+/* ---------- Design tokens ---------- */
+:root{
+  --bg:#0b1220;
+  --bg2:#0f1b33;
+
+  --text:#eef2ff;
+  --muted:rgba(238,242,255,.75);
+  --muted2:rgba(238,242,255,.6);
+
+  --line:rgba(255,255,255,.12);
+  --card:rgba(255,255,255,.05);
+  --card2:rgba(255,255,255,.04);
+
+  --accent:#4f8cff;
+  --accent2:#2dd4bf;
+
+  --shadow: 0 18px 60px rgba(0,0,0,.35);
+  --shadow2: 0 10px 40px rgba(0,0,0,.18);
+
+  --radius: 18px;
+  --max: 1100px;
+
+  --focus: rgba(79,140,255,.55);
+}
+
+/* ---------- Base ---------- */
+*{ box-sizing: border-box; }
+html{ scroll-behavior: smooth; }
+
+body{
+  margin:0;
+  font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, "Apple Color Emoji","Segoe UI Emoji";
+  color: var(--text);
+  background:
+    radial-gradient(1200px 600px at 15% 10%, rgba(79,140,255,.22), transparent 60%),
+    radial-gradient(900px 600px at 85% 25%, rgba(45,212,191,.18), transparent 55%),
+    linear-gradient(180deg, var(--bg), var(--bg2));
+  line-height: 1.55;
+}
+
+img{ max-width:100%; height:auto; display:block; }
+a{ color:inherit; text-decoration:none; }
+code{ font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace; }
+
+/* ---------- Layout helpers ---------- */
+.container{
+  max-width: var(--max);
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+/* ---------- Top bar ---------- */
+.topbar{
+  border-bottom: 1px solid var(--line);
+  background: rgba(0,0,0,.12);
+  backdrop-filter: blur(10px);
+}
+.topbar .row{
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  padding: 10px 0;
+  gap: 12px;
+  color: var(--muted);
+  font-size: 14px;
+}
+
+/* Pills (phone/email badges) */
+.pill{
+  display:inline-flex;
+  align-items:center;
+  gap: 8px;
+  padding: 6px 10px;
+  border: 1px solid var(--line);
+  border-radius: 999px;
+  background: rgba(255,255,255,.04);
+}
+.pill strong{ color: var(--text); font-weight: 700; }
+
+/* ---------- Header + Nav ---------- */
+header{
+  position: sticky;
+  top: 0;
+  z-index: 50;
+  background: rgba(11,18,32,.72);
+  backdrop-filter: blur(14px);
+  border-bottom: 1px solid var(--line);
+}
+
+.nav{
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  padding: 14px 0;
+  gap: 14px;
+  position: relative;
+}
+
+.brand{
+  display:flex;
+  align-items:center;
+  gap: 12px;
+  min-width: 200px;
+}
+
+.brand .name{
+  display:flex;
+  flex-direction: column;
+  line-height: 1.1;
+}
+.brand .name span:first-child{ font-weight: 700; }
+.brand .name span:last-child{ font-size: 12px; color: var(--muted2); }
+
+/* Logo picture container */
+.logoPic{
+  width: 38px;
+  height: 38px;
+  border-radius: 12px;
+  overflow: hidden;
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  background: rgba(255,255,255,.06);
+  border: 1px solid rgba(255,255,255,.12);
+}
+.logoImg{
+  width:100%;
+  height:100%;
+  object-fit: contain;
+  padding: 6px;
+}
+
+nav ul{
+  list-style:none;
+  margin: 0;
+  padding: 0;
+  display:flex;
+  align-items:center;
+  gap: 18px;
+  color: var(--muted);
+  font-size: 14px;
+}
+nav a{
+  padding: 8px 10px;
+  border-radius: 12px;
+}
+nav a:hover{
+  background: rgba(255,255,255,.06);
+  color: var(--text);
+}
+nav a.active{
+  background: rgba(255,255,255,.06);
+  color: rgba(238,242,255,1);
+}
+
+/* Buttons */
+.cta{
+  display:flex;
+  align-items:center;
+  gap: 10px;
+}
+.btn{
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  gap: 10px;
+
+  padding: 10px 14px;
+  border-radius: 999px;
+
+  border: 1px solid rgba(255,255,255,.16);
+  background: rgba(255,255,255,.06);
+  color: var(--text);
+  font-weight: 600;
+  cursor: pointer;
+
+  transition: transform .12s ease, background .12s ease, filter .12s ease;
+  white-space: nowrap;
+}
+.btn:hover{
+  transform: translateY(-1px);
+  background: rgba(255,255,255,.10);
+}
+.btn.primary{
+  border-color: rgba(79,140,255,.45);
+  background: linear-gradient(135deg, rgba(79,140,255,.95), rgba(45,212,191,.75));
+  color: #06111f;
+}
+.btn.primary:hover{ filter: brightness(1.03); }
+.btn:disabled{
+  opacity:.6;
+  cursor:not-allowed;
+  transform:none;
+}
+
+/* Mobile menu button (if present) */
+.menuBtn{
+  display:none;
+  padding: 10px 12px;
+  border-radius: 12px;
+  border: 1px solid var(--line);
+  background: rgba(255,255,255,.05);
+  color: var(--text);
+}
+
+/* ---------- Cards + sections ---------- */
+.card, .pageCard, .heroCard, .asideCard{
+  border-radius: var(--radius);
+  border: 1px solid var(--line);
+  background: var(--card2);
+  box-shadow: var(--shadow2);
+}
+
+.pageCard{
+  padding: 26px;
+  background: var(--card);
+  box-shadow: var(--shadow);
+}
+
+.card{
+  padding: 18px;
+}
+
+.heroCard{
+  padding: 28px;
+  background: rgba(255,255,255,.05);
+  box-shadow: var(--shadow);
+  position: relative;
+  overflow: hidden;
+}
+
+.asideCard{
+  padding: 18px;
+  background: rgba(255,255,255,.04);
+}
+
+/* Titles */
+h1{
+  margin: 0 0 10px;
+  font-size: 34px;
+  letter-spacing: -0.6px;
+  line-height: 1.15;
+}
+h2{
+  margin: 22px 0 10px;
+  font-size: 16px;
+  letter-spacing: 0.6px;
+  text-transform: uppercase;
+}
+h3{
+  margin: 0 0 8px;
+  font-size: 16px;
+}
+.sub{ margin: 0 0 16px; color: var(--muted); max-width: 80ch; }
+.muted{ color: var(--muted); }
+.fine{ color: var(--muted2); font-size: 12px; line-height: 1.5; }
+
+/* ---------- Rotating word ---------- */
+.rotWord{
+  display:inline-block;
+  min-width:4ch;
+  will-change:transform, opacity;
+  transition:opacity .35s ease, transform .35s ease;
+}
+.rotWord.is-out{ opacity:0; transform:translateY(-10px); }
+.rotWord.is-in{ opacity:1; transform:translateY(0); }
+
+/* Lists */
+.list{
+  margin: 10px 0 0 0;
+  padding-left: 18px;
+  color: rgba(238,242,255,.9);
+  font-size: 14px;
+  line-height: 1.7;
+}
+
+/* Blockquotes (testimonials) */
+blockquote{
+  margin:0;
+  padding: 18px 18px 18px 16px;
+  border-left: 4px solid rgba(79,140,255,.6);
+  border-radius: 14px;
+  background: rgba(255,255,255,.04);
+  border: 1px solid rgba(255,255,255,.10);
+  color: rgba(238,242,255,.92);
+}
+blockquote footer{
+  margin-top: 10px;
+  color: var(--muted);
+  font-weight: 600;
+}
+
+/* ---------- Forms ---------- */
+form{ display:grid; gap: 12px; }
+label{ font-size: 13px; color: var(--muted2); }
+
+input, textarea, select{
+  width: 100%;
+  padding: 12px 12px;
+  border-radius: 14px;
+  border: 1px solid rgba(255,255,255,.14);
+  background: rgba(0,0,0,.18);
+  color: var(--text);
+  outline: none;
+  appearance: none;
+}
+
+textarea{ min-height: 120px; resize: vertical; }
+
+input:focus, textarea:focus, select:focus{
+  border-color: var(--focus);
+}
+
+/* ---------- Footer ---------- */
+footer{
+  border-top: 1px solid var(--line);
+  padding: 20px 0 28px;
+  color: var(--muted2);
+  font-size: 13px;
+}
+footer .row{
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap: 12px;
+  flex-wrap:wrap;
+}
+footer a{
+  color: var(--muted);
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+
+/* ---------- Responsive ---------- */
+@media (max-width: 940px){
+  nav ul{ display:none; }
+  .menuBtn{ display:inline-flex; }
+
+  /* If you use the homepage mobile dropdown behavior:
+     .nav.open nav ul will appear below header
+  */
+  .nav.open nav ul{
+    display:flex;
+    position:absolute;
+    left: 20px;
+    right: 20px;
+    top: 64px;
+
+    flex-direction: column;
+    padding: 12px;
+    border-radius: 18px;
+
+    border: 1px solid var(--line);
+    background: rgba(11,18,32,.92);
+    backdrop-filter: blur(16px);
+  }
+
+  h1{ font-size: 30px; }
+}
+
+@media (prefers-reduced-motion: reduce){
+  html{ scroll-behavior: auto; }
+  .rotWord{ transition: none; }
+}
