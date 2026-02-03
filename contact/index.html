@@ -116,7 +116,7 @@
     /* --- CONTACT GRID --- */
     .grid{
       display:grid;
-      grid-template-columns: 1fr 1.4fr; /* Make form slightly wider */
+      grid-template-columns: 1fr 1.4fr;
       gap:32px;
       align-items:start;
     }
@@ -137,7 +137,6 @@
       padding-bottom: 12px;
     }
 
-    /* --- LEFT COLUMN: INFO --- */
     .info-list {
       display: flex;
       flex-direction: column;
@@ -163,10 +162,7 @@
     }
     .info-value a { color: var(--brand); }
 
-    .hours-grid {
-      display: grid;
-      gap: 10px;
-    }
+    .hours-grid { display: grid; gap: 10px; }
     .hour-row {
       display: flex;
       justify-content: space-between;
@@ -188,7 +184,6 @@
       line-height: 1.5;
     }
 
-    /* --- RIGHT COLUMN: FORM --- */
     form{display:grid; gap:20px}
     .row2{display:grid; grid-template-columns:1fr 1fr; gap:20px}
     
@@ -220,7 +215,6 @@
     
     .fine{font-size:13px; color:var(--muted); margin-top:10px; line-height: 1.4;}
 
-    /* --- FOOTER --- */
     footer{
       padding:32px 0;
       text-align:center;
@@ -232,7 +226,6 @@
     footer a{color:inherit; text-decoration:underline; text-underline-offset:3px}
     footer a:hover{color:var(--brand)}
 
-    /* --- RESPONSIVE --- */
     @media (max-width: 800px){
       nav ul{display:none}
       .menuBtn{display:inline-block}
@@ -241,29 +234,23 @@
       .pageIntro h1{font-size:32px}
       .card{padding: 24px;}
     }
-/* --- MOBILE HEADER FIX --- */
-    @media (max-width: 600px) {
-      /* Shrink logo slightly more to prevent crowding */
-      .brand img { height: 28px; }
-      
-      /* Tighten the nav container */
-      .nav { padding: 8px 0; gap: 4px; }
 
-      /* FIX THE BUTTON: Smaller, centered text, compact */
+    @media (max-width: 600px) {
+      .brand img { height: 28px; }
+      .nav { padding: 8px 0; gap: 4px; }
       .nav .btn { 
-        padding: 6px 14px;      /* Smaller padding */
-        font-size: 12px;        /* Smaller text */
-        min-height: 34px;       /* Consistent height */
-        line-height: 1;         /* Forces text to center vertically */
-        white-space: nowrap;    /* Prevents text wrapping */
-        display: inline-flex;   /* Ensures flex centering works */
+        padding: 6px 14px;
+        font-size: 12px;
+        min-height: 34px;
+        line-height: 1;
+        white-space: nowrap;
+        display: inline-flex;
         align-items: center;    
         justify-content: center;
       }
-
-      /* Adjust hamburger menu to match */
       .menuBtn { font-size: 24px; padding: 4px; }
     }
+  </style>
 </head>
 
 <body>
@@ -310,7 +297,8 @@
             <div class="info-item">
               <span class="info-label">Phone</span>
               <span class="info-value">
-                <a href="tel:+18598135274">(859) 81‑FLASH</a>
+                <a href="tel:+18598135274">(859) 81-FLASH</a>
+                <span style="color:var(--muted); font-weight:600;"> (859) 813-5274</span>
               </span>
             </div>
             <div class="info-item">
@@ -321,7 +309,7 @@
             </div>
             <div class="info-item">
               <span class="info-label">Fax</span>
-              <span class="info-value">(859) 605‑5274</span>
+              <span class="info-value">(859) 605-5274</span>
             </div>
           </div>
 
@@ -361,6 +349,7 @@
               </div>
               <div>
                 <label for="topic">Topic</label>
+                <!-- Add required if you want this mandatory -->
                 <select id="topic" name="topic">
                   <option value="" disabled selected>Select a topic...</option>
                   <option>General question</option>
@@ -376,7 +365,7 @@
               <textarea id="message" name="message" placeholder="How can we help you today?"></textarea>
             </div>
 
-            <input type="text" name="_gotcha" style="display:none" tabindex="-1" autocomplete="off">
+            <input type="text" name="_gotcha" style="display:none" tabindex="-1" autocomplete="off" aria-hidden="true">
 
             <button class="btn" type="submit" style="width:100%;">Send Message</button>
 
