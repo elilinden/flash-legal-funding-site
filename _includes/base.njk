@@ -153,6 +153,30 @@
       nav ul{display:none}
       .menuBtn{display:inline-block}
     }
+
+    /* --- MOBILE HEADER FIX (Prevents Overlap) --- */
+    @media (max-width: 600px) {
+      /* Make logo slightly smaller */
+      .brand img {
+        height: 32px;
+      }
+      /* Tighten the spacing */
+      .nav {
+        padding: 10px 0;
+        gap: 8px;
+      }
+      /* Shrink the button text and padding */
+      .nav .btn {
+        padding: 8px 16px;
+        font-size: 13px;
+        white-space: nowrap;
+      }
+      /* Ensure menu button is clickable */
+      .menuBtn {
+        font-size: 26px;
+        padding: 5px;
+      }
+    }
   </style>
 </head>
 
