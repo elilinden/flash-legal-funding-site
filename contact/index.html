@@ -241,14 +241,29 @@
       .pageIntro h1{font-size:32px}
       .card{padding: 24px;}
     }
-    /* --- MOBILE HEADER FIX --- */
+/* --- MOBILE HEADER FIX --- */
     @media (max-width: 600px) {
-      .brand img { height: 32px; }
-      .nav { padding: 10px 0; gap: 8px; }
-      .nav .btn { padding: 8px 16px; font-size: 13px; white-space: nowrap; }
-      .menuBtn { font-size: 26px; padding: 5px; }
+      /* Shrink logo slightly more to prevent crowding */
+      .brand img { height: 28px; }
+      
+      /* Tighten the nav container */
+      .nav { padding: 8px 0; gap: 4px; }
+
+      /* FIX THE BUTTON: Smaller, centered text, compact */
+      .nav .btn { 
+        padding: 6px 14px;      /* Smaller padding */
+        font-size: 12px;        /* Smaller text */
+        min-height: 34px;       /* Consistent height */
+        line-height: 1;         /* Forces text to center vertically */
+        white-space: nowrap;    /* Prevents text wrapping */
+        display: inline-flex;   /* Ensures flex centering works */
+        align-items: center;    
+        justify-content: center;
+      }
+
+      /* Adjust hamburger menu to match */
+      .menuBtn { font-size: 24px; padding: 4px; }
     }
-  </style>
 </head>
 
 <body>
