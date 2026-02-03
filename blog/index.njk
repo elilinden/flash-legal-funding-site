@@ -66,6 +66,7 @@
       display:flex; align-items:center; justify-content:space-between;
       gap:16px;
       padding:14px 0;
+      position:relative; /* helps mobile menu anchor */
     }
     .brand{
       display:flex; align-items:center; gap:12px;
@@ -73,7 +74,7 @@
       color:#111;
     }
     .brand img{height:42px; width:auto}
-    
+
     nav ul{
       list-style:none; margin:0; padding:0;
       display:flex; gap:22px;
@@ -81,7 +82,7 @@
       font-weight:600; font-size:15px;
     }
     nav a:hover{color:var(--brand)}
-    
+
     .btn{
       display:inline-flex; align-items:center; justify-content:center;
       padding:12px 24px;
@@ -94,7 +95,7 @@
       transition:transform .15s ease, box-shadow .15s ease;
     }
     .btn:hover{transform:translateY(-1px); box-shadow:0 14px 28px rgba(59,91,255,.28)}
-    .menuBtn{display:none; background:transparent; border:0; font-size:22px; color:var(--ink)}
+    .menuBtn{display:none; background:transparent; border:0; font-size:22px; color:var(--ink); cursor:pointer}
 
     /* --- BLOG SPECIFIC STYLES --- */
     main {
@@ -262,35 +263,32 @@
     footer a{color:inherit; text-decoration:underline; text-underline-offset:3px}
     footer a:hover{color:var(--brand)}
 
+    /* Responsive grid: 3 -> 2 -> 1 */
     @media (max-width: 980px){
-      .grid{ grid-template-columns:1fr; }
+      .grid{ grid-template-columns: repeat(2, minmax(0,1fr)); }
       .pageIntro h1{ font-size:30px; }
       nav ul{display:none}
-      .menuBtn{display:inline-block}
+      .menuBtn{display:inline-block; cursor:pointer}
+    }
+    @media (max-width: 640px){
+      .grid{ grid-template-columns: 1fr; }
     }
 
-/* --- MOBILE HEADER FIX --- */
+    /* --- MOBILE HEADER FIX --- */
     @media (max-width: 600px) {
-      /* Shrink logo slightly more to prevent crowding */
       .brand img { height: 28px; }
-      
-      /* Tighten the nav container */
       .nav { padding: 8px 0; gap: 4px; }
-
-      /* FIX THE BUTTON: Smaller, centered text, compact */
-      .nav .btn { 
-        padding: 6px 14px;      /* Smaller padding */
-        font-size: 12px;        /* Smaller text */
-        min-height: 34px;       /* Consistent height */
-        line-height: 1;         /* Forces text to center vertically */
-        white-space: nowrap;    /* Prevents text wrapping */
-        display: inline-flex;   /* Ensures flex centering works */
-        align-items: center;    
+      .nav .btn {
+        padding: 6px 14px;
+        font-size: 12px;
+        min-height: 34px;
+        line-height: 1;
+        white-space: nowrap;
+        display: inline-flex;
+        align-items: center;
         justify-content: center;
       }
-
-      /* Adjust hamburger menu to match */
-      .menuBtn { font-size: 24px; padding: 4px; }
+      .menuBtn { font-size: 24px; padding: 4px; cursor:pointer; }
     }
   </style>
 </head>
@@ -312,12 +310,13 @@
             <li><a href="/#our-story">Our Story</a></li>
             <li><a href="/#what-is-it">What Is It?</a></li>
             <li><a href="/#testimonials">Testimonials</a></li>
+            <li><a href="/faq/">FAQ</a></li>
             <li><a href="/blog/">Blog</a></li>
           </ul>
         </nav>
 
         <div style="display:flex; gap:12px; align-items:center;">
-          <button class="menuBtn" id="menuBtn" aria-label="Open menu">☰</button>
+          <button class="menuBtn" id="menuBtn" aria-label="Open menu" aria-expanded="false">☰</button>
           <a class="btn" href="/apply/">APPLY NOW</a>
         </div>
       </div>
@@ -328,7 +327,7 @@
     <div class="container">
       <div class="pageIntro">
         <h1>Blog</h1>
-        <p>Short, clear guides about pre‑settlement funding, what we review, and what to expect while your case is in progress.</p>
+        <p>Short, clear guides about pre-settlement funding, what we review, and what to expect while your case is in progress.</p>
       </div>
 
       <div class="toolbar">
@@ -347,7 +346,10 @@
 
       <div class="grid" id="posts" aria-live="polite">
         {%- for post in collections.blog | reverse -%}
-        <article class="post" data-tag="{{ post.data.category }}" data-title="{{ post.data.title | lower }}">
+        <article class="post"
+          data-tag="{{ post.data.category }}"
+          data-title="{{ post.data.title | lower }}"
+          data-desc="{{ post.data.description | lower }}">
           <div class="postTop">
             <span class="tag">{{ post.data.tagName }}</span>
             <span>{{ post.date.toDateString() }}</span>
@@ -376,13 +378,30 @@
   </footer>
 
   <script>
-    // Mobile menu toggle (from header)
+    // Mobile menu toggle (header)
     const menuBtn = document.getElementById("menuBtn");
     const menu = document.getElementById("menu");
+
     if (menuBtn && menu) {
-      menuBtn.addEventListener("click", () => {
-        const open = menu.style.display === "flex";
-        menu.style.display = open ? "none" : "flex";
+      menuBtn.setAttribute("aria-expanded", "false");
+
+      const closeMenu = () => {
+        menu.style.display = "none";
+        // reset any inline styles applied when open
+        menu.style.flexDirection = "";
+        menu.style.background = "";
+        menu.style.position = "";
+        menu.style.top = "";
+        menu.style.right = "";
+        menu.style.padding = "";
+        menu.style.border = "";
+        menu.style.borderRadius = "";
+        menu.style.boxShadow = "";
+        menuBtn.setAttribute("aria-expanded", "false");
+      };
+
+      const openMenu = () => {
+        menu.style.display = "flex";
         menu.style.flexDirection = "column";
         menu.style.background = "#fff";
         menu.style.position = "absolute";
@@ -392,10 +411,35 @@
         menu.style.border = "1px solid #e8ecf6";
         menu.style.borderRadius = "12px";
         menu.style.boxShadow = "0 12px 30px rgba(0,0,0,.08)";
+        menuBtn.setAttribute("aria-expanded", "true");
+      };
+
+      menuBtn.addEventListener("click", (e) => {
+        e.stopPropagation();
+        const isOpen = menu.style.display === "flex";
+        isOpen ? closeMenu() : openMenu();
+      });
+
+      document.addEventListener("click", (e) => {
+        const isButton = e.target === menuBtn;
+        const insideMenu = menu.contains(e.target);
+        if (!isButton && !insideMenu) closeMenu();
+      });
+
+      document.addEventListener("keydown", (e) => {
+        if (e.key === "Escape") closeMenu();
+      });
+
+      // If user resizes from mobile -> desktop, clear inline display:none
+      window.addEventListener("resize", () => {
+        if (window.innerWidth > 980) {
+          menu.style.display = "";
+          menuBtn.setAttribute("aria-expanded", "false");
+        }
       });
     }
 
-    // Blog Filter Logic
+    // Blog Filter Logic (title + description)
     const chips = Array.from(document.querySelectorAll(".chip"));
     const posts = Array.from(document.querySelectorAll(".post"));
     const q = document.getElementById("q");
@@ -408,9 +452,10 @@
       posts.forEach((post) => {
         const postTag = post.getAttribute("data-tag");
         const title = (post.getAttribute("data-title") || "").toLowerCase();
+        const desc = (post.getAttribute("data-desc") || "").toLowerCase();
 
         const matchTag = tag === "all" || postTag === tag;
-        const matchQuery = !query || title.includes(query);
+        const matchQuery = !query || title.includes(query) || desc.includes(query);
 
         post.style.display = (matchTag && matchQuery) ? "flex" : "none";
       });
