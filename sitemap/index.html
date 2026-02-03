@@ -56,6 +56,7 @@
       display:flex; align-items:center; justify-content:space-between;
       gap:16px;
       padding:14px 0;
+      position:relative;
     }
     .brand{
       display:flex; align-items:center; gap:12px;
@@ -63,6 +64,7 @@
       color:#111;
     }
     .brand img{height:42px; width:auto}
+
     nav ul{
       list-style:none; margin:0; padding:0;
       display:flex; gap:22px;
@@ -70,6 +72,7 @@
       font-weight:600; font-size:15px;
     }
     nav a:hover{color:var(--brand)}
+
     .btn{
       display:inline-flex; align-items:center; justify-content:center;
       padding:12px 24px;
@@ -143,34 +146,49 @@
       background:#fff;
     }
 
+    /* Mobile menu panel (no inline styles needed) */
+    .menuPanel{
+      display:none;
+    }
+    .menuOpen .menuPanel{
+      display:flex;
+      flex-direction:column;
+      gap:10px;
+      background:#fff;
+      position:absolute;
+      top:64px;
+      right:24px;
+      padding:14px;
+      border:1px solid #e8ecf6;
+      border-radius:12px;
+      box-shadow:0 12px 30px rgba(0,0,0,.08);
+      min-width:220px;
+    }
+    .menuOpen .menuPanel a{padding:6px 6px; border-radius:8px}
+    .menuOpen .menuPanel a:hover{background:#f4f6ff}
+
     @media (max-width: 980px){
       nav ul{display:none}
       .menuBtn{display:inline-block}
       .grid{grid-template-columns:1fr}
       .pageIntro h1{font-size:30px}
+      .menuPanel{display:flex} /* exists, but only shown when menuOpen is on */
     }
 
     /* --- MOBILE HEADER FIX --- */
     @media (max-width: 600px) {
-      /* Shrink logo slightly more to prevent crowding */
       .brand img { height: 28px; }
-      
-      /* Tighten the nav container */
       .nav { padding: 8px 0; gap: 4px; }
-
-      /* FIX THE BUTTON: Smaller, centered text, compact */
-      .nav .btn { 
-        padding: 6px 14px;      /* Smaller padding */
-        font-size: 12px;        /* Smaller text */
-        min-height: 34px;       /* Consistent height */
-        line-height: 1;         /* Forces text to center vertically */
-        white-space: nowrap;    /* Prevents text wrapping */
-        display: inline-flex;   /* Ensures flex centering works */
-        align-items: center;    
+      .nav .btn {
+        padding: 6px 14px;
+        font-size: 12px;
+        min-height: 34px;
+        line-height: 1;
+        white-space: nowrap;
+        display: inline-flex;
+        align-items: center;
         justify-content: center;
       }
-
-      /* Adjust hamburger menu to match */
       .menuBtn { font-size: 24px; padding: 4px; }
     }
   </style>
@@ -187,19 +205,29 @@
         </a>
 
         <nav aria-label="Primary">
-          <ul id="menu">
+          <ul>
             <li><a href="/">Home</a></li>
             <li><a href="/#services">Services</a></li>
             <li><a href="/#our-story">Our Story</a></li>
             <li><a href="/#what-is-it">What Is It?</a></li>
             <li><a href="/#testimonials">Testimonials</a></li>
-            <li><a href="/#blog">Blog</a></li>
+            <li><a href="/blog/">Blog</a></li>
           </ul>
         </nav>
 
         <div style="display:flex; gap:12px; align-items:center;">
-          <button class="menuBtn" id="menuBtn" aria-label="Open menu">☰</button>
+          <button class="menuBtn" id="menuBtn" aria-label="Open menu" aria-expanded="false">☰</button>
           <a class="btn" href="/apply/">APPLY NOW</a>
+        </div>
+
+        <!-- Mobile menu panel -->
+        <div class="menuPanel" id="menuPanel" aria-label="Mobile menu">
+          <a href="/">Home</a>
+          <a href="/#services">Services</a>
+          <a href="/#our-story">Our Story</a>
+          <a href="/#what-is-it">What Is It?</a>
+          <a href="/#testimonials">Testimonials</a>
+          <a href="/blog/">Blog</a>
         </div>
       </div>
     </div>
@@ -221,7 +249,7 @@
             <li><a href="/#our-story">Our Story</a></li>
             <li><a href="/#what-is-it">What Is It?</a></li>
             <li><a href="/#testimonials">Testimonials</a></li>
-            <li><a href="/#blog">Blog</a></li>
+            <li><a href="/blog/">Blog</a></li>
           </ul>
         </div>
 
@@ -252,21 +280,34 @@
   </footer>
 
   <script>
+    const nav = document.getElementById("nav");
     const menuBtn = document.getElementById("menuBtn");
-    const menu = document.getElementById("menu");
-    if (menuBtn && menu) {
-      menuBtn.addEventListener("click", () => {
-        const open = menu.style.display === "flex";
-        menu.style.display = open ? "none" : "flex";
-        menu.style.flexDirection = "column";
-        menu.style.background = "#fff";
-        menu.style.position = "absolute";
-        menu.style.top = "64px";
-        menu.style.right = "24px";
-        menu.style.padding = "14px";
-        menu.style.border = "1px solid #e8ecf6";
-        menu.style.borderRadius = "12px";
-        menu.style.boxShadow = "0 12px 30px rgba(0,0,0,.08)";
+
+    function closeMenu() {
+      nav.classList.remove("menuOpen");
+      menuBtn.setAttribute("aria-expanded", "false");
+    }
+
+    function toggleMenu() {
+      const open = nav.classList.toggle("menuOpen");
+      menuBtn.setAttribute("aria-expanded", open ? "true" : "false");
+    }
+
+    if (menuBtn && nav) {
+      menuBtn.addEventListener("click", (e) => {
+        e.stopPropagation();
+        toggleMenu();
+      });
+
+      // Close when clicking outside
+      document.addEventListener("click", () => closeMenu());
+
+      // Don’t close when clicking inside panel/nav
+      nav.addEventListener("click", (e) => e.stopPropagation());
+
+      // Close on resize up
+      window.addEventListener("resize", () => {
+        if (window.innerWidth > 980) closeMenu();
       });
     }
   </script>
