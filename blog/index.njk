@@ -356,7 +356,11 @@
           </div>
           <h2>{{ post.data.title }}</h2>
           <p>{{ post.data.description }}</p>
-          <a class="read" href="{{ post.url }}">Read More</a>
+          <a class="read"
+           href="{{ post.url }}"
+         aria-label="Read more: {{ post.data.title }}">
+          Read More
+      </a>
         </article>
         {%- endfor -%}
       </div>
