@@ -1,9 +1,9 @@
 module.exports = function (eleventyConfig) {
-  // ✅ Copy your /assets folder as-is (so /assets/VideoFLF.mp4 ends up in /_site/assets/VideoFLF.mp4)
-  eleventyConfig.addPassthroughCopy({ "assets": "assets" });
+  // ✅ Copy assets folder
+  eleventyConfig.addPassthroughCopy("assets");
 
-  // ✅ (Optional but recommended) Also pass through your root static files if you have them
-  // This prevents "missing file" issues for common static root files.
+  // ✅ Copy root static files
+  // Only include these lines if the files actually exist in your project root
   eleventyConfig.addPassthroughCopy("robots.txt");
   eleventyConfig.addPassthroughCopy("sitemap.xml");
   eleventyConfig.addPassthroughCopy("favicon.ico");
@@ -11,7 +11,7 @@ module.exports = function (eleventyConfig) {
   return {
     dir: {
       input: ".",
-      output: "_site",
+      output: "_site", // Eleventy builds the site here
     },
   };
 };
