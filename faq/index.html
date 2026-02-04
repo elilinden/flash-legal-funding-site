@@ -6,9 +6,21 @@
   <title>FAQ | Flash Legal Funding</title>
   <meta name="description" content="Frequently asked questions about pre-settlement funding." />
 
+  <!-- Fonts (async load pattern like your other pages) -->
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;600;700;800&display=swap" rel="stylesheet" />
+  <link
+    rel="stylesheet"
+    href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;600;700;800&display=swap"
+    media="print"
+    onload="this.media='all'"
+  />
+  <noscript>
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;600;700;800&display=swap"
+    />
+  </noscript>
 
   <style>
     :root{
@@ -29,7 +41,7 @@
     html{scroll-behavior:smooth}
     body{
       margin:0;
-      font-family: "Manrope", ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial;
+      font-family:"Manrope", ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial;
       color:var(--ink);
       background:#fff;
       line-height:1.6;
@@ -37,6 +49,7 @@
     a{color:inherit; text-decoration:none}
     .container{max-width:var(--max); margin:0 auto; padding:0 24px}
 
+    /* --- TOPBAR + HEADER (same as other pages) --- */
     .topbar{
       background:#b7dcff;
       border-bottom:1px solid #9dc7ff;
@@ -64,6 +77,7 @@
       color:#111;
     }
     .brand img{height:42px; width:auto}
+
     nav ul{
       list-style:none; margin:0; padding:0;
       display:flex; gap:22px;
@@ -71,6 +85,7 @@
       font-weight:600; font-size:15px;
     }
     nav a:hover{color:var(--brand)}
+
     .btn{
       display:inline-flex; align-items:center; justify-content:center;
       padding:12px 24px;
@@ -84,30 +99,22 @@
       cursor:pointer;
     }
     .btn:hover{transform:translateY(-1px); box-shadow:0 14px 28px rgba(59,91,255,.28)}
-    .btn.ghost{
-      background:#fff;
-      color:var(--brand);
-      border:2px solid var(--brand);
-      box-shadow:none;
-    }
-    .menuBtn{display:none; background:transparent; border:0; font-size:22px; color:var(--ink); cursor:pointer}
 
+    .menuBtn{
+      display:none;
+      background:transparent;
+      border:0;
+      font-size:22px;
+      color:var(--ink);
+      cursor:pointer
+    }
+
+    /* --- PAGE --- */
     main{padding:60px 0 80px; background:var(--panel)}
-    .pageIntro{
-      text-align:center;
-      margin-bottom:28px;
-    }
-    .pageIntro h1{
-      margin:0 0 10px;
-      font-size:36px;
-      color:#0f1540;
-    }
-    .pageIntro p{
-      margin:0 auto;
-      color:var(--muted);
-      max-width:70ch;
-      font-size:16px;
-    }
+    .pageIntro{ text-align:center; margin-bottom:28px; }
+    .pageIntro h1{ margin:0 0 10px; font-size:36px; color:#0f1540; }
+    .pageIntro p{ margin:0 auto; color:var(--muted); max-width:70ch; font-size:16px; }
+
     .badgeRow{
       display:flex; gap:10px; flex-wrap:wrap; justify-content:center;
       margin-top:16px;
@@ -129,10 +136,8 @@
       border:1px solid #eef1fa;
     }
 
-    .faq{
-      display:grid;
-      gap:12px;
-    }
+    /* --- FAQ --- */
+    .faq{ display:grid; gap:12px; }
     .qa{
       border:1px solid #e3e7f2;
       background:#f8f9fd;
@@ -140,7 +145,6 @@
       overflow:hidden;
     }
 
-    /* Button that toggles an answer */
     .q{
       width:100%;
       text-align:left;
@@ -175,7 +179,6 @@
       transition:transform .15s ease;
     }
 
-    /* Answer panel: collapsible via max-height (smooth) */
     .a{
       padding:0 16px;
       color:var(--muted);
@@ -190,7 +193,7 @@
 
     .qa.open .a{
       padding:0 16px 16px 16px;
-      max-height: 520px; /* enough for typical answers */
+      max-height:520px;
     }
     .qa.open .chev{transform:rotate(180deg)}
 
@@ -204,13 +207,17 @@
       font-size:13px;
     }
 
+    /* --- FOOTER (match other pages) --- */
     footer{
       padding:24px 0;
       text-align:center;
       color:#6e7396;
       font-size:13px;
       background:#fff;
+      border-top:1px solid var(--nav-border);
     }
+    footer a{color:inherit; text-decoration:underline; text-underline-offset:3px}
+    footer a:hover{color:var(--brand)}
 
     @media (max-width: 980px){
       nav ul{display:none}
@@ -219,7 +226,7 @@
       .card{padding:22px}
       .pageIntro h1{font-size:30px}
     }
-    /* --- MOBILE HEADER FIX --- */
+
     @media (max-width: 600px) {
       .brand img { height: 28px; }
       .nav { padding: 8px 0; gap: 4px; }
@@ -236,7 +243,6 @@
       .menuBtn { font-size: 24px; padding: 4px; }
     }
 
-    /* Respect reduced motion */
     @media (prefers-reduced-motion: reduce) {
       .a, .chev { transition: none; }
     }
@@ -246,6 +252,7 @@
 <body>
   <div class="topbar">CALL US NOW: (859) 81-FLASH</div>
 
+  <!-- Header (same nav as other pages) -->
   <header>
     <div class="container">
       <div class="nav" id="nav">
@@ -266,7 +273,7 @@
         </nav>
 
         <div style="display:flex; gap:12px; align-items:center;">
-          <button class="menuBtn" id="menuBtn" aria-label="Open menu" aria-expanded="false">☰</button>
+          <button class="menuBtn" id="menuBtn" type="button" aria-label="Open menu" aria-expanded="false">☰</button>
           <a class="btn" href="/apply/">APPLY NOW</a>
         </div>
       </div>
@@ -287,7 +294,6 @@
 
       <div class="card">
         <div class="faq" id="faq">
-          <!-- 1 -->
           <div class="qa">
             <button class="q" type="button">
               What is pre-settlement funding?
@@ -298,7 +304,6 @@
             </div>
           </div>
 
-          <!-- 2 -->
           <div class="qa">
             <button class="q" type="button">
               Is this a loan?
@@ -309,7 +314,6 @@
             </div>
           </div>
 
-          <!-- 3 -->
           <div class="qa">
             <button class="q" type="button">
               Do you check credit?
@@ -320,7 +324,6 @@
             </div>
           </div>
 
-          <!-- 4 -->
           <div class="qa">
             <button class="q" type="button">
               Do I need an attorney to apply?
@@ -331,7 +334,6 @@
             </div>
           </div>
 
-          <!-- 5 -->
           <div class="qa">
             <button class="q" type="button">
               How fast is the process?
@@ -342,7 +344,6 @@
             </div>
           </div>
 
-          <!-- 6 -->
           <div class="qa">
             <button class="q" type="button">
               How much funding can I receive?
@@ -353,7 +354,6 @@
             </div>
           </div>
 
-          <!-- 7 -->
           <div class="qa">
             <button class="q" type="button">
               What types of cases do you fund?
@@ -370,7 +370,6 @@
             </div>
           </div>
 
-          <!-- 8 -->
           <div class="qa">
             <button class="q" type="button">
               What happens if I lose my case?
@@ -381,7 +380,6 @@
             </div>
           </div>
 
-          <!-- 9 -->
           <div class="qa">
             <button class="q" type="button">
               Will this affect my case or settlement?
@@ -392,7 +390,6 @@
             </div>
           </div>
 
-          <!-- 10 -->
           <div class="qa">
             <button class="q" type="button">
               What information do you need to review my case?
@@ -403,7 +400,6 @@
             </div>
           </div>
 
-          <!-- 11 -->
           <div class="qa">
             <button class="q" type="button">
               Can I get more than one advance?
@@ -414,7 +410,6 @@
             </div>
           </div>
 
-          <!-- 12 -->
           <div class="qa">
             <button class="q" type="button">
               How is repayment handled?
@@ -425,7 +420,6 @@
             </div>
           </div>
 
-          <!-- 13 -->
           <div class="qa">
             <button class="q" type="button">
               Are there upfront fees?
@@ -436,7 +430,6 @@
             </div>
           </div>
 
-          <!-- 14 -->
           <div class="qa">
             <button class="q" type="button">
               Can I apply online?
@@ -447,7 +440,6 @@
             </div>
           </div>
 
-          <!-- 15 -->
           <div class="qa">
             <button class="q" type="button">
               What if I switch attorneys or firms?
@@ -477,92 +469,102 @@
     </div>
   </footer>
 
-<script>
-  // Mobile menu toggle (header)
-  const menuBtn = document.getElementById("menuBtn");
-  const menu = document.getElementById("menu");
+  <script>
+    // Mobile menu toggle (header) — consistent behavior
+    const menuBtn = document.getElementById("menuBtn");
+    const menu = document.getElementById("menu");
 
-  if (menuBtn && menu) {
-    const closeMenu = () => {
-      menu.style.display = "none";
+    if (menuBtn && menu) {
       menuBtn.setAttribute("aria-expanded", "false");
-    };
 
-    const openMenu = () => {
-      menu.style.display = "flex";
-      menu.style.flexDirection = "column";
-      menu.style.background = "#fff";
-      menu.style.position = "absolute";
-      menu.style.top = "64px";
-      menu.style.right = "24px";
-      menu.style.padding = "14px";
-      menu.style.border = "1px solid #e8ecf6";
-      menu.style.borderRadius = "12px";
-      menu.style.boxShadow = "0 12px 30px rgba(0,0,0,.08)";
-      menuBtn.setAttribute("aria-expanded", "true");
-    };
-
-    menuBtn.addEventListener("click", (e) => {
-      e.stopPropagation();
-      const open = menu.style.display === "flex";
-      open ? closeMenu() : openMenu();
-    });
-
-    document.addEventListener("click", (e) => {
-      const isButton = e.target === menuBtn;
-      const insideMenu = menu.contains(e.target);
-      if (!isButton && !insideMenu) closeMenu();
-    });
-
-    document.addEventListener("keydown", (e) => {
-      if (e.key === "Escape") closeMenu();
-    });
-
-    window.addEventListener("resize", () => {
-      if (window.innerWidth > 980) {
-        menu.style.display = "";
+      const closeMenu = () => {
+        menu.style.display = "none";
+        menu.style.flexDirection = "";
+        menu.style.background = "";
+        menu.style.position = "";
+        menu.style.top = "";
+        menu.style.right = "";
+        menu.style.padding = "";
+        menu.style.border = "";
+        menu.style.borderRadius = "";
+        menu.style.boxShadow = "";
         menuBtn.setAttribute("aria-expanded", "false");
-      }
-    });
-  }
+      };
 
-  // FAQ accordion toggle (FIX)
-  const faq = document.getElementById("faq");
-  if (faq) {
-    const items = Array.from(faq.querySelectorAll(".qa"));
+      const openMenu = () => {
+        menu.style.display = "flex";
+        menu.style.flexDirection = "column";
+        menu.style.background = "#fff";
+        menu.style.position = "absolute";
+        menu.style.top = "64px";
+        menu.style.right = "24px";
+        menu.style.padding = "14px";
+        menu.style.border = "1px solid #e8ecf6";
+        menu.style.borderRadius = "12px";
+        menu.style.boxShadow = "0 12px 30px rgba(0,0,0,.08)";
+        menuBtn.setAttribute("aria-expanded", "true");
+      };
 
-    items.forEach((qa) => {
-      const btn = qa.querySelector(".q");
-      const ans = qa.querySelector(".a");
-      if (!btn || !ans) return;
+      menuBtn.addEventListener("click", (e) => {
+        e.stopPropagation();
+        const isOpen = menu.style.display === "flex";
+        isOpen ? closeMenu() : openMenu();
+      });
 
-      // Add ARIA hooks
-      const id = "a-" + Math.random().toString(16).slice(2);
-      ans.id = ans.id || id;
-      btn.setAttribute("aria-controls", ans.id);
-      btn.setAttribute("aria-expanded", "false");
+      document.addEventListener("click", (e) => {
+        const insideMenu = menu.contains(e.target);
+        const insideBtn = menuBtn.contains(e.target);
+        if (!insideBtn && !insideMenu) closeMenu();
+      });
 
-      btn.addEventListener("click", () => {
-        const isOpen = qa.classList.contains("open");
+      document.addEventListener("keydown", (e) => {
+        if (e.key === "Escape") closeMenu();
+      });
 
-        // Close all others (accordion behavior). If you want multiple open, delete this loop.
-        items.forEach((other) => {
-          other.classList.remove("open");
-          const ob = other.querySelector(".q");
-          if (ob) ob.setAttribute("aria-expanded", "false");
-        });
-
-        // Toggle this one
-        if (!isOpen) {
-          qa.classList.add("open");
-          btn.setAttribute("aria-expanded", "true");
-        } else {
-          qa.classList.remove("open");
-          btn.setAttribute("aria-expanded", "false");
+      window.addEventListener("resize", () => {
+        if (window.innerWidth > 980) {
+          menu.style.display = "";
+          menuBtn.setAttribute("aria-expanded", "false");
         }
       });
-    });
-  }
-</script>
+    }
+
+    // FAQ accordion toggle (single-open accordion)
+    const faq = document.getElementById("faq");
+    if (faq) {
+      const items = Array.from(faq.querySelectorAll(".qa"));
+
+      items.forEach((qa, idx) => {
+        const btn = qa.querySelector(".q");
+        const ans = qa.querySelector(".a");
+        if (!btn || !ans) return;
+
+        // Deterministic IDs (no random)
+        const ansId = ans.id || `faq-a-${idx + 1}`;
+        ans.id = ansId;
+
+        btn.setAttribute("aria-controls", ansId);
+        btn.setAttribute("aria-expanded", "false");
+
+        btn.addEventListener("click", () => {
+          const isOpen = qa.classList.contains("open");
+
+          items.forEach((other) => {
+            other.classList.remove("open");
+            const ob = other.querySelector(".q");
+            if (ob) ob.setAttribute("aria-expanded", "false");
+          });
+
+          if (!isOpen) {
+            qa.classList.add("open");
+            btn.setAttribute("aria-expanded", "true");
+          } else {
+            qa.classList.remove("open");
+            btn.setAttribute("aria-expanded", "false");
+          }
+        });
+      });
+    }
+  </script>
 </body>
 </html>
