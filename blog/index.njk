@@ -9,14 +9,14 @@
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link 
-  href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;600;700;800&display=swap" 
-  rel="stylesheet" 
-  media="print" 
-  onload="this.media='all'"
->
-<noscript>
-  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;600;700;800&display=swap" rel="stylesheet">
-</noscript>
+    href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;600;700;800&display=swap" 
+    rel="stylesheet" 
+    media="print" 
+    onload="this.media='all'"
+  >
+  <noscript>
+    <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;600;700;800&display=swap" rel="stylesheet">
+  </noscript>
 
   <style>
     /* --- MAIN SITE THEME --- */
@@ -54,6 +54,19 @@
     img, video{max-width:100%; display:block}
     .container{max-width:var(--max); margin:0 auto; padding:0 24px}
 
+    /* Screen-reader-only helper (SEO-friendly link text without changing UI) */
+    .sr-only{
+      position:absolute !important;
+      width:1px !important;
+      height:1px !important;
+      padding:0 !important;
+      margin:-1px !important;
+      overflow:hidden !important;
+      clip:rect(0,0,0,0) !important;
+      white-space:nowrap !important;
+      border:0 !important;
+    }
+
     /* --- HEADER STYLES --- */
     .topbar{
       background: #b7dcff;
@@ -74,7 +87,7 @@
       display:flex; align-items:center; justify-content:space-between;
       gap:16px;
       padding:14px 0;
-      position:relative; /* helps mobile menu anchor */
+      position:relative;
     }
     .brand{
       display:flex; align-items:center; gap:12px;
@@ -244,6 +257,7 @@
       font-weight:800;
       font-size:14px;
       align-self:flex-start;
+      position:relative;
     }
     .post a.read:hover{ color:var(--brand); }
 
@@ -271,7 +285,6 @@
     footer a{color:inherit; text-decoration:underline; text-underline-offset:3px}
     footer a:hover{color:var(--brand)}
 
-    /* Responsive grid: 3 -> 2 -> 1 */
     @media (max-width: 980px){
       .grid{ grid-template-columns: repeat(2, minmax(0,1fr)); }
       .pageIntro h1{ font-size:30px; }
@@ -282,7 +295,6 @@
       .grid{ grid-template-columns: 1fr; }
     }
 
-    /* --- MOBILE HEADER FIX --- */
     @media (max-width: 600px) {
       .brand img { height: 28px; }
       .nav { padding: 8px 0; gap: 4px; }
@@ -324,7 +336,7 @@
         </nav>
 
         <div style="display:flex; gap:12px; align-items:center;">
-          <button class="menuBtn" id="menuBtn" aria-label="Open menu" aria-expanded="false">☰</button>
+          <button class="menuBtn" id="menuBtn" aria-label="Open menu" aria-expanded="false" type="button">☰</button>
           <a class="btn" href="/apply/">APPLY NOW</a>
         </div>
       </div>
@@ -362,13 +374,16 @@
             <span class="tag">{{ post.data.tagName }}</span>
             <span>{{ post.date.toDateString() }}</span>
           </div>
+
           <h2>{{ post.data.title }}</h2>
           <p>{{ post.data.description }}</p>
+
+          <!-- SEO FIX: link text is now unique (still looks like "Read More") -->
           <a class="read"
-           href="{{ post.url }}"
-         aria-label="Read more: {{ post.data.title }}">
-          Read More
-      </a>
+             href="{{ post.url }}"
+             aria-label="Read more: {{ post.data.title }}">
+            Read More <span class="sr-only">— {{ post.data.title }}</span>
+          </a>
         </article>
         {%- endfor -%}
       </div>
@@ -399,7 +414,6 @@
 
       const closeMenu = () => {
         menu.style.display = "none";
-        // reset any inline styles applied when open
         menu.style.flexDirection = "";
         menu.style.background = "";
         menu.style.position = "";
@@ -433,16 +447,15 @@
       });
 
       document.addEventListener("click", (e) => {
-        const isButton = e.target === menuBtn;
         const insideMenu = menu.contains(e.target);
-        if (!isButton && !insideMenu) closeMenu();
+        const insideBtn = menuBtn.contains(e.target);
+        if (!insideBtn && !insideMenu) closeMenu();
       });
 
       document.addEventListener("keydown", (e) => {
         if (e.key === "Escape") closeMenu();
       });
 
-      // If user resizes from mobile -> desktop, clear inline display:none
       window.addEventListener("resize", () => {
         if (window.innerWidth > 980) {
           menu.style.display = "";
