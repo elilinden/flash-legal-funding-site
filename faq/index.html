@@ -56,6 +56,7 @@
       display:flex; align-items:center; justify-content:space-between;
       gap:16px;
       padding:14px 0;
+      position:relative;
     }
     .brand{
       display:flex; align-items:center; gap:12px;
@@ -138,6 +139,8 @@
       border-radius:14px;
       overflow:hidden;
     }
+
+    /* Button that toggles an answer */
     .q{
       width:100%;
       text-align:left;
@@ -154,6 +157,12 @@
       font-size:15px;
     }
     .q:hover{background:#eef2ff}
+    .q:focus-visible{
+      outline:3px solid rgba(59,91,255,.35);
+      outline-offset:2px;
+      border-radius:12px;
+    }
+
     .chev{
       width:28px; height:28px;
       border-radius:10px;
@@ -165,16 +174,24 @@
       font-weight:900;
       transition:transform .15s ease;
     }
+
+    /* Answer panel: collapsible via max-height (smooth) */
     .a{
-      padding:0 16px 16px 16px;
+      padding:0 16px;
       color:var(--muted);
-      display:none;
       font-size:15px;
+      max-height:0;
+      overflow:hidden;
+      transition:max-height .25s ease, padding .25s ease;
     }
     .a p{margin:0}
     .a ul{margin:10px 0 0 18px}
     .a li{margin:6px 0}
-    .qa.open .a{display:block}
+
+    .qa.open .a{
+      padding:0 16px 16px 16px;
+      max-height: 520px; /* enough for typical answers */
+    }
     .qa.open .chev{transform:rotate(180deg)}
 
     .callout{
@@ -204,26 +221,24 @@
     }
     /* --- MOBILE HEADER FIX --- */
     @media (max-width: 600px) {
-      /* Shrink logo slightly more to prevent crowding */
       .brand img { height: 28px; }
-      
-      /* Tighten the nav container */
       .nav { padding: 8px 0; gap: 4px; }
-
-      /* FIX THE BUTTON: Smaller, centered text, compact */
-      .nav .btn { 
-        padding: 6px 14px;      /* Smaller padding */
-        font-size: 12px;        /* Smaller text */
-        min-height: 34px;       /* Consistent height */
-        line-height: 1;         /* Forces text to center vertically */
-        white-space: nowrap;    /* Prevents text wrapping */
-        display: inline-flex;   /* Ensures flex centering works */
-        align-items: center;    
+      .nav .btn {
+        padding: 6px 14px;
+        font-size: 12px;
+        min-height: 34px;
+        line-height: 1;
+        white-space: nowrap;
+        display: inline-flex;
+        align-items: center;
         justify-content: center;
       }
-
-      /* Adjust hamburger menu to match */
       .menuBtn { font-size: 24px; padding: 4px; }
+    }
+
+    /* Respect reduced motion */
+    @media (prefers-reduced-motion: reduce) {
+      .a, .chev { transition: none; }
     }
   </style>
 </head>
@@ -262,117 +277,193 @@
     <div class="container">
       <div class="pageIntro">
         <h1>Frequently Asked Questions</h1>
-        <p>Answers to common questions about pre‑settlement funding. If you don’t see your question, contact us.</p>
+        <p>Answers to common questions about pre-settlement funding. If you don’t see your question, contact us.</p>
         <div class="badgeRow">
           <span class="badge">No credit check</span>
-          <span class="badge">Non‑recourse</span>
+          <span class="badge">Non-recourse</span>
           <span class="badge">Attorney cooperation required</span>
         </div>
       </div>
 
       <div class="card">
         <div class="faq" id="faq">
+          <!-- 1 -->
           <div class="qa">
             <button class="q" type="button">
-              What is pre‑settlement funding?
-              <span class="chev">⌄</span>
+              What is pre-settlement funding?
+              <span class="chev" aria-hidden="true">⌄</span>
             </button>
             <div class="a">
-              <p>Pre‑settlement funding is an advance on the potential value of a pending personal injury case. It can help cover living expenses while your case is ongoing.</p>
+              <p>Pre-settlement funding is an advance on the potential value of a pending personal injury case. It can help cover expenses while your case is ongoing.</p>
             </div>
           </div>
 
+          <!-- 2 -->
           <div class="qa">
             <button class="q" type="button">
               Is this a loan?
-              <span class="chev">⌄</span>
+              <span class="chev" aria-hidden="true">⌄</span>
             </button>
             <div class="a">
-              <p>It’s not a traditional loan. Funding is typically <strong>non‑recourse</strong>, meaning repayment is contingent on the outcome of your case, subject to the terms of your agreement.</p>
+              <p>It’s not a traditional loan. Funding is typically <strong>non-recourse</strong>, meaning repayment is contingent on the outcome of your case, subject to your agreement’s terms.</p>
             </div>
           </div>
 
+          <!-- 3 -->
           <div class="qa">
             <button class="q" type="button">
               Do you check credit?
-              <span class="chev">⌄</span>
+              <span class="chev" aria-hidden="true">⌄</span>
             </button>
             <div class="a">
               <p>No. Approval is generally based on the case and requires attorney cooperation.</p>
             </div>
           </div>
 
+          <!-- 4 -->
           <div class="qa">
             <button class="q" type="button">
               Do I need an attorney to apply?
-              <span class="chev">⌄</span>
+              <span class="chev" aria-hidden="true">⌄</span>
             </button>
             <div class="a">
-              <p>In most situations, yes. We typically need to coordinate with your attorney/law firm to review case details.</p>
+              <p>In most situations, yes. We typically coordinate with your attorney/law firm to request case documents and confirm key details.</p>
             </div>
           </div>
 
+          <!-- 5 -->
           <div class="qa">
             <button class="q" type="button">
               How fast is the process?
-              <span class="chev">⌄</span>
+              <span class="chev" aria-hidden="true">⌄</span>
             </button>
             <div class="a">
-              <p>Timing depends on how quickly we can obtain the necessary case information from the law firm. Once we have what we need, decisions can be made quickly.</p>
+              <p>Timing depends on how quickly we receive the needed case information from the law firm. Once we have it, decisions can be made quickly.</p>
             </div>
           </div>
 
+          <!-- 6 -->
           <div class="qa">
             <button class="q" type="button">
-              How much can I get?
-              <span class="chev">⌄</span>
+              How much funding can I receive?
+              <span class="chev" aria-hidden="true">⌄</span>
             </button>
             <div class="a">
-              <p>Amounts vary based on case type, stage of litigation, liability, damages, and other factors. We can discuss a range after an initial review.</p>
+              <p>Amounts vary based on case type, stage, liability, damages, insurance coverage, and other underwriting factors. We can provide a range after initial review.</p>
             </div>
           </div>
 
+          <!-- 7 -->
           <div class="qa">
             <button class="q" type="button">
               What types of cases do you fund?
-              <span class="chev">⌄</span>
+              <span class="chev" aria-hidden="true">⌄</span>
             </button>
             <div class="a">
               <p>We focus on personal injury matters, including:</p>
               <ul>
                 <li>Car and truck accidents</li>
                 <li>Slip and fall incidents</li>
+                <li>Workplace injury claims (case-by-case)</li>
                 <li>Other personal injury cases (depending on underwriting)</li>
               </ul>
             </div>
           </div>
 
+          <!-- 8 -->
           <div class="qa">
             <button class="q" type="button">
               What happens if I lose my case?
-              <span class="chev">⌄</span>
+              <span class="chev" aria-hidden="true">⌄</span>
             </button>
             <div class="a">
-              <p>Because funding is generally non‑recourse, if there is no recovery you may owe nothing, subject to the terms of your agreement.</p>
+              <p>Because funding is generally non-recourse, if there is no recovery you may owe nothing, subject to the terms of your agreement.</p>
             </div>
           </div>
 
+          <!-- 9 -->
+          <div class="qa">
+            <button class="q" type="button">
+              Will this affect my case or settlement?
+              <span class="chev" aria-hidden="true">⌄</span>
+            </button>
+            <div class="a">
+              <p>Your attorney remains in control of legal strategy. Funding is designed to help you avoid financial pressure while your case progresses. Any impact depends on your specific situation and your agreement’s terms.</p>
+            </div>
+          </div>
+
+          <!-- 10 -->
+          <div class="qa">
+            <button class="q" type="button">
+              What information do you need to review my case?
+              <span class="chev" aria-hidden="true">⌄</span>
+            </button>
+            <div class="a">
+              <p>We typically request information from your attorney such as claim details, insurance information, and key documents relevant to evaluating liability and damages.</p>
+            </div>
+          </div>
+
+          <!-- 11 -->
+          <div class="qa">
+            <button class="q" type="button">
+              Can I get more than one advance?
+              <span class="chev" aria-hidden="true">⌄</span>
+            </button>
+            <div class="a">
+              <p>In some cases, additional funding may be available later depending on case progress and updated information. Additional advances require review and approval.</p>
+            </div>
+          </div>
+
+          <!-- 12 -->
+          <div class="qa">
+            <button class="q" type="button">
+              How is repayment handled?
+              <span class="chev" aria-hidden="true">⌄</span>
+            </button>
+            <div class="a">
+              <p>If your case resolves with a recovery, repayment is typically made from the settlement proceeds at the time of disbursement, per the agreement.</p>
+            </div>
+          </div>
+
+          <!-- 13 -->
+          <div class="qa">
+            <button class="q" type="button">
+              Are there upfront fees?
+              <span class="chev" aria-hidden="true">⌄</span>
+            </button>
+            <div class="a">
+              <p>We do not charge an application fee. Your agreement will explain all terms and any costs associated with the advance.</p>
+            </div>
+          </div>
+
+          <!-- 14 -->
           <div class="qa">
             <button class="q" type="button">
               Can I apply online?
-              <span class="chev">⌄</span>
+              <span class="chev" aria-hidden="true">⌄</span>
             </button>
             <div class="a">
-              <p>Yes. Use our online form on the <a href="/apply/" style="text-decoration:underline;">Apply</a> page. You can also call <a href="tel:+18598135274" style="text-decoration:underline;">(859) 81‑FLASH</a>.</p>
+              <p>Yes. Use our online form on the <a href="/apply/" style="text-decoration:underline; text-underline-offset:3px;">Apply</a> page. You can also call <a href="tel:+18598135274" style="text-decoration:underline; text-underline-offset:3px;">(859) 81-FLASH</a>.</p>
+            </div>
+          </div>
+
+          <!-- 15 -->
+          <div class="qa">
+            <button class="q" type="button">
+              What if I switch attorneys or firms?
+              <span class="chev" aria-hidden="true">⌄</span>
+            </button>
+            <div class="a">
+              <p>If representation changes, we may need updated contact information and continued cooperation from the new firm so the funding can be properly managed.</p>
             </div>
           </div>
         </div>
 
         <div class="callout">
           Still have questions? Call
-          <a href="tel:+18598135274" style="text-decoration:underline;">(859) 81‑FLASH</a>
+          <a href="tel:+18598135274" style="text-decoration:underline; text-underline-offset:3px;">(859) 81-FLASH</a>
           or email
-          <a href="mailto:info@flashlegalfunding.com" style="text-decoration:underline;">info@flashlegalfunding.com</a>.
+          <a href="mailto:info@flashlegalfunding.com" style="text-decoration:underline; text-underline-offset:3px;">info@flashlegalfunding.com</a>.
         </div>
       </div>
     </div>
@@ -387,6 +478,7 @@
   </footer>
 
 <script>
+  // Mobile menu toggle (header)
   const menuBtn = document.getElementById("menuBtn");
   const menu = document.getElementById("menu");
 
@@ -424,6 +516,51 @@
 
     document.addEventListener("keydown", (e) => {
       if (e.key === "Escape") closeMenu();
+    });
+
+    window.addEventListener("resize", () => {
+      if (window.innerWidth > 980) {
+        menu.style.display = "";
+        menuBtn.setAttribute("aria-expanded", "false");
+      }
+    });
+  }
+
+  // FAQ accordion toggle (FIX)
+  const faq = document.getElementById("faq");
+  if (faq) {
+    const items = Array.from(faq.querySelectorAll(".qa"));
+
+    items.forEach((qa) => {
+      const btn = qa.querySelector(".q");
+      const ans = qa.querySelector(".a");
+      if (!btn || !ans) return;
+
+      // Add ARIA hooks
+      const id = "a-" + Math.random().toString(16).slice(2);
+      ans.id = ans.id || id;
+      btn.setAttribute("aria-controls", ans.id);
+      btn.setAttribute("aria-expanded", "false");
+
+      btn.addEventListener("click", () => {
+        const isOpen = qa.classList.contains("open");
+
+        // Close all others (accordion behavior). If you want multiple open, delete this loop.
+        items.forEach((other) => {
+          other.classList.remove("open");
+          const ob = other.querySelector(".q");
+          if (ob) ob.setAttribute("aria-expanded", "false");
+        });
+
+        // Toggle this one
+        if (!isOpen) {
+          qa.classList.add("open");
+          btn.setAttribute("aria-expanded", "true");
+        } else {
+          qa.classList.remove("open");
+          btn.setAttribute("aria-expanded", "false");
+        }
+      });
     });
   }
 </script>
