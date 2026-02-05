@@ -1,0 +1,22 @@
+---
+permalink: /sitemap.xml
+eleventyExcludeFromCollections: true
+---
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+{%- set site = "https://flashlegalfunding.com" -%}
+{%- for page in collections.all -%}
+  {%- if page.url
+        and page.outputPath
+        and page.outputPath.endsWith(".html")
+        and page.url != "/404/"
+        and page.url != "/sitemap.xml"
+        and page.url != "/sitemap/"
+  -%}
+  <url>
+    <loc>{{ site }}{{ page.url }}</loc>
+    <lastmod>{{ page.date.toISOString() }}</lastmod>
+  </url>
+  {%- endif -%}
+{%- endfor -%}
+</urlset>
