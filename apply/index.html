@@ -3,8 +3,23 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Apply | Flash Legal Funding</title>
-  <meta name="description" content="Apply for pre-settlement funding with Flash Legal Funding." />
+  <title>Apply for Pre-Settlement Funding | Flash Legal Funding</title>
+  <meta name="description" content="Apply for pre-settlement funding online. No credit check, fast approval, and non-recourse cash advances for personal injury cases. Get started with Flash Legal Funding today." />
+  <link rel="canonical" href="https://flashlegalfunding.com/apply/" />
+
+  <!-- Open Graph -->
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="Apply for Pre-Settlement Funding | Flash Legal Funding" />
+  <meta property="og:description" content="Apply for pre-settlement funding online. No credit check, fast approval, and non-recourse cash advances for personal injury cases." />
+  <meta property="og:url" content="https://flashlegalfunding.com/apply/" />
+  <meta property="og:site_name" content="Flash Legal Funding" />
+  <meta property="og:image" content="https://flashlegalfunding.com/assets/logo.png" />
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="Apply for Pre-Settlement Funding | Flash Legal Funding" />
+  <meta name="twitter:description" content="Apply for pre-settlement funding online. No credit check, fast approval, and non-recourse cash advances for personal injury cases." />
+  <meta name="twitter:image" content="https://flashlegalfunding.com/assets/logo.png" />
 
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -270,6 +285,7 @@
             <li><a href="/#testimonials">Testimonials</a></li>
             <li><a href="/faq/">FAQ</a></li>
             <li><a href="/blog/">Blog</a></li>
+            <li><a href="/contact/">Contact</a></li>
           </ul>
         </nav>
 
@@ -306,7 +322,7 @@
               </div>
               <div>
                 <label for="phone">Phone</label>
-                <input id="phone" name="phone" autocomplete="tel" required />
+                <input id="phone" name="phone" type="tel" autocomplete="tel" required />
               </div>
             </div>
 
@@ -324,7 +340,7 @@
             <div class="row2">
               <div>
                 <label for="caseType">Case type</label>
-                <select id="caseType" name="case_type">
+                <select id="caseType" name="case_type" required>
                   <option value="">Select</option>
                   <option>Car accident</option>
                   <option>Truck accident</option>
@@ -376,7 +392,7 @@
             </div>
 
             <!-- Honeypot -->
-            <input type="text" name="_gotcha" style="display:none" tabindex="-1" autocomplete="off">
+            <input type="text" name="_gotcha" style="display:none" tabindex="-1" autocomplete="off" aria-hidden="true">
 
             <button class="btn" type="submit">Submit Application</button>
 

@@ -3,12 +3,35 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Blog | Flash Legal Funding</title>
-  <meta name="description" content="Helpful guides about pre-settlement funding and what to expect during the process." />
+  <title>Pre-Settlement Funding Blog | Guides and Resources | Flash Legal Funding</title>
+  <meta name="description" content="Read guides about pre-settlement funding, lawsuit loans, and the legal funding process. Learn how funding works, tips for approval, and what to expect." />
+  <link rel="canonical" href="https://flashlegalfunding.com/blog/" />
+
+  <!-- Open Graph -->
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="Pre-Settlement Funding Blog | Flash Legal Funding" />
+  <meta property="og:description" content="Read guides about pre-settlement funding, lawsuit loans, and the legal funding process. Learn how funding works, tips for approval, and what to expect." />
+  <meta property="og:url" content="https://flashlegalfunding.com/blog/" />
+  <meta property="og:site_name" content="Flash Legal Funding" />
+  <meta property="og:image" content="https://flashlegalfunding.com/assets/logo.png" />
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="Pre-Settlement Funding Blog | Flash Legal Funding" />
+  <meta name="twitter:description" content="Read guides about pre-settlement funding, lawsuit loans, and the legal funding process." />
+  <meta name="twitter:image" content="https://flashlegalfunding.com/assets/logo.png" />
 
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;600;700;800&display=swap" rel="stylesheet" />
+  <link 
+    href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;600;700;800&display=swap" 
+    rel="stylesheet" 
+    media="print" 
+    onload="this.media='all'"
+  >
+  <noscript>
+    <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;600;700;800&display=swap" rel="stylesheet">
+  </noscript>
 
   <style>
     /* --- MAIN SITE THEME --- */
@@ -46,6 +69,19 @@
     img, video{max-width:100%; display:block}
     .container{max-width:var(--max); margin:0 auto; padding:0 24px}
 
+    /* Screen-reader-only helper (SEO-friendly link text without changing UI) */
+    .sr-only{
+      position:absolute !important;
+      width:1px !important;
+      height:1px !important;
+      padding:0 !important;
+      margin:-1px !important;
+      overflow:hidden !important;
+      clip:rect(0,0,0,0) !important;
+      white-space:nowrap !important;
+      border:0 !important;
+    }
+
     /* --- HEADER STYLES --- */
     .topbar{
       background: #b7dcff;
@@ -66,6 +102,7 @@
       display:flex; align-items:center; justify-content:space-between;
       gap:16px;
       padding:14px 0;
+      position:relative;
     }
     .brand{
       display:flex; align-items:center; gap:12px;
@@ -73,7 +110,7 @@
       color:#111;
     }
     .brand img{height:42px; width:auto}
-    
+
     nav ul{
       list-style:none; margin:0; padding:0;
       display:flex; gap:22px;
@@ -81,7 +118,7 @@
       font-weight:600; font-size:15px;
     }
     nav a:hover{color:var(--brand)}
-    
+
     .btn{
       display:inline-flex; align-items:center; justify-content:center;
       padding:12px 24px;
@@ -94,7 +131,7 @@
       transition:transform .15s ease, box-shadow .15s ease;
     }
     .btn:hover{transform:translateY(-1px); box-shadow:0 14px 28px rgba(59,91,255,.28)}
-    .menuBtn{display:none; background:transparent; border:0; font-size:22px; color:var(--ink)}
+    .menuBtn{display:none; background:transparent; border:0; font-size:22px; color:var(--ink); cursor:pointer}
 
     /* --- BLOG SPECIFIC STYLES --- */
     main {
@@ -235,6 +272,7 @@
       font-weight:800;
       font-size:14px;
       align-self:flex-start;
+      position:relative;
     }
     .post a.read:hover{ color:var(--brand); }
 
@@ -263,10 +301,29 @@
     footer a:hover{color:var(--brand)}
 
     @media (max-width: 980px){
-      .grid{ grid-template-columns:1fr; }
+      .grid{ grid-template-columns: repeat(2, minmax(0,1fr)); }
       .pageIntro h1{ font-size:30px; }
       nav ul{display:none}
-      .menuBtn{display:inline-block}
+      .menuBtn{display:inline-block; cursor:pointer}
+    }
+    @media (max-width: 640px){
+      .grid{ grid-template-columns: 1fr; }
+    }
+
+    @media (max-width: 600px) {
+      .brand img { height: 28px; }
+      .nav { padding: 8px 0; gap: 4px; }
+      .nav .btn {
+        padding: 6px 14px;
+        font-size: 12px;
+        min-height: 34px;
+        line-height: 1;
+        white-space: nowrap;
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+      }
+      .menuBtn { font-size: 24px; padding: 4px; cursor:pointer; }
     }
   </style>
 </head>
@@ -288,12 +345,14 @@
             <li><a href="/#our-story">Our Story</a></li>
             <li><a href="/#what-is-it">What Is It?</a></li>
             <li><a href="/#testimonials">Testimonials</a></li>
+            <li><a href="/faq/">FAQ</a></li>
             <li><a href="/blog/">Blog</a></li>
+            <li><a href="/contact/">Contact</a></li>
           </ul>
         </nav>
 
         <div style="display:flex; gap:12px; align-items:center;">
-          <button class="menuBtn" id="menuBtn" aria-label="Open menu">☰</button>
+          <button class="menuBtn" id="menuBtn" aria-label="Open menu" aria-expanded="false" type="button">☰</button>
           <a class="btn" href="/apply/">APPLY NOW</a>
         </div>
       </div>
@@ -304,7 +363,7 @@
     <div class="container">
       <div class="pageIntro">
         <h1>Blog</h1>
-        <p>Short, clear guides about pre‑settlement funding, what we review, and what to expect while your case is in progress.</p>
+        <p>Short, clear guides about pre-settlement funding, what we review, and what to expect while your case is in progress.</p>
       </div>
 
       <div class="toolbar">
@@ -321,174 +380,384 @@
         </div>
       </div>
 
-      <div class="grid" id="posts" aria-live="polite"><article class="post" data-tag="attorneys" data-title="how pre-settlement funding increases case value">
+      <div class="grid" id="posts" aria-live="polite"><article class="post"
+          data-tag="attorneys"
+          data-title="how pre-settlement funding increases case value"
+          data-desc="stop settling for less because your client is desperate. see how funding gives you the leverage to fight for policy limits.">
           <div class="postTop">
             <span class="tag">For Attorneys</span>
-            <span>Tue May 19 2026</span>
+            <span>Wed May 20 2026</span>
           </div>
+
           <h2>How Pre-Settlement Funding Increases Case Value</h2>
           <p>Stop settling for less because your client is desperate. See how funding gives you the leverage to fight for policy limits.</p>
-          <a class="read" href="/posts/how-funding-increases-case-value/">Read More</a>
-        </article><article class="post" data-tag="process" data-title="what happens after you are approved? from contract to cash">
+
+          <!-- SEO FIX: link text is now unique (still looks like "Read More") -->
+          <a class="read"
+             href="/posts/how-funding-increases-case-value/"
+             aria-label="Read more: How Pre-Settlement Funding Increases Case Value">
+            Read More <span class="sr-only">— How Pre-Settlement Funding Increases Case Value</span>
+          </a>
+        </article><article class="post"
+          data-tag="process"
+          data-title="what happens after you are approved? from contract to cash"
+          data-desc="you&#39;ve been approved! now what? learn about the final steps to get your cash, including digital contracts and payment options.">
           <div class="postTop">
             <span class="tag">Process</span>
-            <span>Thu May 14 2026</span>
+            <span>Fri May 15 2026</span>
           </div>
+
           <h2>What Happens After You Are Approved? From Contract to Cash</h2>
           <p>You&#39;ve been approved! Now what? Learn about the final steps to get your cash, including digital contracts and payment options.</p>
-          <a class="read" href="/posts/what-happens-after-approval/">Read More</a>
-        </article><article class="post" data-tag="process" data-title="how to speed up your lawsuit funding application">
+
+          <!-- SEO FIX: link text is now unique (still looks like "Read More") -->
+          <a class="read"
+             href="/posts/what-happens-after-approval/"
+             aria-label="Read more: What Happens After You Are Approved? From Contract to Cash">
+            Read More <span class="sr-only">— What Happens After You Are Approved? From Contract to Cash</span>
+          </a>
+        </article><article class="post"
+          data-tag="process"
+          data-title="how to speed up your lawsuit funding application"
+          data-desc="need cash fast? here are the 3 simple steps you can take to ensure your funding request gets approved in 24 hours or less.">
           <div class="postTop">
             <span class="tag">Process</span>
-            <span>Sat May 09 2026</span>
+            <span>Sun May 10 2026</span>
           </div>
+
           <h2>How to Speed Up Your Lawsuit Funding Application</h2>
           <p>Need cash fast? Here are the 3 simple steps you can take to ensure your funding request gets approved in 24 hours or less.</p>
-          <a class="read" href="/posts/how-to-speed-up-application/">Read More</a>
-        </article><article class="post" data-tag="funding" data-title="how much pre-settlement funding can i get?">
+
+          <!-- SEO FIX: link text is now unique (still looks like "Read More") -->
+          <a class="read"
+             href="/posts/how-to-speed-up-application/"
+             aria-label="Read more: How to Speed Up Your Lawsuit Funding Application">
+            Read More <span class="sr-only">— How to Speed Up Your Lawsuit Funding Application</span>
+          </a>
+        </article><article class="post"
+          data-tag="funding"
+          data-title="how much pre-settlement funding can i get?"
+          data-desc="wondering how much cash you qualify for? learn about the &#39;10% rule&#39; and how we calculate a safe amount for your case.">
           <div class="postTop">
             <span class="tag">Funding Basics</span>
-            <span>Mon May 04 2026</span>
+            <span>Tue May 05 2026</span>
           </div>
+
           <h2>How Much Pre-Settlement Funding Can I Get?</h2>
           <p>Wondering how much cash you qualify for? Learn about the &#39;10% Rule&#39; and how we calculate a safe amount for your case.</p>
-          <a class="read" href="/posts/how-much-funding-can-i-get/">Read More</a>
-        </article><article class="post" data-tag="funding" data-title="broker vs. direct lender: why cutting out the middleman saves you money">
+
+          <!-- SEO FIX: link text is now unique (still looks like "Read More") -->
+          <a class="read"
+             href="/posts/how-much-funding-can-i-get/"
+             aria-label="Read more: How Much Pre-Settlement Funding Can I Get?">
+            Read More <span class="sr-only">— How Much Pre-Settlement Funding Can I Get?</span>
+          </a>
+        </article><article class="post"
+          data-tag="funding"
+          data-title="broker vs. direct lender: why cutting out the middleman saves you money"
+          data-desc="don&#39;t pay extra fees to a middleman. learn the critical difference between lawsuit funding brokers and direct lenders like flash legal funding.">
           <div class="postTop">
             <span class="tag">Funding Basics</span>
-            <span>Thu Apr 30 2026</span>
+            <span>Fri May 01 2026</span>
           </div>
+
           <h2>Broker vs. Direct Lender: Why Cutting Out the Middleman Saves You Money</h2>
           <p>Don&#39;t pay extra fees to a middleman. Learn the critical difference between lawsuit funding brokers and direct lenders like Flash Legal Funding.</p>
-          <a class="read" href="/posts/broker-vs-direct-lender/">Read More</a>
-        </article><article class="post" data-tag="attorneys" data-title="why partner with a funding company? a strategic asset for your firm">
+
+          <!-- SEO FIX: link text is now unique (still looks like "Read More") -->
+          <a class="read"
+             href="/posts/broker-vs-direct-lender/"
+             aria-label="Read more: Broker vs. Direct Lender: Why Cutting Out the Middleman Saves You Money">
+            Read More <span class="sr-only">— Broker vs. Direct Lender: Why Cutting Out the Middleman Saves You Money</span>
+          </a>
+        </article><article class="post"
+          data-tag="attorneys"
+          data-title="why partner with a funding company? a strategic asset for your firm"
+          data-desc="client financial pressure is the enemy of maximum value. learn how partnering with the right funding company buys you the time to litigate properly.">
           <div class="postTop">
             <span class="tag">For Attorneys</span>
-            <span>Fri Apr 24 2026</span>
+            <span>Sat Apr 25 2026</span>
           </div>
+
           <h2>Why Partner with a Funding Company? A Strategic Asset for Your Firm</h2>
           <p>Client financial pressure is the enemy of maximum value. Learn how partnering with the right funding company buys you the time to litigate properly.</p>
-          <a class="read" href="/posts/why-partner-with-us/">Read More</a>
-        </article><article class="post" data-tag="funding" data-title="is a lawsuit loan actually a loan?">
+
+          <!-- SEO FIX: link text is now unique (still looks like "Read More") -->
+          <a class="read"
+             href="/posts/why-partner-with-us/"
+             aria-label="Read more: Why Partner with a Funding Company? A Strategic Asset for Your Firm">
+            Read More <span class="sr-only">— Why Partner with a Funding Company? A Strategic Asset for Your Firm</span>
+          </a>
+        </article><article class="post"
+          data-tag="funding"
+          data-title="is a lawsuit loan actually a loan?"
+          data-desc="it is technically a non-recourse advance, not a loan. learn the critical difference that protects you from debt if you lose your case.">
           <div class="postTop">
             <span class="tag">Funding Basics</span>
-            <span>Sun Apr 19 2026</span>
+            <span>Mon Apr 20 2026</span>
           </div>
+
           <h2>Is a Lawsuit Loan Actually a Loan?</h2>
           <p>It is technically a non-recourse advance, not a loan. Learn the critical difference that protects you from debt if you lose your case.</p>
-          <a class="read" href="/posts/is-a-lawsuit-loan-a-loan/">Read More</a>
-        </article><article class="post" data-tag="process" data-title="what is the process for pre-settlement funding?">
+
+          <!-- SEO FIX: link text is now unique (still looks like "Read More") -->
+          <a class="read"
+             href="/posts/is-a-lawsuit-loan-a-loan/"
+             aria-label="Read more: Is a Lawsuit Loan Actually a Loan?">
+            Read More <span class="sr-only">— Is a Lawsuit Loan Actually a Loan?</span>
+          </a>
+        </article><article class="post"
+          data-tag="process"
+          data-title="what is the process for pre-settlement funding?"
+          data-desc="getting funding shouldn&#39;t be as hard as the lawsuit itself. learn our simple 4-step process to get cash in as little as 24 hours.">
           <div class="postTop">
             <span class="tag">Process</span>
-            <span>Tue Apr 14 2026</span>
+            <span>Wed Apr 15 2026</span>
           </div>
+
           <h2>What Is the Process for Pre-Settlement Funding?</h2>
           <p>Getting funding shouldn&#39;t be as hard as the lawsuit itself. Learn our simple 4-step process to get cash in as little as 24 hours.</p>
-          <a class="read" href="/posts/process-for-pre-settlement-funding/">Read More</a>
-        </article><article class="post" data-tag="funding" data-title="how does a compounding interest rate work?">
+
+          <!-- SEO FIX: link text is now unique (still looks like "Read More") -->
+          <a class="read"
+             href="/posts/process-for-pre-settlement-funding/"
+             aria-label="Read more: What Is the Process for Pre-Settlement Funding?">
+            Read More <span class="sr-only">— What Is the Process for Pre-Settlement Funding?</span>
+          </a>
+        </article><article class="post"
+          data-tag="funding"
+          data-title="how does a compounding interest rate work?"
+          data-desc="compound interest acts like a snowball, turning a small loan into a large debt. learn how the math works before you sign.">
           <div class="postTop">
             <span class="tag">Funding Basics</span>
-            <span>Thu Apr 09 2026</span>
+            <span>Fri Apr 10 2026</span>
           </div>
+
           <h2>How Does a Compounding Interest Rate Work?</h2>
           <p>Compound interest acts like a snowball, turning a small loan into a large debt. Learn how the math works before you sign.</p>
-          <a class="read" href="/posts/how-compounding-interest-works/">Read More</a>
-        </article><article class="post" data-tag="funding" data-title="how will interest rates be calculated on a lawsuit loan?">
+
+          <!-- SEO FIX: link text is now unique (still looks like "Read More") -->
+          <a class="read"
+             href="/posts/how-compounding-interest-works/"
+             aria-label="Read more: How Does a Compounding Interest Rate Work?">
+            Read More <span class="sr-only">— How Does a Compounding Interest Rate Work?</span>
+          </a>
+        </article><article class="post"
+          data-tag="funding"
+          data-title="how will interest rates be calculated on a lawsuit loan?"
+          data-desc="confused by interest rates? we break down the difference between simple interest and fixed fees so you don&#39;t get overcharged.">
           <div class="postTop">
             <span class="tag">Funding Basics</span>
-            <span>Sat Apr 04 2026</span>
+            <span>Sun Apr 05 2026</span>
           </div>
+
           <h2>How Will Interest Rates Be Calculated on a Lawsuit Loan?</h2>
           <p>Confused by interest rates? We break down the difference between simple interest and fixed fees so you don&#39;t get overcharged.</p>
-          <a class="read" href="/posts/how-interest-rates-are-calculated/">Read More</a>
-        </article><article class="post" data-tag="funding" data-title="the truth about &#39;fixed fees&#39; in lawsuit funding">
+
+          <!-- SEO FIX: link text is now unique (still looks like "Read More") -->
+          <a class="read"
+             href="/posts/how-interest-rates-are-calculated/"
+             aria-label="Read more: How Will Interest Rates Be Calculated on a Lawsuit Loan?">
+            Read More <span class="sr-only">— How Will Interest Rates Be Calculated on a Lawsuit Loan?</span>
+          </a>
+        </article><article class="post"
+          data-tag="funding"
+          data-title="the truth about &#39;fixed fees&#39; in lawsuit funding"
+          data-desc="some lenders claim 0% interest but charge massive fixed fees. learn how these multipliers work and why they can cost you thousands.">
           <div class="postTop">
             <span class="tag">Funding Basics</span>
-            <span>Sun Mar 29 2026</span>
+            <span>Mon Mar 30 2026</span>
           </div>
+
           <h2>The Truth About &#39;Fixed Fees&#39; in Lawsuit Funding</h2>
           <p>Some lenders claim 0% interest but charge massive fixed fees. Learn how these multipliers work and why they can cost you thousands.</p>
-          <a class="read" href="/posts/how-does-the-fixed-fee-work/">Read More</a>
-        </article><article class="post" data-tag="legal" data-title="what is a motor vehicle accident (mva)? a guide for victims">
+
+          <!-- SEO FIX: link text is now unique (still looks like "Read More") -->
+          <a class="read"
+             href="/posts/how-does-the-fixed-fee-work/"
+             aria-label="Read more: The Truth About &#39;Fixed Fees&#39; in Lawsuit Funding">
+            Read More <span class="sr-only">— The Truth About &#39;Fixed Fees&#39; in Lawsuit Funding</span>
+          </a>
+        </article><article class="post"
+          data-tag="legal"
+          data-title="what is a motor vehicle accident (mva)? a guide for victims"
+          data-desc="from defining an mva to the immediate steps you must take after a crash, this guide covers everything you need to know to protect your rights.">
           <div class="postTop">
             <span class="tag">Legal Guide</span>
-            <span>Tue Mar 24 2026</span>
+            <span>Wed Mar 25 2026</span>
           </div>
+
           <h2>What Is a Motor Vehicle Accident (MVA)? A Guide for Victims</h2>
           <p>From defining an MVA to the immediate steps you must take after a crash, this guide covers everything you need to know to protect your rights.</p>
-          <a class="read" href="/posts/what-is-a-mva/">Read More</a>
-        </article><article class="post" data-tag="funding" data-title="5 common misconceptions about lawsuit funding">
+
+          <!-- SEO FIX: link text is now unique (still looks like "Read More") -->
+          <a class="read"
+             href="/posts/what-is-a-mva/"
+             aria-label="Read more: What Is a Motor Vehicle Accident (MVA)? A Guide for Victims">
+            Read More <span class="sr-only">— What Is a Motor Vehicle Accident (MVA)? A Guide for Victims</span>
+          </a>
+        </article><article class="post"
+          data-tag="funding"
+          data-title="5 common misconceptions about lawsuit funding"
+          data-desc="think you need good credit or a massive case to qualify? think again. we debunk the biggest myths about pre-settlement funding.">
           <div class="postTop">
             <span class="tag">Funding Basics</span>
-            <span>Thu Mar 19 2026</span>
+            <span>Fri Mar 20 2026</span>
           </div>
+
           <h2>5 Common Misconceptions About Lawsuit Funding</h2>
           <p>Think you need good credit or a massive case to qualify? Think again. We debunk the biggest myths about pre-settlement funding.</p>
-          <a class="read" href="/posts/5-common-misconceptions/">Read More</a>
-        </article><article class="post" data-tag="funding" data-title="how to choose the right lawsuit funding company for your needs">
+
+          <!-- SEO FIX: link text is now unique (still looks like "Read More") -->
+          <a class="read"
+             href="/posts/5-common-misconceptions/"
+             aria-label="Read more: 5 Common Misconceptions About Lawsuit Funding">
+            Read More <span class="sr-only">— 5 Common Misconceptions About Lawsuit Funding</span>
+          </a>
+        </article><article class="post"
+          data-tag="funding"
+          data-title="how to choose the right lawsuit funding company for your needs"
+          data-desc="not all funding companies are created equal. learn exactly what to look for—from reputation to fee structures—before you sign.">
           <div class="postTop">
             <span class="tag">Funding Basics</span>
-            <span>Sat Mar 14 2026</span>
+            <span>Sun Mar 15 2026</span>
           </div>
+
           <h2>How to Choose the Right Lawsuit Funding Company for Your Needs</h2>
           <p>Not all funding companies are created equal. Learn exactly what to look for—from reputation to fee structures—before you sign.</p>
-          <a class="read" href="/posts/how-to-choose-the-right-company/">Read More</a>
-        </article><article class="post" data-tag="funding" data-title="understanding the benefits of pre-settlement funding">
+
+          <!-- SEO FIX: link text is now unique (still looks like "Read More") -->
+          <a class="read"
+             href="/posts/how-to-choose-the-right-company/"
+             aria-label="Read more: How to Choose the Right Lawsuit Funding Company for Your Needs">
+            Read More <span class="sr-only">— How to Choose the Right Lawsuit Funding Company for Your Needs</span>
+          </a>
+        </article><article class="post"
+          data-tag="funding"
+          data-title="understanding the benefits of pre-settlement funding"
+          data-desc="explore how pre-settlement funding provides financial stability, covers living expenses, and levels the playing field during your lawsuit.">
           <div class="postTop">
             <span class="tag">Funding Basics</span>
-            <span>Mon Mar 09 2026</span>
+            <span>Tue Mar 10 2026</span>
           </div>
+
           <h2>Understanding the Benefits of Pre-Settlement Funding</h2>
           <p>Explore how pre-settlement funding provides financial stability, covers living expenses, and levels the playing field during your lawsuit.</p>
-          <a class="read" href="/posts/benefits-of-pre-settlement-funding/">Read More</a>
-        </article><article class="post" data-tag="funding" data-title="what happens if you lose your case after getting funding?">
+
+          <!-- SEO FIX: link text is now unique (still looks like "Read More") -->
+          <a class="read"
+             href="/posts/benefits-of-pre-settlement-funding/"
+             aria-label="Read more: Understanding the Benefits of Pre-Settlement Funding">
+            Read More <span class="sr-only">— Understanding the Benefits of Pre-Settlement Funding</span>
+          </a>
+        </article><article class="post"
+          data-tag="funding"
+          data-title="what happens if you lose your case after getting funding?"
+          data-desc="worried about repayment risks? learn how non-recourse funding protects you if your lawsuit doesn&#39;t go the way you planned.">
           <div class="postTop">
             <span class="tag">Funding Basics</span>
-            <span>Wed Mar 04 2026</span>
+            <span>Thu Mar 05 2026</span>
           </div>
+
           <h2>What Happens If You Lose Your Case After Getting Funding?</h2>
           <p>Worried about repayment risks? Learn how non-recourse funding protects you if your lawsuit doesn&#39;t go the way you planned.</p>
-          <a class="read" href="/posts/what-happens-if-you-lose/">Read More</a>
-        </article><article class="post" data-tag="process" data-title="top tips for getting approved for lawsuit funding">
+
+          <!-- SEO FIX: link text is now unique (still looks like "Read More") -->
+          <a class="read"
+             href="/posts/what-happens-if-you-lose/"
+             aria-label="Read more: What Happens If You Lose Your Case After Getting Funding?">
+            Read More <span class="sr-only">— What Happens If You Lose Your Case After Getting Funding?</span>
+          </a>
+        </article><article class="post"
+          data-tag="process"
+          data-title="top tips for getting approved for lawsuit funding"
+          data-desc="discover the key steps to increasing your chances of getting approved for lawsuit funding, from hiring an experienced attorney to demonstrating financial need.">
           <div class="postTop">
             <span class="tag">Process</span>
-            <span>Sat Feb 28 2026</span>
+            <span>Sun Mar 01 2026</span>
           </div>
+
           <h2>Top Tips for Getting Approved for Lawsuit Funding</h2>
           <p>Discover the key steps to increasing your chances of getting approved for lawsuit funding, from hiring an experienced attorney to demonstrating financial need.</p>
-          <a class="read" href="/posts/tips-for-approval/">Read More</a>
-        </article><article class="post" data-tag="funding" data-title="how flash legal funding can help you succeed in your legal battle">
+
+          <!-- SEO FIX: link text is now unique (still looks like "Read More") -->
+          <a class="read"
+             href="/posts/tips-for-approval/"
+             aria-label="Read more: Top Tips for Getting Approved for Lawsuit Funding">
+            Read More <span class="sr-only">— Top Tips for Getting Approved for Lawsuit Funding</span>
+          </a>
+        </article><article class="post"
+          data-tag="funding"
+          data-title="how flash legal funding can help you succeed in your legal battle"
+          data-desc="discover how flash legal funding offers quick, non-recourse funding solutions to help you focus on winning your case without financial stress.">
           <div class="postTop">
             <span class="tag">Funding Basics</span>
-            <span>Tue Feb 24 2026</span>
+            <span>Wed Feb 25 2026</span>
           </div>
+
           <h2>How Flash Legal Funding Can Help You Succeed in Your Legal Battle</h2>
           <p>Discover how Flash Legal Funding offers quick, non-recourse funding solutions to help you focus on winning your case without financial stress.</p>
-          <a class="read" href="/posts/how-flash-helps/">Read More</a>
-        </article><article class="post" data-tag="funding" data-title="can i get a loan from my attorney? insights for clients">
+
+          <!-- SEO FIX: link text is now unique (still looks like "Read More") -->
+          <a class="read"
+             href="/posts/how-flash-helps/"
+             aria-label="Read more: How Flash Legal Funding Can Help You Succeed in Your Legal Battle">
+            Read More <span class="sr-only">— How Flash Legal Funding Can Help You Succeed in Your Legal Battle</span>
+          </a>
+        </article><article class="post"
+          data-tag="funding"
+          data-title="can i get a loan from my attorney? insights for clients"
+          data-desc="explore the possibilities and legalities of getting a loan from your attorney and discover alternative solutions with flash legal funding.">
           <div class="postTop">
             <span class="tag">Funding Basics</span>
-            <span>Thu Feb 19 2026</span>
+            <span>Fri Feb 20 2026</span>
           </div>
+
           <h2>Can I Get a Loan from My Attorney? Insights for Clients</h2>
           <p>Explore the possibilities and legalities of getting a loan from your attorney and discover alternative solutions with Flash Legal Funding.</p>
-          <a class="read" href="/posts/can-i-get-a-loan-from-my-attorney/">Read More</a>
-        </article><article class="post" data-tag="funding" data-title="is a lawsuit loan legal? understanding the legality of litigation financing">
+
+          <!-- SEO FIX: link text is now unique (still looks like "Read More") -->
+          <a class="read"
+             href="/posts/can-i-get-a-loan-from-my-attorney/"
+             aria-label="Read more: Can I Get a Loan from My Attorney? Insights for Clients">
+            Read More <span class="sr-only">— Can I Get a Loan from My Attorney? Insights for Clients</span>
+          </a>
+        </article><article class="post"
+          data-tag="funding"
+          data-title="is a lawsuit loan legal? understanding the legality of litigation financing"
+          data-desc="a clear guide to the legality of litigation financing, state regulations, and how flash legal funding ensures compliance.">
           <div class="postTop">
             <span class="tag">Funding Basics</span>
-            <span>Sat Feb 14 2026</span>
+            <span>Sun Feb 15 2026</span>
           </div>
+
           <h2>Is a Lawsuit Loan Legal? Understanding the Legality of Litigation Financing</h2>
           <p>A clear guide to the legality of litigation financing, state regulations, and how Flash Legal Funding ensures compliance.</p>
-          <a class="read" href="/posts/is-a-lawsuit-loan-legal/">Read More</a>
-        </article><article class="post" data-tag="funding" data-title="how do lawsuit loans work? a comprehensive guide">
+
+          <!-- SEO FIX: link text is now unique (still looks like "Read More") -->
+          <a class="read"
+             href="/posts/is-a-lawsuit-loan-legal/"
+             aria-label="Read more: Is a Lawsuit Loan Legal? Understanding the Legality of Litigation Financing">
+            Read More <span class="sr-only">— Is a Lawsuit Loan Legal? Understanding the Legality of Litigation Financing</span>
+          </a>
+        </article><article class="post"
+          data-tag="funding"
+          data-title="how do lawsuit loans work? a comprehensive guide"
+          data-desc="demystify the workings of lawsuit loans with our in-depth guide. discover how flash legal funding can support your legal journey.">
           <div class="postTop">
             <span class="tag">Funding Basics</span>
-            <span>Mon Feb 09 2026</span>
+            <span>Tue Feb 10 2026</span>
           </div>
+
           <h2>How Do Lawsuit Loans Work? A Comprehensive Guide</h2>
           <p>Demystify the workings of lawsuit loans with our in-depth guide. Discover how Flash Legal Funding can support your legal journey.</p>
-          <a class="read" href="/posts/how-funding-works/">Read More</a>
+
+          <!-- SEO FIX: link text is now unique (still looks like "Read More") -->
+          <a class="read"
+             href="/posts/how-funding-works/"
+             aria-label="Read more: How Do Lawsuit Loans Work? A Comprehensive Guide">
+            Read More <span class="sr-only">— How Do Lawsuit Loans Work? A Comprehensive Guide</span>
+          </a>
         </article></div>
 
       <div class="comingSoon">
@@ -508,13 +777,29 @@
   </footer>
 
   <script>
-    // Mobile menu toggle (from header)
+    // Mobile menu toggle (header)
     const menuBtn = document.getElementById("menuBtn");
     const menu = document.getElementById("menu");
+
     if (menuBtn && menu) {
-      menuBtn.addEventListener("click", () => {
-        const open = menu.style.display === "flex";
-        menu.style.display = open ? "none" : "flex";
+      menuBtn.setAttribute("aria-expanded", "false");
+
+      const closeMenu = () => {
+        menu.style.display = "none";
+        menu.style.flexDirection = "";
+        menu.style.background = "";
+        menu.style.position = "";
+        menu.style.top = "";
+        menu.style.right = "";
+        menu.style.padding = "";
+        menu.style.border = "";
+        menu.style.borderRadius = "";
+        menu.style.boxShadow = "";
+        menuBtn.setAttribute("aria-expanded", "false");
+      };
+
+      const openMenu = () => {
+        menu.style.display = "flex";
         menu.style.flexDirection = "column";
         menu.style.background = "#fff";
         menu.style.position = "absolute";
@@ -524,10 +809,34 @@
         menu.style.border = "1px solid #e8ecf6";
         menu.style.borderRadius = "12px";
         menu.style.boxShadow = "0 12px 30px rgba(0,0,0,.08)";
+        menuBtn.setAttribute("aria-expanded", "true");
+      };
+
+      menuBtn.addEventListener("click", (e) => {
+        e.stopPropagation();
+        const isOpen = menu.style.display === "flex";
+        isOpen ? closeMenu() : openMenu();
+      });
+
+      document.addEventListener("click", (e) => {
+        const insideMenu = menu.contains(e.target);
+        const insideBtn = menuBtn.contains(e.target);
+        if (!insideBtn && !insideMenu) closeMenu();
+      });
+
+      document.addEventListener("keydown", (e) => {
+        if (e.key === "Escape") closeMenu();
+      });
+
+      window.addEventListener("resize", () => {
+        if (window.innerWidth > 980) {
+          menu.style.display = "";
+          menuBtn.setAttribute("aria-expanded", "false");
+        }
       });
     }
 
-    // Blog Filter Logic
+    // Blog Filter Logic (title + description)
     const chips = Array.from(document.querySelectorAll(".chip"));
     const posts = Array.from(document.querySelectorAll(".post"));
     const q = document.getElementById("q");
@@ -540,9 +849,10 @@
       posts.forEach((post) => {
         const postTag = post.getAttribute("data-tag");
         const title = (post.getAttribute("data-title") || "").toLowerCase();
+        const desc = (post.getAttribute("data-desc") || "").toLowerCase();
 
         const matchTag = tag === "all" || postTag === tag;
-        const matchQuery = !query || title.includes(query);
+        const matchQuery = !query || title.includes(query) || desc.includes(query);
 
         post.style.display = (matchTag && matchQuery) ? "flex" : "none";
       });

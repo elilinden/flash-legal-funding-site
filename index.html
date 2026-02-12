@@ -3,12 +3,81 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Flash Legal Funding | Pre-Settlement Funding</title>
-  <meta name="description" content="Bills won’t wait for your settlement. Neither should you. No credit check. Get cash fast. If you don’t win, pay $0." />
+  <title>Pre-Settlement Funding for Personal Injury Cases | Flash Legal Funding</title>
+  <meta name="description" content="Flash Legal Funding provides fast pre-settlement funding for personal injury cases. No credit check, non-recourse cash advances. If you don't win, pay $0. Apply today." />
+  <link rel="canonical" href="https://flashlegalfunding.com/" />
+
+  <!-- Open Graph -->
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="Pre-Settlement Funding for Personal Injury Cases | Flash Legal Funding" />
+  <meta property="og:description" content="Flash Legal Funding provides fast pre-settlement funding for personal injury cases. No credit check, non-recourse cash advances. If you don't win, pay $0." />
+  <meta property="og:url" content="https://flashlegalfunding.com/" />
+  <meta property="og:site_name" content="Flash Legal Funding" />
+  <meta property="og:image" content="https://flashlegalfunding.com/assets/logo.png" />
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="Pre-Settlement Funding for Personal Injury Cases | Flash Legal Funding" />
+  <meta name="twitter:description" content="Flash Legal Funding provides fast pre-settlement funding for personal injury cases. No credit check, non-recourse cash advances. If you don't win, pay $0." />
+  <meta name="twitter:image" content="https://flashlegalfunding.com/assets/logo.png" />
+
+  <!-- Structured Data: WebSite -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebSite",
+    "name": "Flash Legal Funding",
+    "url": "https://flashlegalfunding.com",
+    "description": "Fast pre-settlement funding for personal injury cases. No credit check, non-recourse cash advances.",
+    "publisher": {
+      "@type": "Organization",
+      "name": "Flash Legal Funding",
+      "url": "https://flashlegalfunding.com",
+      "logo": {
+        "@type": "ImageObject",
+        "url": "https://flashlegalfunding.com/assets/logo.png"
+      }
+    }
+  }
+  </script>
+
+  <!-- Structured Data: LocalBusiness -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FinancialService",
+    "name": "Flash Legal Funding",
+    "url": "https://flashlegalfunding.com",
+    "logo": "https://flashlegalfunding.com/assets/logo.png",
+    "description": "Pre-settlement funding company providing non-recourse cash advances for personal injury cases. No credit check required.",
+    "telephone": "+1-859-813-5274",
+    "email": "info@flashlegalfunding.com",
+    "foundingDate": "2022",
+    "areaServed": "US",
+    "priceRange": "$$",
+    "openingHoursSpecification": [
+      {
+        "@type": "OpeningHoursSpecification",
+        "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"],
+        "opens": "08:00",
+        "closes": "17:00"
+      }
+    ],
+    "sameAs": []
+  }
+  </script>
 
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;600;700;800&display=swap" rel="stylesheet" />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;600;700;800&display=swap"
+    rel="stylesheet"
+    media="print"
+    onload="this.media='all'"
+  >
+  <noscript>
+    <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;600;700;800&display=swap" rel="stylesheet">
+  </noscript>
 
   <style>
     :root{
@@ -445,11 +514,12 @@
             <li><a href="/#testimonials">Testimonials</a></li>
             <li><a href="/faq/">FAQ</a></li>
             <li><a href="/blog/">Blog</a></li>
+            <li><a href="/contact/">Contact</a></li>
           </ul>
         </nav>
 
         <div style="display:flex; gap:12px; align-items:center;">
-          <button class="menuBtn" id="menuBtn" aria-label="Open menu">☰</button>
+          <button class="menuBtn" id="menuBtn" aria-label="Open menu" aria-expanded="false" type="button">☰</button>
           <a class="btn" href="/apply/">APPLY NOW</a>
         </div>
       </div>
@@ -548,7 +618,7 @@
               tabindex="-1"
               aria-hidden="true"
             >
-              <source src="./assets/videoflf.mp4" type="video/mp4" />
+              <source src="/assets/videoflf.mp4" type="video/mp4" />
               Your browser does not support the video tag.
             </video>
           </div>
@@ -622,13 +692,25 @@
 
   <script>
     // Mobile menu toggle
-    const nav = document.getElementById("nav");
     const menuBtn = document.getElementById("menuBtn");
     const menu = document.getElementById("menu");
-    if (menuBtn && nav && menu) {
-      menuBtn.addEventListener("click", () => {
-        const open = menu.style.display === "flex";
-        menu.style.display = open ? "none" : "flex";
+    if (menuBtn && menu) {
+      menuBtn.setAttribute("aria-expanded", "false");
+      const closeMenu = () => {
+        menu.style.display = "none";
+        menu.style.flexDirection = "";
+        menu.style.background = "";
+        menu.style.position = "";
+        menu.style.top = "";
+        menu.style.right = "";
+        menu.style.padding = "";
+        menu.style.border = "";
+        menu.style.borderRadius = "";
+        menu.style.boxShadow = "";
+        menuBtn.setAttribute("aria-expanded", "false");
+      };
+      const openMenu = () => {
+        menu.style.display = "flex";
         menu.style.flexDirection = "column";
         menu.style.background = "#fff";
         menu.style.position = "absolute";
@@ -638,6 +720,18 @@
         menu.style.border = "1px solid #e8ecf6";
         menu.style.borderRadius = "12px";
         menu.style.boxShadow = "0 12px 30px rgba(0,0,0,.08)";
+        menuBtn.setAttribute("aria-expanded", "true");
+      };
+      menuBtn.addEventListener("click", (e) => {
+        e.stopPropagation();
+        menu.style.display === "flex" ? closeMenu() : openMenu();
+      });
+      document.addEventListener("click", (e) => {
+        if (!menuBtn.contains(e.target) && !menu.contains(e.target)) closeMenu();
+      });
+      document.addEventListener("keydown", (e) => { if (e.key === "Escape") closeMenu(); });
+      window.addEventListener("resize", () => {
+        if (window.innerWidth > 980) { menu.style.display = ""; menuBtn.setAttribute("aria-expanded", "false"); }
       });
     }
 

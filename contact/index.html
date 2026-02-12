@@ -3,8 +3,23 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Contact | Flash Legal Funding</title>
-  <meta name="description" content="Contact Flash Legal Funding. We are here to help." />
+  <title>Contact Us | Flash Legal Funding Pre-Settlement Funding</title>
+  <meta name="description" content="Contact Flash Legal Funding for pre-settlement funding questions. Call (859) 81-FLASH or send us a message. We respond quickly to all inquiries." />
+  <link rel="canonical" href="https://flashlegalfunding.com/contact/" />
+
+  <!-- Open Graph -->
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="Contact Us | Flash Legal Funding" />
+  <meta property="og:description" content="Contact Flash Legal Funding for pre-settlement funding questions. Call (859) 81-FLASH or send us a message." />
+  <meta property="og:url" content="https://flashlegalfunding.com/contact/" />
+  <meta property="og:site_name" content="Flash Legal Funding" />
+  <meta property="og:image" content="https://flashlegalfunding.com/assets/logo.png" />
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="Contact Us | Flash Legal Funding" />
+  <meta name="twitter:description" content="Contact Flash Legal Funding for pre-settlement funding questions. Call (859) 81-FLASH or send us a message." />
+  <meta name="twitter:image" content="https://flashlegalfunding.com/assets/logo.png" />
 
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -272,11 +287,12 @@
             <li><a href="/#testimonials">Testimonials</a></li>
             <li><a href="/faq/">FAQ</a></li>
             <li><a href="/blog/">Blog</a></li>
+            <li><a href="/contact/">Contact</a></li>
           </ul>
         </nav>
 
         <div style="display:flex; gap:12px; align-items:center;">
-          <button class="menuBtn" id="menuBtn" aria-label="Open menu">☰</button>
+          <button class="menuBtn" id="menuBtn" aria-label="Open menu" aria-expanded="false" type="button">☰</button>
           <a class="btn" href="/apply/">APPLY NOW</a>
         </div>
       </div>
@@ -391,9 +407,22 @@
     const menuBtn = document.getElementById("menuBtn");
     const menu = document.getElementById("menu");
     if (menuBtn && menu) {
-      menuBtn.addEventListener("click", () => {
-        const open = menu.style.display === "flex";
-        menu.style.display = open ? "none" : "flex";
+      menuBtn.setAttribute("aria-expanded", "false");
+      const closeMenu = () => {
+        menu.style.display = "none";
+        menu.style.flexDirection = "";
+        menu.style.background = "";
+        menu.style.position = "";
+        menu.style.top = "";
+        menu.style.right = "";
+        menu.style.padding = "";
+        menu.style.border = "";
+        menu.style.borderRadius = "";
+        menu.style.boxShadow = "";
+        menuBtn.setAttribute("aria-expanded", "false");
+      };
+      const openMenu = () => {
+        menu.style.display = "flex";
         menu.style.flexDirection = "column";
         menu.style.background = "#fff";
         menu.style.position = "absolute";
@@ -403,6 +432,18 @@
         menu.style.border = "1px solid #e8ecf6";
         menu.style.borderRadius = "12px";
         menu.style.boxShadow = "0 12px 30px rgba(0,0,0,.08)";
+        menuBtn.setAttribute("aria-expanded", "true");
+      };
+      menuBtn.addEventListener("click", (e) => {
+        e.stopPropagation();
+        menu.style.display === "flex" ? closeMenu() : openMenu();
+      });
+      document.addEventListener("click", (e) => {
+        if (!menuBtn.contains(e.target) && !menu.contains(e.target)) closeMenu();
+      });
+      document.addEventListener("keydown", (e) => { if (e.key === "Escape") closeMenu(); });
+      window.addEventListener("resize", () => {
+        if (window.innerWidth > 980) { menu.style.display = ""; menuBtn.setAttribute("aria-expanded", "false"); }
       });
     }
   </script>

@@ -4,7 +4,20 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Privacy Policy | Flash Legal Funding</title>
-  <meta name="description" content="Privacy Policy for Flash Legal Funding." />
+  <meta name="description" content="Read the Flash Legal Funding privacy policy. Learn how we collect, use, and protect your information when you use our pre-settlement funding services." />
+  <link rel="canonical" href="https://flashlegalfunding.com/privacy-policy/" />
+
+  <!-- Open Graph -->
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="Privacy Policy | Flash Legal Funding" />
+  <meta property="og:description" content="Read the Flash Legal Funding privacy policy. Learn how we collect, use, and protect your information." />
+  <meta property="og:url" content="https://flashlegalfunding.com/privacy-policy/" />
+  <meta property="og:site_name" content="Flash Legal Funding" />
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="Privacy Policy | Flash Legal Funding" />
+  <meta name="twitter:description" content="Read the Flash Legal Funding privacy policy. Learn how we collect, use, and protect your information." />
 
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -161,6 +174,30 @@
       .pageIntro h1{font-size:30px}
       .card{padding:20px}
     }
+
+    /* --- MOBILE HEADER FIX --- */
+    @media (max-width: 600px) {
+      /* Shrink logo slightly more to prevent crowding */
+      .brand img { height: 28px; }
+      
+      /* Tighten the nav container */
+      .nav { padding: 8px 0; gap: 4px; }
+
+      /* FIX THE BUTTON: Smaller, centered text, compact */
+      .nav .btn { 
+        padding: 6px 14px;      /* Smaller padding */
+        font-size: 12px;        /* Smaller text */
+        min-height: 34px;       /* Consistent height */
+        line-height: 1;         /* Forces text to center vertically */
+        white-space: nowrap;    /* Prevents text wrapping */
+        display: inline-flex;   /* Ensures flex centering works */
+        align-items: center;    
+        justify-content: center;
+      }
+
+      /* Adjust hamburger menu to match */
+      .menuBtn { font-size: 24px; padding: 4px; }
+    }
   </style>
 </head>
 
@@ -181,12 +218,14 @@
             <li><a href="/#our-story">Our Story</a></li>
             <li><a href="/#what-is-it">What Is It?</a></li>
             <li><a href="/#testimonials">Testimonials</a></li>
-            <li><a href="/#blog">Blog</a></li>
+            <li><a href="/faq/">FAQ</a></li>
+            <li><a href="/blog/">Blog</a></li>
+            <li><a href="/contact/">Contact</a></li>
           </ul>
         </nav>
 
         <div style="display:flex; gap:12px; align-items:center;">
-          <button class="menuBtn" id="menuBtn" aria-label="Open menu">☰</button>
+          <button class="menuBtn" id="menuBtn" aria-label="Open menu" aria-expanded="false" type="button">☰</button>
           <a class="btn" href="/apply/">APPLY NOW</a>
         </div>
       </div>
@@ -290,9 +329,22 @@
     const menuBtn = document.getElementById("menuBtn");
     const menu = document.getElementById("menu");
     if (menuBtn && menu) {
-      menuBtn.addEventListener("click", () => {
-        const open = menu.style.display === "flex";
-        menu.style.display = open ? "none" : "flex";
+      menuBtn.setAttribute("aria-expanded", "false");
+      const closeMenu = () => {
+        menu.style.display = "none";
+        menu.style.flexDirection = "";
+        menu.style.background = "";
+        menu.style.position = "";
+        menu.style.top = "";
+        menu.style.right = "";
+        menu.style.padding = "";
+        menu.style.border = "";
+        menu.style.borderRadius = "";
+        menu.style.boxShadow = "";
+        menuBtn.setAttribute("aria-expanded", "false");
+      };
+      const openMenu = () => {
+        menu.style.display = "flex";
         menu.style.flexDirection = "column";
         menu.style.background = "#fff";
         menu.style.position = "absolute";
@@ -302,6 +354,18 @@
         menu.style.border = "1px solid #e8ecf6";
         menu.style.borderRadius = "12px";
         menu.style.boxShadow = "0 12px 30px rgba(0,0,0,.08)";
+        menuBtn.setAttribute("aria-expanded", "true");
+      };
+      menuBtn.addEventListener("click", (e) => {
+        e.stopPropagation();
+        menu.style.display === "flex" ? closeMenu() : openMenu();
+      });
+      document.addEventListener("click", (e) => {
+        if (!menuBtn.contains(e.target) && !menu.contains(e.target)) closeMenu();
+      });
+      document.addEventListener("keydown", (e) => { if (e.key === "Escape") closeMenu(); });
+      window.addEventListener("resize", () => {
+        if (window.innerWidth > 980) { menu.style.display = ""; menuBtn.setAttribute("aria-expanded", "false"); }
       });
     }
   </script>

@@ -4,7 +4,20 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Terms of Use | Flash Legal Funding</title>
-  <meta name="description" content="Terms of Use for Flash Legal Funding." />
+  <meta name="description" content="Read the Terms of Use for Flash Legal Funding. This agreement governs your use of the flashlegalfunding.com website and services." />
+  <link rel="canonical" href="https://flashlegalfunding.com/terms-of-use/" />
+
+  <!-- Open Graph -->
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="Terms of Use | Flash Legal Funding" />
+  <meta property="og:description" content="Read the Terms of Use for Flash Legal Funding. This agreement governs your use of the flashlegalfunding.com website." />
+  <meta property="og:url" content="https://flashlegalfunding.com/terms-of-use/" />
+  <meta property="og:site_name" content="Flash Legal Funding" />
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="Terms of Use | Flash Legal Funding" />
+  <meta name="twitter:description" content="Read the Terms of Use for Flash Legal Funding." />
 
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -173,31 +186,6 @@
     footer a{color:inherit; text-decoration:underline; text-underline-offset:3px}
     footer a:hover{color:var(--brand)}
 
-    /* mobile nav dropdown */
-    .mobileMenu{
-      display:none;
-      position:absolute;
-      top:64px;
-      right:24px;
-      width:min(320px, calc(100vw - 48px));
-      background:#fff;
-      border:1px solid #e8ecf6;
-      border-radius:14px;
-      box-shadow:0 12px 30px rgba(0,0,0,.08);
-      padding:10px;
-    }
-    .mobileMenu a{
-      display:block;
-      padding:10px 12px;
-      border-radius:10px;
-      color:var(--ink-soft);
-      font-weight:700;
-    }
-    .mobileMenu a:hover{
-      background:#eef2ff;
-      color:var(--brand);
-    }
-
     @media (max-width: 980px){
       nav ul{display:none}
       .menuBtn{display:inline-block}
@@ -250,26 +238,13 @@
             <li><a href="/#testimonials">Testimonials</a></li>
             <li><a href="/faq/">FAQ</a></li>
             <li><a href="/blog/">Blog</a></li>
+            <li><a href="/contact/">Contact</a></li>
           </ul>
         </nav>
 
         <div style="display:flex; gap:12px; align-items:center;">
-          <button class="menuBtn" id="menuBtn" aria-label="Open menu" aria-expanded="false" aria-controls="mobileMenu">☰</button>
+          <button class="menuBtn" id="menuBtn" aria-label="Open menu" aria-expanded="false" type="button">☰</button>
           <a class="btn" href="/apply/">APPLY NOW</a>
-        </div>
-
-        <div class="mobileMenu" id="mobileMenu" aria-label="Mobile menu">
-          <a href="/">Home</a>
-          <a href="/#services">Services</a>
-          <a href="/#our-story">Our Story</a>
-          <a href="/#what-is-it">What Is It?</a>
-          <a href="/#testimonials">Testimonials</a>
-          <a href="/blog/">Blog</a>
-          <a href="/apply/">Apply</a>
-          <a href="/contact/">Contact</a>
-          <a href="/faq/">FAQ</a>
-          <a href="/privacy-policy/">Privacy Policy</a>
-          <a href="/terms-of-use/">Terms of Use</a>
         </div>
       </div>
     </div>
@@ -523,31 +498,45 @@
 
   <script>
     const menuBtn = document.getElementById("menuBtn");
-    const mobileMenu = document.getElementById("mobileMenu");
-
-    if (menuBtn && mobileMenu) {
-      menuBtn.addEventListener("click", () => {
-        const open = mobileMenu.style.display === "block";
-        mobileMenu.style.display = open ? "none" : "block";
-        menuBtn.setAttribute("aria-expanded", open ? "false" : "true");
+    const menu = document.getElementById("menu");
+    if (menuBtn && menu) {
+      menuBtn.setAttribute("aria-expanded", "false");
+      const closeMenu = () => {
+        menu.style.display = "none";
+        menu.style.flexDirection = "";
+        menu.style.background = "";
+        menu.style.position = "";
+        menu.style.top = "";
+        menu.style.right = "";
+        menu.style.padding = "";
+        menu.style.border = "";
+        menu.style.borderRadius = "";
+        menu.style.boxShadow = "";
+        menuBtn.setAttribute("aria-expanded", "false");
+      };
+      const openMenu = () => {
+        menu.style.display = "flex";
+        menu.style.flexDirection = "column";
+        menu.style.background = "#fff";
+        menu.style.position = "absolute";
+        menu.style.top = "64px";
+        menu.style.right = "24px";
+        menu.style.padding = "14px";
+        menu.style.border = "1px solid #e8ecf6";
+        menu.style.borderRadius = "12px";
+        menu.style.boxShadow = "0 12px 30px rgba(0,0,0,.08)";
+        menuBtn.setAttribute("aria-expanded", "true");
+      };
+      menuBtn.addEventListener("click", (e) => {
+        e.stopPropagation();
+        menu.style.display === "flex" ? closeMenu() : openMenu();
       });
-
-      // close on outside click
       document.addEventListener("click", (e) => {
-        const isButton = e.target === menuBtn;
-        const insideMenu = mobileMenu.contains(e.target);
-        if (!isButton && !insideMenu) {
-          mobileMenu.style.display = "none";
-          menuBtn.setAttribute("aria-expanded", "false");
-        }
+        if (!menuBtn.contains(e.target) && !menu.contains(e.target)) closeMenu();
       });
-
-      // close on escape
-      document.addEventListener("keydown", (e) => {
-        if (e.key === "Escape") {
-          mobileMenu.style.display = "none";
-          menuBtn.setAttribute("aria-expanded", "false");
-        }
+      document.addEventListener("keydown", (e) => { if (e.key === "Escape") closeMenu(); });
+      window.addEventListener("resize", () => {
+        if (window.innerWidth > 980) { menu.style.display = ""; menuBtn.setAttribute("aria-expanded", "false"); }
       });
     }
   </script>

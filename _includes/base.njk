@@ -4,6 +4,55 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>{{ title }} | Flash Legal Funding</title>
+  {% if description %}<meta name="description" content="{{ description }}" />{% endif %}
+  <link rel="canonical" href="https://flashlegalfunding.com{{ page.url }}" />
+
+  <!-- Open Graph -->
+  <meta property="og:type" content="{% if tags and 'blog' in tags %}article{% else %}website{% endif %}" />
+  <meta property="og:title" content="{{ title }} | Flash Legal Funding" />
+  {% if description %}<meta property="og:description" content="{{ description }}" />{% endif %}
+  <meta property="og:url" content="https://flashlegalfunding.com{{ page.url }}" />
+  <meta property="og:site_name" content="Flash Legal Funding" />
+  <meta property="og:image" content="https://flashlegalfunding.com/assets/logo.png" />
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="{{ title }} | Flash Legal Funding" />
+  {% if description %}<meta name="twitter:description" content="{{ description }}" />{% endif %}
+  <meta name="twitter:image" content="https://flashlegalfunding.com/assets/logo.png" />
+
+  {% if tags and 'blog' in tags %}
+  <!-- BlogPosting Structured Data -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BlogPosting",
+    "headline": "{{ title }}",
+    "description": "{{ description }}",
+    "url": "https://flashlegalfunding.com{{ page.url }}",
+    "datePublished": "{{ date.toISOString() }}",
+    "dateModified": "{{ date.toISOString() }}",
+    "author": {
+      "@type": "Organization",
+      "name": "Flash Legal Funding",
+      "url": "https://flashlegalfunding.com"
+    },
+    "publisher": {
+      "@type": "Organization",
+      "name": "Flash Legal Funding",
+      "url": "https://flashlegalfunding.com",
+      "logo": {
+        "@type": "ImageObject",
+        "url": "https://flashlegalfunding.com/assets/logo.png"
+      }
+    },
+    "mainEntityOfPage": {
+      "@type": "WebPage",
+      "@id": "https://flashlegalfunding.com{{ page.url }}"
+    }
+  }
+  </script>
+  {% endif %}
 
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -217,6 +266,7 @@
             <li><a href="/#testimonials">Testimonials</a></li>
             <li><a href="/faq/">FAQ</a></li>
             <li><a href="/blog/">Blog</a></li>
+            <li><a href="/contact/">Contact</a></li>
           </ul>
         </nav>
 
