@@ -3,10 +3,7 @@ module.exports = function (eleventyConfig) {
   eleventyConfig.addPassthroughCopy("assets");
 
   // ✅ Copy root static files
-  // Only include these lines if the files actually exist in your project root
   eleventyConfig.addPassthroughCopy("robots.txt");
-  eleventyConfig.addPassthroughCopy("sitemap.xml");
-  eleventyConfig.addPassthroughCopy("favicon.ico");
 
   return {
     dir: {

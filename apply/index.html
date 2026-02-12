@@ -285,6 +285,7 @@
             <li><a href="/#testimonials">Testimonials</a></li>
             <li><a href="/faq/">FAQ</a></li>
             <li><a href="/blog/">Blog</a></li>
+            <li><a href="/contact/">Contact</a></li>
           </ul>
         </nav>
 
@@ -321,7 +322,7 @@
               </div>
               <div>
                 <label for="phone">Phone</label>
-                <input id="phone" name="phone" autocomplete="tel" required />
+                <input id="phone" name="phone" type="tel" autocomplete="tel" required />
               </div>
             </div>
 
@@ -339,7 +340,7 @@
             <div class="row2">
               <div>
                 <label for="caseType">Case type</label>
-                <select id="caseType" name="case_type">
+                <select id="caseType" name="case_type" required>
                   <option value="">Select</option>
                   <option>Car accident</option>
                   <option>Truck accident</option>
@@ -391,7 +392,7 @@
             </div>
 
             <!-- Honeypot -->
-            <input type="text" name="_gotcha" style="display:none" tabindex="-1" autocomplete="off">
+            <input type="text" name="_gotcha" style="display:none" tabindex="-1" autocomplete="off" aria-hidden="true">
 
             <button class="btn" type="submit">Submit Application</button>
 
