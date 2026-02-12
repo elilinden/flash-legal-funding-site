@@ -3,8 +3,21 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Terms and Conditions | Flash Legal Funding</title>
-  <meta name="description" content="Terms and Conditions for Flash Legal Funding." />
+  <title>Terms of Use | Flash Legal Funding</title>
+  <meta name="description" content="Read the Terms of Use for Flash Legal Funding. This agreement governs your use of the flashlegalfunding.com website and services." />
+  <link rel="canonical" href="https://flashlegalfunding.com/terms-of-use/" />
+
+  <!-- Open Graph -->
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="Terms of Use | Flash Legal Funding" />
+  <meta property="og:description" content="Read the Terms of Use for Flash Legal Funding. This agreement governs your use of the flashlegalfunding.com website." />
+  <meta property="og:url" content="https://flashlegalfunding.com/terms-of-use/" />
+  <meta property="og:site_name" content="Flash Legal Funding" />
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="Terms of Use | Flash Legal Funding" />
+  <meta name="twitter:description" content="Read the Terms of Use for Flash Legal Funding." />
 
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -204,6 +217,30 @@
       .pageIntro h1{font-size:30px}
       .card{padding:20px}
     }
+
+    /* --- MOBILE HEADER FIX --- */
+    @media (max-width: 600px) {
+      /* Shrink logo slightly more to prevent crowding */
+      .brand img { height: 28px; }
+      
+      /* Tighten the nav container */
+      .nav { padding: 8px 0; gap: 4px; }
+
+      /* FIX THE BUTTON: Smaller, centered text, compact */
+      .nav .btn { 
+        padding: 6px 14px;      /* Smaller padding */
+        font-size: 12px;        /* Smaller text */
+        min-height: 34px;       /* Consistent height */
+        line-height: 1;         /* Forces text to center vertically */
+        white-space: nowrap;    /* Prevents text wrapping */
+        display: inline-flex;   /* Ensures flex centering works */
+        align-items: center;    
+        justify-content: center;
+      }
+
+      /* Adjust hamburger menu to match */
+      .menuBtn { font-size: 24px; padding: 4px; }
+    }
   </style>
 </head>
 
@@ -224,28 +261,28 @@
             <li><a href="/#our-story">Our Story</a></li>
             <li><a href="/#what-is-it">What Is It?</a></li>
             <li><a href="/#testimonials">Testimonials</a></li>
-            <li><a href="/#blog">Blog</a></li>
+            <li><a href="/faq/">FAQ</a></li>
+            <li><a href="/blog/">Blog</a></li>
           </ul>
         </nav>
 
         <div style="display:flex; gap:12px; align-items:center;">
-          <button class="menuBtn" id="menuBtn" aria-label="Open menu">☰</button>
+          <button class="menuBtn" id="menuBtn" aria-label="Open menu" aria-expanded="false" aria-controls="mobileMenu">☰</button>
           <a class="btn" href="/apply/">APPLY NOW</a>
         </div>
 
-        <!-- mobile dropdown -->
         <div class="mobileMenu" id="mobileMenu" aria-label="Mobile menu">
           <a href="/">Home</a>
           <a href="/#services">Services</a>
           <a href="/#our-story">Our Story</a>
           <a href="/#what-is-it">What Is It?</a>
           <a href="/#testimonials">Testimonials</a>
-          <a href="/#blog">Blog</a>
+          <a href="/blog/">Blog</a>
           <a href="/apply/">Apply</a>
           <a href="/contact/">Contact</a>
           <a href="/faq/">FAQ</a>
-          <a href="/privacy/">Privacy Policy</a>
-          <a href="/terms/">Terms of Use</a>
+          <a href="/privacy-policy/">Privacy Policy</a>
+          <a href="/terms-of-use/">Terms of Use</a>
         </div>
       </div>
     </div>
@@ -254,7 +291,7 @@
   <main>
     <div class="container">
       <div class="pageIntro">
-        <h1>Terms and Conditions</h1>
+        <h1>Terms of Use</h1>
         <p>
           Agreement between you and Flash Legal Funding (“FLF”) regarding your use of Flashlegalfunding.com (the “Site”).
         </p>
@@ -458,7 +495,7 @@
         <p>
           Unless otherwise specified herein, this agreement constitutes the entire agreement between the user and FLF with respect to the Site and it supersedes all prior or contemporaneous communications and proposals, whether electronic, oral or
           written, between the user and FLF with respect to the Site. A printed version of this agreement and of any notice given in electronic form shall be admissible in judicial or administrative proceedings based upon or relating to this agreement
-          to the same extent and subject extent and subject to the same conditions as other business documents and records originally generated and maintained in printed form.
+          to the same extent and subject to the same conditions as other business documents and records originally generated and maintained in printed form.
           It is the express wish to the parties that this agreement and all related documents be written in English.
         </p>
 
@@ -488,9 +525,9 @@
       <div class="footerRow">
         <span>2026 Flash Legal Funding. All Rights Reserved.</span>
         <span class="sep">|</span>
-        <a href="/terms/">Terms of Use</a>
+        <a href="/terms-of-use/">Terms of Use</a>
         <span class="sep">|</span>
-        <a href="/privacy/">Privacy Policy</a>
+        <a href="/privacy-policy/">Privacy Policy</a>
         <span class="sep">|</span>
         <a href="/sitemap">Sitemap</a>
       </div>
@@ -505,6 +542,7 @@
       menuBtn.addEventListener("click", () => {
         const open = mobileMenu.style.display === "block";
         mobileMenu.style.display = open ? "none" : "block";
+        menuBtn.setAttribute("aria-expanded", open ? "false" : "true");
       });
 
       // close on outside click
@@ -513,12 +551,16 @@
         const insideMenu = mobileMenu.contains(e.target);
         if (!isButton && !insideMenu) {
           mobileMenu.style.display = "none";
+          menuBtn.setAttribute("aria-expanded", "false");
         }
       });
 
       // close on escape
       document.addEventListener("keydown", (e) => {
-        if (e.key === "Escape") mobileMenu.style.display = "none";
+        if (e.key === "Escape") {
+          mobileMenu.style.display = "none";
+          menuBtn.setAttribute("aria-expanded", "false");
+        }
       });
     }
   </script>
