@@ -203,6 +203,14 @@ tags: blog
         This article is for general informational purposes and is not legal advice. Consult with your attorney regarding funding options in your state.
       </div>
 
+      <h2>Related Articles</h2>
+      <ul>
+        <li><a href="/posts/process-for-pre-settlement-funding/" style="color:var(--brand)">What Is the Process for Pre-Settlement Funding?</a></li>
+        <li><a href="/posts/how-to-speed-up-application/" style="color:var(--brand)">How to Speed Up Your Pre-Settlement Funding Application</a></li>
+        <li><a href="/posts/how-much-funding-can-i-get/" style="color:var(--brand)">How Much Pre-Settlement Funding Can I Get?</a></li>
+        <li><a href="/posts/broker-vs-direct-lender/" style="color:var(--brand)">Broker vs. Direct Lender: What's the Difference?</a></li>
+      </ul>
+
       <a href="/blog/" class="backLink">← Back to all posts</a>
     </div>
   </article>

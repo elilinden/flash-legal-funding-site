@@ -130,6 +130,42 @@
   }
   </script>
 
+  <!-- Structured Data: Reviews -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FinancialService",
+    "name": "Flash Legal Funding",
+    "url": "https://flashlegalfunding.com",
+    "aggregateRating": {
+      "@type": "AggregateRating",
+      "ratingValue": "5",
+      "bestRating": "5",
+      "ratingCount": "3"
+    },
+    "review": [
+      {
+        "@type": "Review",
+        "author": { "@type": "Person", "name": "Gabriella S." },
+        "reviewRating": { "@type": "Rating", "ratingValue": "5", "bestRating": "5" },
+        "reviewBody": "After my car accident I couldn't work for months and the bills were piling up. Flash Legal Funding got me cash within 24 hours so I could focus on recovery instead of stressing about rent."
+      },
+      {
+        "@type": "Review",
+        "author": { "@type": "Person", "name": "Katie J." },
+        "reviewRating": { "@type": "Rating", "ratingValue": "5", "bestRating": "5" },
+        "reviewBody": "My attorney said the insurance company was lowballing us. Flash gave me the financial breathing room to wait for a fair settlement instead of taking the first offer out of desperation."
+      },
+      {
+        "@type": "Review",
+        "author": { "@type": "Person", "name": "Marko S." },
+        "reviewRating": { "@type": "Rating", "ratingValue": "5", "bestRating": "5" },
+        "reviewBody": "The process was simple and the team kept me updated every step of the way. No credit check, no hassle. I'd recommend them to anyone waiting on a personal injury settlement."
+      }
+    ]
+  }
+  </script>
+
   <!-- Structured Data: BreadcrumbList -->
   <script type="application/ld+json">
   {
@@ -652,7 +688,7 @@
             <li><a href="/">Home</a></li>
             <li><a href="/#services">How It Works</a></li>
             <li><a href="/#case-types">Case Types</a></li>
-            <li><a href="/#what-is-it">What Is It?</a></li>
+            <li><a href="/for-attorneys/">For Attorneys</a></li>
             <li><a href="/faq/">FAQ</a></li>
             <li><a href="/blog/">Blog</a></li>
             <li><a href="/contact/">Contact</a></li>
@@ -672,8 +708,8 @@
       <div class="container">
         <div class="heroGrid">
           <div>
-            <h1><span class="rotWord" id="rotWord" aria-live="polite">Life</span> won’t wait for your settlement.<br><span>Neither should you.</span></h1>
-            <p>Get non-recourse pre-settlement funding for your personal injury case. No credit check, no monthly payments, and no risk. If you don’t win your case, you pay $0.</p>
+            <h1>Non-Recourse Pre-Settlement Funding for <span>Personal Injury Cases</span></h1>
+            <p>Get cash now while your personal injury case is pending. No credit check, no monthly payments, and zero risk. If you don’t win your case, you pay $0.</p>
             <div class="features">
               <span>✓ No Credit Check</span>
               <span>✓ Lowest Rate</span>
@@ -727,26 +763,26 @@
         <h2 class="sectionTitle animate-fade" data-animate="fade">Personal Injury Cases Eligible for Non-Recourse Funding</h2>
         <p style="text-align:center; color:var(--muted); max-width:70ch; margin:0 auto 32px;">We provide pre-settlement cash advances for a wide range of personal injury lawsuits. Our non-recourse funding means you only repay if you win or settle your case.</p>
         <div class="caseGrid">
-          <div class="caseCard animate-fade" data-animate="fade">
+          <a href="/car-accident-funding/" class="caseCard animate-fade" data-animate="fade" style="text-decoration:none; color:inherit; display:block;">
             <h3>Car Accident Funding</h3>
             <p>Injured in a car accident? Get a non-recourse cash advance while your attorney negotiates your auto accident settlement. Covers medical bills, lost wages, and living expenses.</p>
-          </div>
-          <div class="caseCard animate-fade" data-animate="fade">
+          </a>
+          <a href="/truck-accident-funding/" class="caseCard animate-fade" data-animate="fade" style="text-decoration:none; color:inherit; display:block;">
             <h3>Truck Accident Funding</h3>
             <p>Truck accident cases often involve severe injuries and lengthy litigation. Our pre-settlement funding helps you stay financially stable while your case moves forward.</p>
-          </div>
-          <div class="caseCard animate-fade" data-animate="fade">
+          </a>
+          <a href="/slip-and-fall-funding/" class="caseCard animate-fade" data-animate="fade" style="text-decoration:none; color:inherit; display:block;">
             <h3>Slip and Fall Funding</h3>
             <p>Slip and fall injuries from premises liability can lead to expensive medical treatments. Get pre-settlement funding to cover your costs without taking on personal debt.</p>
-          </div>
-          <div class="caseCard animate-fade" data-animate="fade">
+          </a>
+          <a href="/workplace-injury-funding/" class="caseCard animate-fade" data-animate="fade" style="text-decoration:none; color:inherit; display:block;">
             <h3>Workplace Injury Funding</h3>
             <p>If you've been injured on the job and filed a personal injury claim, pre-settlement funding can bridge the financial gap while you await your settlement or judgment.</p>
-          </div>
-          <div class="caseCard animate-fade" data-animate="fade">
+          </a>
+          <a href="/motorcycle-accident-funding/" class="caseCard animate-fade" data-animate="fade" style="text-decoration:none; color:inherit; display:block;">
             <h3>Motorcycle Accident Funding</h3>
             <p>Motorcycle accident victims often face long recovery times. Non-recourse funding lets you focus on healing instead of worrying about how to pay your bills.</p>
-          </div>
+          </a>
           <div class="caseCard animate-fade" data-animate="fade">
             <h3>Other Personal Injury Cases</h3>
             <p>We review all types of personal injury lawsuits for pre-settlement funding eligibility. <a href="/apply/" style="color:var(--brand); text-decoration:underline; text-underline-offset:3px;">Apply now</a> and we'll evaluate your case.</p>
@@ -821,9 +857,10 @@
               loop
               muted
               playsinline
-              preload="auto"
+              preload="metadata"
               tabindex="-1"
               aria-hidden="true"
+              loading="lazy"
             >
               <source src="/assets/videoflf.mp4" type="video/mp4" />
               Your browser does not support the video tag.
@@ -837,17 +874,17 @@
       <div class="container">
         <div class="eyebrow">TESTIMONIALS</div>
         <div class="quoteWrap" aria-live="polite">
-          <div class="quote active">
-            <p>“Needed a loan and Flash Legal Funding was there. The money helped me get back on track!”</p>
-            <span>Gabriella S.</span>
+          <div class=”quote active”>
+            <p>”After my car accident I couldn't work for months and the bills were piling up. Flash Legal Funding got me cash within 24 hours so I could focus on recovery instead of stressing about rent.”</p>
+            <span>Gabriella S. — Car Accident Case</span>
           </div>
-          <div class="quote">
-            <p>“They approved me super fast with no hassles.”</p>
-            <span>Katie J.</span>
+          <div class=”quote”>
+            <p>”My attorney said the insurance company was lowballing us. Flash gave me the financial breathing room to wait for a fair settlement instead of taking the first offer out of desperation.”</p>
+            <span>Katie J. — Slip and Fall Case</span>
           </div>
-          <div class="quote">
-            <p>“The process was simple, and the team kept me updated.”</p>
-            <span>Marko S.</span>
+          <div class=”quote”>
+            <p>”The process was simple and the team kept me updated every step of the way. No credit check, no hassle. I'd recommend them to anyone waiting on a personal injury settlement.”</p>
+            <span>Marko S. — Workplace Injury Case</span>
           </div>
         </div>
       </div>
@@ -890,10 +927,38 @@
   </main>
 
   <footer>
-    <div class="container">
-      2026 Flash Legal Funding. All Rights Reserved.
-      <br />
-      <a href="/terms-of-use/">Terms of Use</a> | <a href="/privacy-policy/">Privacy Policy</a> | <a href="/sitemap">Sitemap</a>
+    <div class="container" style="max-width:var(--max); margin:0 auto; padding:0 24px;">
+      <div style="display:grid; grid-template-columns:repeat(3, 1fr); gap:30px; text-align:left; padding:30px 0 20px;">
+        <div>
+          <strong style="display:block; margin-bottom:10px; color:var(--ink); font-size:14px; text-transform:uppercase; letter-spacing:.1em;">Company</strong>
+          <a href="/" style="display:block; margin-bottom:6px;">Home</a>
+          <a href="/#services" style="display:block; margin-bottom:6px;">How It Works</a>
+          <a href="/for-attorneys/" style="display:block; margin-bottom:6px;">For Attorneys</a>
+          <a href="/faq/" style="display:block; margin-bottom:6px;">FAQ</a>
+          <a href="/blog/" style="display:block; margin-bottom:6px;">Blog</a>
+          <a href="/contact/" style="display:block; margin-bottom:6px;">Contact</a>
+        </div>
+        <div>
+          <strong style="display:block; margin-bottom:10px; color:var(--ink); font-size:14px; text-transform:uppercase; letter-spacing:.1em;">Case Types</strong>
+          <a href="/car-accident-funding/" style="display:block; margin-bottom:6px;">Car Accident Funding</a>
+          <a href="/truck-accident-funding/" style="display:block; margin-bottom:6px;">Truck Accident Funding</a>
+          <a href="/slip-and-fall-funding/" style="display:block; margin-bottom:6px;">Slip and Fall Funding</a>
+          <a href="/workplace-injury-funding/" style="display:block; margin-bottom:6px;">Workplace Injury Funding</a>
+          <a href="/motorcycle-accident-funding/" style="display:block; margin-bottom:6px;">Motorcycle Accident Funding</a>
+        </div>
+        <div>
+          <strong style="display:block; margin-bottom:10px; color:var(--ink); font-size:14px; text-transform:uppercase; letter-spacing:.1em;">Contact</strong>
+          <p style="margin:0 0 6px;"><a href="tel:+18598135274">(859) 81-FLASH</a></p>
+          <p style="margin:0 0 6px;"><a href="mailto:info@flashlegalfunding.com">info@flashlegalfunding.com</a></p>
+          <p style="margin:0 0 6px;">Mon–Fri: 8:00 AM – 5:00 PM PT</p>
+          <p style="margin:14px 0 0; font-size:12px; color:#9a9ec0; line-height:1.5;">Non-recourse pre-settlement funding for personal injury cases. No credit check. No monthly payments. If you lose, you owe $0.</p>
+        </div>
+      </div>
+      <div style="border-top:1px solid var(--nav-border); padding-top:16px;">
+        2026 Flash Legal Funding. All Rights Reserved.
+        <br />
+        <a href="/terms-of-use/">Terms of Use</a> | <a href="/privacy-policy/">Privacy Policy</a> | <a href="/sitemap">Sitemap</a>
+      </div>
     </div>
   </footer>
 
@@ -953,31 +1018,6 @@
 
     document.querySelectorAll("[data-animate]").forEach((el) => observer.observe(el));
 
-    // Rotating hero word: Bills → Rent → Life
-    const rotWordEl = document.getElementById("rotWord");
-    const rotWords = ["Bills", "Rent", "Life"];
-    let rotIdx = 2; // starts on "Life"
-
-    if (rotWordEl) {
-      const reduced = window.matchMedia && window.matchMedia("(prefers-reduced-motion: reduce)").matches;
-
-      setInterval(() => {
-        rotIdx = (rotIdx + 1) % rotWords.length;
-
-        if (reduced) {
-          rotWordEl.textContent = rotWords[rotIdx];
-          return;
-        }
-
-        rotWordEl.classList.add("is-out");
-        setTimeout(() => {
-          rotWordEl.textContent = rotWords[rotIdx];
-          rotWordEl.classList.remove("is-out");
-          rotWordEl.classList.add("is-in");
-          setTimeout(() => rotWordEl.classList.remove("is-in"), 360);
-        }, 220);
-      }, 3000);
-    }
 
     // Testimonials fade between quotes
     const quotes = Array.from(document.querySelectorAll(".quote"));

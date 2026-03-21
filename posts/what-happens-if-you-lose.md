@@ -209,6 +209,14 @@ tags: blog
         This article is for general informational purposes. Always check your specific funding agreement to confirm it is a non-recourse advance.
       </div>
 
+      <h2>Related Articles</h2>
+      <ul>
+        <li><a href="/posts/benefits-of-pre-settlement-funding/" style="color:var(--brand)">Understanding the Benefits of Pre-Settlement Funding</a></li>
+        <li><a href="/posts/how-funding-works/" style="color:var(--brand)">How Do Lawsuit Loans Work? A Comprehensive Guide</a></li>
+        <li><a href="/posts/is-a-lawsuit-loan-a-loan/" style="color:var(--brand)">Is a Lawsuit Loan Really a Loan?</a></li>
+        <li><a href="/posts/how-much-funding-can-i-get/" style="color:var(--brand)">How Much Pre-Settlement Funding Can I Get?</a></li>
+      </ul>
+
       <a href="/blog/" class="backLink">← Back to all posts</a>
     </div>
   </article>
