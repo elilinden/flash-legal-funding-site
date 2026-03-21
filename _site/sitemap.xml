@@ -64,56 +64,56 @@
     <priority>0.7</priority>
   </url>
 
-
-  <url>
-    <loc>https://flashlegalfunding.com/privacy-policy/</loc>
-    <lastmod>2026-03-21T06:25:53.320Z</lastmod>
-    <changefreq>yearly</changefreq>
-    <priority>0.5</priority>
-  </url>
-
-
-  <url>
-    <loc>https://flashlegalfunding.com/terms-of-use/</loc>
-    <lastmod>2026-03-21T06:25:53.320Z</lastmod>
-    <changefreq>yearly</changefreq>
-    <priority>0.5</priority>
-  </url>
-
   <url>
     <loc>https://flashlegalfunding.com/</loc>
-    <lastmod>2026-03-21T06:30:22.710Z</lastmod>
+    <lastmod>2026-03-21T06:36:34.902Z</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
   </url>
 
   <url>
     <loc>https://flashlegalfunding.com/apply/</loc>
-    <lastmod>2026-03-21T06:30:54.606Z</lastmod>
+    <lastmod>2026-03-21T06:36:47.242Z</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
 
   <url>
     <loc>https://flashlegalfunding.com/faq/</loc>
-    <lastmod>2026-03-21T06:32:37.158Z</lastmod>
+    <lastmod>2026-03-21T06:36:52.298Z</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+  </url>
+
+  <url>
+    <loc>https://flashlegalfunding.com/contact/</loc>
+    <lastmod>2026-03-21T06:36:58.522Z</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
 
   <url>
     <loc>https://flashlegalfunding.com/blog/</loc>
-    <lastmod>2026-03-21T06:33:01.222Z</lastmod>
+    <lastmod>2026-03-21T06:37:03.510Z</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
 
   <url>
-    <loc>https://flashlegalfunding.com/contact/</loc>
-    <lastmod>2026-03-21T06:33:41.258Z</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.9</priority>
+    <loc>https://flashlegalfunding.com/privacy-policy/</loc>
+    <lastmod>2026-03-21T06:37:21.270Z</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.5</priority>
   </url>
+
+  <url>
+    <loc>https://flashlegalfunding.com/terms-of-use/</loc>
+    <lastmod>2026-03-21T06:37:26.706Z</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.5</priority>
+  </url>
+
+
 
   <url>
     <loc>https://flashlegalfunding.com/posts/what-is-a-mva/</loc>
