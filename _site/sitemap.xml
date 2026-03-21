@@ -47,7 +47,7 @@
     <loc>https://flashlegalfunding.com/posts/benefits-of-pre-settlement-funding/</loc>
     <lastmod>2026-03-10T00:00:00.000Z</lastmod>
     <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
+    <priority>0.9</priority>
   </url>
 
   <url>
@@ -64,56 +64,98 @@
     <priority>0.7</priority>
   </url>
 
-  <url>
-    <loc>https://flashlegalfunding.com/</loc>
-    <lastmod>2026-03-21T06:36:34.902Z</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>1.0</priority>
-  </url>
 
   <url>
     <loc>https://flashlegalfunding.com/apply/</loc>
-    <lastmod>2026-03-21T06:36:47.242Z</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.9</priority>
-  </url>
-
-  <url>
-    <loc>https://flashlegalfunding.com/faq/</loc>
-    <lastmod>2026-03-21T06:36:52.298Z</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.9</priority>
-  </url>
-
-  <url>
-    <loc>https://flashlegalfunding.com/contact/</loc>
-    <lastmod>2026-03-21T06:36:58.522Z</lastmod>
+    <lastmod>2026-03-21T06:45:16.953Z</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
 
   <url>
     <loc>https://flashlegalfunding.com/blog/</loc>
-    <lastmod>2026-03-21T06:37:03.510Z</lastmod>
+    <lastmod>2026-03-21T06:45:16.957Z</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
 
   <url>
+    <loc>https://flashlegalfunding.com/contact/</loc>
+    <lastmod>2026-03-21T06:45:16.957Z</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+  </url>
+
+  <url>
+    <loc>https://flashlegalfunding.com/faq/</loc>
+    <lastmod>2026-03-21T06:45:16.957Z</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+  </url>
+
+  <url>
     <loc>https://flashlegalfunding.com/privacy-policy/</loc>
-    <lastmod>2026-03-21T06:37:21.270Z</lastmod>
+    <lastmod>2026-03-21T06:45:16.961Z</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.5</priority>
+  </url>
+
+
+  <url>
+    <loc>https://flashlegalfunding.com/terms-of-use/</loc>
+    <lastmod>2026-03-21T06:45:16.961Z</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.5</priority>
   </url>
 
   <url>
-    <loc>https://flashlegalfunding.com/terms-of-use/</loc>
-    <lastmod>2026-03-21T06:37:26.706Z</lastmod>
-    <changefreq>yearly</changefreq>
-    <priority>0.5</priority>
+    <loc>https://flashlegalfunding.com/car-accident-funding/</loc>
+    <lastmod>2026-03-21T07:01:02.966Z</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
   </url>
 
+  <url>
+    <loc>https://flashlegalfunding.com/truck-accident-funding/</loc>
+    <lastmod>2026-03-21T07:01:33.474Z</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+  </url>
 
+  <url>
+    <loc>https://flashlegalfunding.com/slip-and-fall-funding/</loc>
+    <lastmod>2026-03-21T07:02:06.794Z</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+  </url>
+
+  <url>
+    <loc>https://flashlegalfunding.com/workplace-injury-funding/</loc>
+    <lastmod>2026-03-21T07:02:34.514Z</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+  </url>
+
+  <url>
+    <loc>https://flashlegalfunding.com/motorcycle-accident-funding/</loc>
+    <lastmod>2026-03-21T07:03:04.874Z</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+  </url>
+
+  <url>
+    <loc>https://flashlegalfunding.com/for-attorneys/</loc>
+    <lastmod>2026-03-21T07:03:57.602Z</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+  </url>
+
+  <url>
+    <loc>https://flashlegalfunding.com/</loc>
+    <lastmod>2026-03-21T07:05:41.658Z</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>1.0</priority>
+  </url>
 
   <url>
     <loc>https://flashlegalfunding.com/posts/what-is-a-mva/</loc>
@@ -147,7 +189,7 @@
     <loc>https://flashlegalfunding.com/posts/process-for-pre-settlement-funding/</loc>
     <lastmod>2026-04-15T00:00:00.000Z</lastmod>
     <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
+    <priority>0.9</priority>
   </url>
 
   <url>
