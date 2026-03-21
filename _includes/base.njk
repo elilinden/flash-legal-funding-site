@@ -34,7 +34,7 @@
   {% if tags and 'blog' in tags %}
   <!-- Article dates for Open Graph -->
   <meta property="article:published_time" content="{{ date.toISOString() }}" />
-  <meta property="article:modified_time" content="{{ date.toISOString() }}" />
+  <meta property="article:modified_time" content="{{ (dateModified or date).toISOString() }}" />
   <meta property="article:section" content="{{ tagName or 'Pre-Settlement Funding' }}" />
 
   <!-- BlogPosting Structured Data -->
@@ -46,7 +46,7 @@
     "description": "{{ description }}",
     "url": "https://flashlegalfunding.com{{ page.url }}",
     "datePublished": "{{ date.toISOString() }}",
-    "dateModified": "{{ date.toISOString() }}",
+    "dateModified": "{{ (dateModified or date).toISOString() }}",
     "author": {
       "@type": "Organization",
       "name": "Flash Legal Funding",
@@ -422,6 +422,12 @@
           <a href="/slip-and-fall-funding/">Slip and Fall Funding</a>
           <a href="/workplace-injury-funding/">Workplace Injury Funding</a>
           <a href="/motorcycle-accident-funding/">Motorcycle Accident Funding</a>
+          <a href="/medical-malpractice-funding/">Medical Malpractice Funding</a>
+          <a href="/dog-bite-funding/">Dog Bite Funding</a>
+          <a href="/pedestrian-accident-funding/">Pedestrian Accident Funding</a>
+          <a href="/rideshare-accident-funding/">Rideshare Accident Funding</a>
+          <a href="/wrongful-death-funding/">Wrongful Death Funding</a>
+          <a href="/product-liability-funding/">Product Liability Funding</a>
         </div>
         <div>
           <strong>Contact</strong>
@@ -432,7 +438,7 @@
         </div>
       </div>
       <div class="footer-bottom">
-        2026 Flash Legal Funding. All Rights Reserved.
+        &copy; 2026 Flash Legal Funding. All Rights Reserved.
         <br />
         <a href="/terms-of-use/">Terms of Use</a> | <a href="/privacy-policy/">Privacy Policy</a> | <a href="/sitemap">Sitemap</a>
       </div>
