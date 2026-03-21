@@ -19,7 +19,10 @@ eleventyExcludeFromCollections: true
     {%- if page.url == "/" %}
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
-    {%- elif page.url == "/apply/" or page.url == "/contact/" or page.url == "/faq/" %}
+    {%- elif page.url == "/apply/" or page.url == "/contact/" or page.url == "/faq/" or page.url == "/for-attorneys/" %}
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+    {%- elif page.url.endsWith("-funding/") and page.url != "/" %}
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
     {%- elif page.url == "/blog/" %}

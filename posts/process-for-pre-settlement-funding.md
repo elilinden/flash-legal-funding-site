@@ -207,6 +207,14 @@ tags: blog
         This article is for general informational purposes. Timelines may vary depending on how quickly your law firm can provide case documentation.
       </div>
 
+      <h2>Related Articles</h2>
+      <ul>
+        <li><a href="/posts/tips-for-approval/" style="color:var(--brand)">Top Tips for Getting Approved for Lawsuit Funding</a></li>
+        <li><a href="/posts/how-to-speed-up-application/" style="color:var(--brand)">How to Speed Up Your Pre-Settlement Funding Application</a></li>
+        <li><a href="/posts/what-happens-after-approval/" style="color:var(--brand)">What Happens After You're Approved for Funding?</a></li>
+        <li><a href="/posts/how-much-funding-can-i-get/" style="color:var(--brand)">How Much Pre-Settlement Funding Can I Get?</a></li>
+      </ul>
+
       <a href="/blog/" class="backLink">← Back to all posts</a>
     </div>
   </article>

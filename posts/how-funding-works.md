@@ -213,6 +213,14 @@ tags: blog
         This article is for general informational purposes and is not legal advice. Consult with your attorney regarding funding options.
       </div>
 
+      <h2>Related Articles</h2>
+      <ul>
+        <li><a href="/posts/benefits-of-pre-settlement-funding/" style="color:var(--brand)">Understanding the Benefits of Pre-Settlement Funding</a></li>
+        <li><a href="/posts/what-happens-if-you-lose/" style="color:var(--brand)">What Happens If You Lose Your Case After Getting Funding?</a></li>
+        <li><a href="/posts/process-for-pre-settlement-funding/" style="color:var(--brand)">What Is the Process for Pre-Settlement Funding?</a></li>
+        <li><a href="/posts/how-much-funding-can-i-get/" style="color:var(--brand)">How Much Pre-Settlement Funding Can I Get?</a></li>
+      </ul>
+
       <a href="/blog/" class="backLink">← Back to all posts</a>
     </div>
   </article>

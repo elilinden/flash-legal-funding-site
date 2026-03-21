@@ -221,6 +221,14 @@ tags: blog
         Ready to find out your specific number? Apply today for a free case evaluation. We can usually tell you how much you qualify for within 24 hours.
       </div>
 
+      <h2>Related Articles</h2>
+      <ul>
+        <li><a href="/posts/how-funding-works/" style="color:var(--brand)">How Do Lawsuit Loans Work? A Comprehensive Guide</a></li>
+        <li><a href="/posts/how-interest-rates-are-calculated/" style="color:var(--brand)">How Interest Rates Are Calculated for Pre-Settlement Funding</a></li>
+        <li><a href="/posts/tips-for-approval/" style="color:var(--brand)">Top Tips for Getting Approved for Lawsuit Funding</a></li>
+        <li><a href="/car-accident-funding/" style="color:var(--brand)">Car Accident Pre-Settlement Funding</a></li>
+      </ul>
+
       <a href="/blog/" class="backLink">← Back to all posts</a>
     </div>
   </article>

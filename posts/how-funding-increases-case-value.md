@@ -204,6 +204,14 @@ tags: blog
         Partner with a funding company that understands litigation strategy. Contact Flash Legal Funding to learn about our attorney-preferred process.
       </div>
 
+      <h2>Related Articles</h2>
+      <ul>
+        <li><a href="/for-attorneys/" style="color:var(--brand)">Pre-Settlement Funding for Attorneys & Law Firms</a></li>
+        <li><a href="/posts/why-partner-with-us/" style="color:var(--brand)">Why Partner with Flash Legal Funding?</a></li>
+        <li><a href="/posts/how-much-funding-can-i-get/" style="color:var(--brand)">How Much Pre-Settlement Funding Can I Get?</a></li>
+        <li><a href="/posts/benefits-of-pre-settlement-funding/" style="color:var(--brand)">Understanding the Benefits of Pre-Settlement Funding</a></li>
+      </ul>
+
       <a href="/blog/" class="backLink">← Back to all posts</a>
     </div>
   </article>

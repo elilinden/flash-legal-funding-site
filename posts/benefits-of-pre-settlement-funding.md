@@ -207,6 +207,14 @@ tags: blog
         This article is for general informational purposes. Always consult with your attorney to determine if pre-settlement funding is the right strategic move for your case.
       </div>
 
+      <h2>Related Articles</h2>
+      <ul>
+        <li><a href="/posts/how-funding-works/" style="color:var(--brand)">How Do Lawsuit Loans Work? A Comprehensive Guide</a></li>
+        <li><a href="/posts/what-happens-if-you-lose/" style="color:var(--brand)">What Happens If You Lose Your Case After Getting Funding?</a></li>
+        <li><a href="/posts/how-much-funding-can-i-get/" style="color:var(--brand)">How Much Pre-Settlement Funding Can I Get?</a></li>
+        <li><a href="/posts/process-for-pre-settlement-funding/" style="color:var(--brand)">What Is the Process for Pre-Settlement Funding?</a></li>
+      </ul>
+
       <a href="/blog/" class="backLink">← Back to all posts</a>
     </div>
   </article>
