@@ -538,12 +538,14 @@
       });
 
       document.addEventListener("click", (e) => {
+        if (window.innerWidth > 980) return;
         const insideMenu = menu.contains(e.target);
         const insideBtn = menuBtn.contains(e.target);
         if (!insideMenu && !insideBtn) closeMenu();
       });
 
       document.addEventListener("keydown", (e) => {
+        if (window.innerWidth > 980) return;
         if (e.key === "Escape") closeMenu();
       });
 
