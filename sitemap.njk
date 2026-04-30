@@ -3,8 +3,10 @@ permalink: /sitemap.xml
 eleventyExcludeFromCollections: true
 ---
 <?xml version="1.0" encoding="UTF-8"?>
-<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+        xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">
 {%- set site = "https://flashlegalfunding.com" %}
+{%- set defaultImage = site + "/assets/og-image.png" %}
 {% for page in collections.all %}
   {%- if page.url
         and page.outputPath
@@ -13,6 +15,10 @@ eleventyExcludeFromCollections: true
         and page.url != "/sitemap.xml"
         and page.url != "/sitemap/"
   %}
+  {%- set pageImage = defaultImage %}
+  {%- if page.data.image %}{% set pageImage = site + page.data.image %}{% endif %}
+  {%- set imageTitle = page.data.title or "Flash Legal Funding" %}
+  {%- set imageCaption = page.data.description or "Non-recourse pre-settlement funding for personal injury cases" %}
   <url>
     <loc>{{ site }}{{ page.url }}</loc>
     <lastmod>{% if page.data.dateModified %}{{ page.data.dateModified.toISOString() }}{% else %}{{ page.inputPath | mtime or page.date.toISOString() }}{% endif %}</lastmod>
@@ -35,6 +41,11 @@ eleventyExcludeFromCollections: true
     <changefreq>yearly</changefreq>
     <priority>0.5</priority>
     {%- endif %}
+    <image:image>
+      <image:loc>{{ pageImage }}</image:loc>
+      <image:title>{{ imageTitle | escape }}</image:title>
+      <image:caption>{{ imageCaption | escape }}</image:caption>
+    </image:image>
   </url>
   {%- endif %}
 {% endfor %}

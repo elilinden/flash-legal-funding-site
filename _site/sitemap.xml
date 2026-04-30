@@ -1,11 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+        xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">
 
   <url>
     <loc>https://flashlegalfunding.com/posts/how-funding-works/</loc>
     <lastmod>2026-04-30T02:08:50.848Z</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
+    <image:image>
+      <image:loc>https://flashlegalfunding.com/assets/og-image.png</image:loc>
+      <image:title>How Do Lawsuit Loans Work? A Comprehensive Guide</image:title>
+      <image:caption>Demystify the workings of lawsuit loans with our in-depth guide. Discover how Flash Legal Funding can support your legal journey.</image:caption>
+    </image:image>
   </url>
 
   <url>
@@ -13,6 +19,11 @@
     <lastmod>2026-04-30T02:08:50.848Z</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
+    <image:image>
+      <image:loc>https://flashlegalfunding.com/assets/og-image.png</image:loc>
+      <image:title>Is a Lawsuit Loan Legal? Understanding the Legality of Litigation Financing</image:title>
+      <image:caption>A clear guide to the legality of litigation financing, state regulations, and how Flash Legal Funding ensures compliance.</image:caption>
+    </image:image>
   </url>
 
   <url>
@@ -20,6 +31,11 @@
     <lastmod>2026-04-30T02:08:50.848Z</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
+    <image:image>
+      <image:loc>https://flashlegalfunding.com/assets/og-image.png</image:loc>
+      <image:title>Can I Get a Loan from My Attorney? Insights for Clients</image:title>
+      <image:caption>Explore the possibilities and legalities of getting a loan from your attorney and discover alternative solutions with Flash Legal Funding.</image:caption>
+    </image:image>
   </url>
 
   <url>
@@ -27,6 +43,11 @@
     <lastmod>2026-04-30T02:08:50.848Z</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
+    <image:image>
+      <image:loc>https://flashlegalfunding.com/assets/og-image.png</image:loc>
+      <image:title>How Flash Legal Funding Can Help You Succeed in Your Legal Battle</image:title>
+      <image:caption>Discover how Flash Legal Funding offers quick, non-recourse funding solutions to help you focus on winning your case without financial stress.</image:caption>
+    </image:image>
   </url>
 
   <url>
@@ -34,6 +55,11 @@
     <lastmod>2026-04-30T02:08:50.849Z</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
+    <image:image>
+      <image:loc>https://flashlegalfunding.com/assets/og-image.png</image:loc>
+      <image:title>Top Tips for Getting Approved for Lawsuit Funding</image:title>
+      <image:caption>Discover the key steps to increasing your chances of getting approved for lawsuit funding, from hiring an experienced attorney to demonstrating financial need.</image:caption>
+    </image:image>
   </url>
 
   <url>
@@ -41,6 +67,11 @@
     <lastmod>2026-04-30T02:08:50.849Z</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
+    <image:image>
+      <image:loc>https://flashlegalfunding.com/assets/og-image.png</image:loc>
+      <image:title>What Happens If You Lose Your Case After Getting Funding?</image:title>
+      <image:caption>Worried about repayment risks? Learn how non-recourse funding protects you if your lawsuit doesn&#39;t go the way you planned.</image:caption>
+    </image:image>
   </url>
 
   <url>
@@ -48,6 +79,11 @@
     <lastmod>2026-04-30T02:08:50.848Z</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
+    <image:image>
+      <image:loc>https://flashlegalfunding.com/assets/og-image.png</image:loc>
+      <image:title>Understanding the Benefits of Pre-Settlement Funding</image:title>
+      <image:caption>Explore how pre-settlement funding provides financial stability, covers living expenses, and levels the playing field during your lawsuit.</image:caption>
+    </image:image>
   </url>
 
   <url>
@@ -55,6 +91,11 @@
     <lastmod>2026-04-30T02:08:50.848Z</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
+    <image:image>
+      <image:loc>https://flashlegalfunding.com/assets/og-image.png</image:loc>
+      <image:title>How to Choose the Right Lawsuit Funding Company for Your Needs</image:title>
+      <image:caption>Not all funding companies are created equal. Learn exactly what to look for—from reputation to fee structures—before you sign.</image:caption>
+    </image:image>
   </url>
 
   <url>
@@ -62,6 +103,11 @@
     <lastmod>2026-04-30T02:08:50.845Z</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
+    <image:image>
+      <image:loc>https://flashlegalfunding.com/assets/og-image.png</image:loc>
+      <image:title>5 Common Misconceptions About Lawsuit Funding</image:title>
+      <image:caption>Think you need good credit or a massive case to qualify? Think again. We debunk the biggest myths about pre-settlement funding.</image:caption>
+    </image:image>
   </url>
 
   <url>
@@ -69,6 +115,11 @@
     <lastmod>2026-04-30T02:08:50.849Z</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
+    <image:image>
+      <image:loc>https://flashlegalfunding.com/assets/og-image.png</image:loc>
+      <image:title>What Is a Motor Vehicle Accident (MVA)? A Guide for Victims</image:title>
+      <image:caption>From defining an MVA to the immediate steps you must take after a crash, this guide covers everything you need to know to protect your rights.</image:caption>
+    </image:image>
   </url>
 
   <url>
@@ -76,6 +127,11 @@
     <lastmod>2026-04-30T02:08:50.848Z</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
+    <image:image>
+      <image:loc>https://flashlegalfunding.com/assets/og-image.png</image:loc>
+      <image:title>The Truth About &#39;Fixed Fees&#39; in Lawsuit Funding</image:title>
+      <image:caption>Some lenders claim 0% interest but charge massive fixed fees. Learn how these multipliers work and why they can cost you thousands.</image:caption>
+    </image:image>
   </url>
 
   <url>
@@ -83,6 +139,11 @@
     <lastmod>2026-04-30T02:08:50.848Z</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
+    <image:image>
+      <image:loc>https://flashlegalfunding.com/assets/og-image.png</image:loc>
+      <image:title>How Will Interest Rates Be Calculated on a Lawsuit Loan?</image:title>
+      <image:caption>Confused by interest rates? We break down the difference between simple interest and fixed fees so you don&#39;t get overcharged.</image:caption>
+    </image:image>
   </url>
 
   <url>
@@ -90,6 +151,11 @@
     <lastmod>2026-04-30T02:08:50.848Z</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
+    <image:image>
+      <image:loc>https://flashlegalfunding.com/assets/og-image.png</image:loc>
+      <image:title>How Does a Compounding Interest Rate Work?</image:title>
+      <image:caption>Compound interest acts like a snowball, turning a small loan into a large debt. Learn how the math works before you sign.</image:caption>
+    </image:image>
   </url>
 
   <url>
@@ -97,6 +163,11 @@
     <lastmod>2026-04-30T02:08:50.848Z</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
+    <image:image>
+      <image:loc>https://flashlegalfunding.com/assets/og-image.png</image:loc>
+      <image:title>What Is the Process for Pre-Settlement Funding?</image:title>
+      <image:caption>Getting funding shouldn&#39;t be as hard as the lawsuit itself. Learn our simple 4-step process to get cash in as little as 24 hours.</image:caption>
+    </image:image>
   </url>
 
   <url>
@@ -104,6 +175,11 @@
     <lastmod>2026-04-30T02:08:50.848Z</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
+    <image:image>
+      <image:loc>https://flashlegalfunding.com/assets/og-image.png</image:loc>
+      <image:title>Is a Lawsuit Loan Actually a Loan?</image:title>
+      <image:caption>It is technically a non-recourse advance, not a loan. Learn the critical difference that protects you from debt if you lose your case.</image:caption>
+    </image:image>
   </url>
 
   <url>
@@ -111,6 +187,11 @@
     <lastmod>2026-04-30T02:08:50.849Z</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
+    <image:image>
+      <image:loc>https://flashlegalfunding.com/assets/og-image.png</image:loc>
+      <image:title>Why Partner with a Funding Company? A Strategic Asset for Your Firm</image:title>
+      <image:caption>Client financial pressure is the enemy of maximum value. Learn how partnering with the right funding company buys you the time to litigate properly.</image:caption>
+    </image:image>
   </url>
 
 
@@ -119,6 +200,11 @@
     <lastmod>2026-04-30T02:08:50.273Z</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
+    <image:image>
+      <image:loc>https://flashlegalfunding.com/assets/og-image.png</image:loc>
+      <image:title>Flash Legal Funding</image:title>
+      <image:caption>Non-recourse pre-settlement funding for personal injury cases</image:caption>
+    </image:image>
   </url>
 
   <url>
@@ -126,6 +212,11 @@
     <lastmod>2026-04-30T02:08:50.293Z</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
+    <image:image>
+      <image:loc>https://flashlegalfunding.com/assets/og-image.png</image:loc>
+      <image:title>Flash Legal Funding</image:title>
+      <image:caption>Non-recourse pre-settlement funding for personal injury cases</image:caption>
+    </image:image>
   </url>
 
   <url>
@@ -133,6 +224,11 @@
     <lastmod>2026-04-30T08:50:47.316Z</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
+    <image:image>
+      <image:loc>https://flashlegalfunding.com/assets/og-image.png</image:loc>
+      <image:title>Car Accident Pre-Settlement Funding</image:title>
+      <image:caption>Get non-recourse pre-settlement funding for your car accident case. No credit check, no monthly payments. If you lose your case, you owe $0. Apply today.</image:caption>
+    </image:image>
   </url>
 
   <url>
@@ -140,6 +236,11 @@
     <lastmod>2026-04-30T02:08:50.293Z</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
+    <image:image>
+      <image:loc>https://flashlegalfunding.com/assets/og-image.png</image:loc>
+      <image:title>Flash Legal Funding</image:title>
+      <image:caption>Non-recourse pre-settlement funding for personal injury cases</image:caption>
+    </image:image>
   </url>
 
   <url>
@@ -147,6 +248,11 @@
     <lastmod>2026-04-30T08:50:47.317Z</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
+    <image:image>
+      <image:loc>https://flashlegalfunding.com/assets/og-image.png</image:loc>
+      <image:title>Dog Bite Pre-Settlement Funding</image:title>
+      <image:caption>Get non-recourse pre-settlement funding for your dog bite injury case. No credit check, no monthly payments. If you lose your case, you owe $0. Apply today.</image:caption>
+    </image:image>
   </url>
 
   <url>
@@ -154,6 +260,11 @@
     <lastmod>2026-04-30T02:08:50.297Z</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
+    <image:image>
+      <image:loc>https://flashlegalfunding.com/assets/og-image.png</image:loc>
+      <image:title>Pre-Settlement Funding for Attorneys &amp; Law Firms</image:title>
+      <image:caption>Partner with Flash Legal Funding to offer non-recourse pre-settlement funding to your personal injury clients. Streamlined process, competitive rates, and financially stable clients who can wait for maximum case value.</image:caption>
+    </image:image>
   </url>
 
   <url>
@@ -161,6 +272,11 @@
     <lastmod>2026-04-30T08:50:47.317Z</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
+    <image:image>
+      <image:loc>https://flashlegalfunding.com/assets/og-image.png</image:loc>
+      <image:title>Medical Malpractice Pre-Settlement Funding</image:title>
+      <image:caption>Get non-recourse pre-settlement funding for your medical malpractice case. No credit check, no monthly payments. If you lose your case, you owe $0. Apply today.</image:caption>
+    </image:image>
   </url>
 
   <url>
@@ -168,6 +284,11 @@
     <lastmod>2026-04-30T08:50:47.317Z</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
+    <image:image>
+      <image:loc>https://flashlegalfunding.com/assets/og-image.png</image:loc>
+      <image:title>Motorcycle Accident Pre-Settlement Funding</image:title>
+      <image:caption>Get non-recourse pre-settlement funding for your motorcycle accident case. No credit check, no monthly payments. Cover medical bills and living expenses while your case settles.</image:caption>
+    </image:image>
   </url>
 
   <url>
@@ -175,6 +296,11 @@
     <lastmod>2026-04-30T08:50:47.318Z</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
+    <image:image>
+      <image:loc>https://flashlegalfunding.com/assets/og-image.png</image:loc>
+      <image:title>Pedestrian Accident Pre-Settlement Funding</image:title>
+      <image:caption>Get non-recourse pre-settlement funding for your pedestrian accident case. No credit check, no monthly payments. If you lose your case, you owe $0. Apply today.</image:caption>
+    </image:image>
   </url>
 
   <url>
@@ -182,6 +308,11 @@
     <lastmod>2026-04-30T02:08:50.849Z</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.5</priority>
+    <image:image>
+      <image:loc>https://flashlegalfunding.com/assets/og-image.png</image:loc>
+      <image:title>Flash Legal Funding</image:title>
+      <image:caption>Non-recourse pre-settlement funding for personal injury cases</image:caption>
+    </image:image>
   </url>
 
   <url>
@@ -189,6 +320,11 @@
     <lastmod>2026-04-30T08:50:47.318Z</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
+    <image:image>
+      <image:loc>https://flashlegalfunding.com/assets/og-image.png</image:loc>
+      <image:title>Product Liability Pre-Settlement Funding</image:title>
+      <image:caption>Get non-recourse pre-settlement funding for your product liability case. No credit check, no monthly payments. If you lose your case, you owe $0. Apply today.</image:caption>
+    </image:image>
   </url>
 
   <url>
@@ -196,6 +332,11 @@
     <lastmod>2026-04-30T08:50:47.318Z</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
+    <image:image>
+      <image:loc>https://flashlegalfunding.com/assets/og-image.png</image:loc>
+      <image:title>Rideshare Accident Pre-Settlement Funding (Uber &amp; Lyft)</image:title>
+      <image:caption>Get non-recourse pre-settlement funding for your Uber, Lyft, or rideshare accident case. No credit check, no monthly payments. If you lose your case, you owe $0.</image:caption>
+    </image:image>
   </url>
 
 
@@ -204,6 +345,11 @@
     <lastmod>2026-04-30T08:50:47.317Z</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
+    <image:image>
+      <image:loc>https://flashlegalfunding.com/assets/og-image.png</image:loc>
+      <image:title>Slip and Fall Pre-Settlement Funding</image:title>
+      <image:caption>Get non-recourse pre-settlement funding for your slip and fall case. No credit check, no monthly payments. Cover medical bills and expenses while your premises liability lawsuit is pending.</image:caption>
+    </image:image>
   </url>
 
   <url>
@@ -211,6 +357,11 @@
     <lastmod>2026-04-30T02:08:50.853Z</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.5</priority>
+    <image:image>
+      <image:loc>https://flashlegalfunding.com/assets/og-image.png</image:loc>
+      <image:title>Flash Legal Funding</image:title>
+      <image:caption>Non-recourse pre-settlement funding for personal injury cases</image:caption>
+    </image:image>
   </url>
 
   <url>
@@ -218,6 +369,11 @@
     <lastmod>2026-04-30T08:50:47.317Z</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
+    <image:image>
+      <image:loc>https://flashlegalfunding.com/assets/og-image.png</image:loc>
+      <image:title>Truck Accident Pre-Settlement Funding</image:title>
+      <image:caption>Get non-recourse pre-settlement funding for your truck accident case. No credit check, no monthly payments. Covers medical bills and living expenses while you wait for your settlement.</image:caption>
+    </image:image>
   </url>
 
   <url>
@@ -225,6 +381,11 @@
     <lastmod>2026-04-30T08:50:47.317Z</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
+    <image:image>
+      <image:loc>https://flashlegalfunding.com/assets/og-image.png</image:loc>
+      <image:title>Workplace Injury Pre-Settlement Funding</image:title>
+      <image:caption>Get non-recourse pre-settlement funding for your workplace injury case. No credit check, no monthly payments. If you lose your case, you owe $0. Apply today.</image:caption>
+    </image:image>
   </url>
 
   <url>
@@ -232,6 +393,11 @@
     <lastmod>2026-04-30T08:50:47.318Z</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
+    <image:image>
+      <image:loc>https://flashlegalfunding.com/assets/og-image.png</image:loc>
+      <image:title>Wrongful Death Pre-Settlement Funding</image:title>
+      <image:caption>Get non-recourse pre-settlement funding for your wrongful death lawsuit. No credit check, no monthly payments. If the case is unsuccessful, you owe $0. Apply today.</image:caption>
+    </image:image>
   </url>
 
   <url>
@@ -239,6 +405,11 @@
     <lastmod>2026-04-30T08:50:54.548Z</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
+    <image:image>
+      <image:loc>https://flashlegalfunding.com/assets/og-image.png</image:loc>
+      <image:title>Flash Legal Funding</image:title>
+      <image:caption>Non-recourse pre-settlement funding for personal injury cases</image:caption>
+    </image:image>
   </url>
 
   <url>
@@ -246,6 +417,11 @@
     <lastmod>2026-04-30T09:04:29.840Z</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
+    <image:image>
+      <image:loc>https://flashlegalfunding.com/assets/og-image.png</image:loc>
+      <image:title>Flash Legal Funding</image:title>
+      <image:caption>Non-recourse pre-settlement funding for personal injury cases</image:caption>
+    </image:image>
   </url>
 
   <url>
@@ -253,6 +429,11 @@
     <lastmod>2026-04-30T02:08:50.848Z</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
+    <image:image>
+      <image:loc>https://flashlegalfunding.com/assets/og-image.png</image:loc>
+      <image:title>Broker vs. Direct Lender: Why Cutting Out the Middleman Saves You Money</image:title>
+      <image:caption>Don&#39;t pay extra fees to a middleman. Learn the critical difference between lawsuit funding brokers and direct lenders like Flash Legal Funding.</image:caption>
+    </image:image>
   </url>
 
   <url>
@@ -260,6 +441,11 @@
     <lastmod>2026-04-30T02:08:50.848Z</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
+    <image:image>
+      <image:loc>https://flashlegalfunding.com/assets/og-image.png</image:loc>
+      <image:title>How Much Pre-Settlement Funding Can I Get?</image:title>
+      <image:caption>Wondering how much cash you qualify for? Learn about the &#39;10% Rule&#39; and how we calculate a safe amount for your case.</image:caption>
+    </image:image>
   </url>
 
   <url>
@@ -267,6 +453,11 @@
     <lastmod>2026-04-30T02:08:50.848Z</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
+    <image:image>
+      <image:loc>https://flashlegalfunding.com/assets/og-image.png</image:loc>
+      <image:title>How to Speed Up Your Lawsuit Funding Application</image:title>
+      <image:caption>Need cash fast? Here are the 3 simple steps you can take to ensure your funding request gets approved in 24 hours or less.</image:caption>
+    </image:image>
   </url>
 
   <url>
@@ -274,6 +465,11 @@
     <lastmod>2026-04-30T02:08:50.849Z</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
+    <image:image>
+      <image:loc>https://flashlegalfunding.com/assets/og-image.png</image:loc>
+      <image:title>What Happens After You Are Approved? From Contract to Cash</image:title>
+      <image:caption>You&#39;ve been approved! Now what? Learn about the final steps to get your cash, including digital contracts and payment options.</image:caption>
+    </image:image>
   </url>
 
   <url>
@@ -281,6 +477,11 @@
     <lastmod>2026-04-30T02:08:50.848Z</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
+    <image:image>
+      <image:loc>https://flashlegalfunding.com/assets/og-image.png</image:loc>
+      <image:title>How Pre-Settlement Funding Increases Case Value</image:title>
+      <image:caption>Stop settling for less because your client is desperate. See how funding gives you the leverage to fight for policy limits.</image:caption>
+    </image:image>
   </url>
 
 </urlset>
