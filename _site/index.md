@@ -12,7 +12,7 @@ Get cash now while your personal injury case is pending. No credit check, no mon
 
 [Apply Now](/apply/) Learn More
 
-### Get a Pre-Settlement Cash Advance Today
+## Get a Pre-Settlement Cash Advance Today
 
 No credit check required. Call [(859) 81-FLASH](tel:+18598135274) or [apply online](/apply/) — funding in as little as 24 hours.
 
