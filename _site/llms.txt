@@ -1,0 +1,58 @@
+# Flash Legal Funding
+
+> Non-recourse pre-settlement funding for personal injury plaintiffs in the United States. No credit check, no monthly payments — if the case is lost, the client owes $0.
+
+This site provides cash advances against pending personal injury settlements. Markdown mirrors of every page are available by appending `.md` (or replacing `index.html` with `index.md`) on any URL. A concatenated copy of all content is at https://flashlegalfunding.com/llms-full.txt.
+
+## Core pages
+
+- [Home — Flash Legal Funding](https://flashlegalfunding.com/index.md): Overview of pre-settlement funding, how it works, and case types funded.
+- [How to Apply](https://flashlegalfunding.com/apply/index.md): Online application for pre-settlement funding.
+- [Contact](https://flashlegalfunding.com/contact/index.md): Phone, email, and contact form for Flash Legal Funding.
+- [FAQ](https://flashlegalfunding.com/faq/index.md): Detailed answers to common questions about lawsuit funding.
+- [For Attorneys](https://flashlegalfunding.com/for-attorneys/index.md): Information for personal injury attorneys partnering with Flash Legal Funding.
+
+## Case types funded
+
+- [Car Accident Funding](https://flashlegalfunding.com/car-accident-funding/index.md)
+- [Truck Accident Funding](https://flashlegalfunding.com/truck-accident-funding/index.md)
+- [Motorcycle Accident Funding](https://flashlegalfunding.com/motorcycle-accident-funding/index.md)
+- [Slip and Fall Funding](https://flashlegalfunding.com/slip-and-fall-funding/index.md)
+- [Workplace Injury Funding](https://flashlegalfunding.com/workplace-injury-funding/index.md)
+- [Medical Malpractice Funding](https://flashlegalfunding.com/medical-malpractice-funding/index.md)
+- [Dog Bite Funding](https://flashlegalfunding.com/dog-bite-funding/index.md)
+- [Pedestrian Accident Funding](https://flashlegalfunding.com/pedestrian-accident-funding/index.md)
+- [Rideshare Accident Funding](https://flashlegalfunding.com/rideshare-accident-funding/index.md)
+- [Wrongful Death Funding](https://flashlegalfunding.com/wrongful-death-funding/index.md)
+- [Product Liability Funding](https://flashlegalfunding.com/product-liability-funding/index.md)
+
+## Blog
+
+- [Blog index](https://flashlegalfunding.com/blog/index.md): All articles about pre-settlement funding.
+
+- [How Do Lawsuit Loans Work? A Comprehensive Guide](https://flashlegalfunding.com/posts/how-funding-works/index.md): Demystify the workings of lawsuit loans with our in-depth guide. Discover how Flash Legal Funding can support your legal journey.
+- [Is a Lawsuit Loan Legal? Understanding the Legality of Litigation Financing](https://flashlegalfunding.com/posts/is-a-lawsuit-loan-legal/index.md): A clear guide to the legality of litigation financing, state regulations, and how Flash Legal Funding ensures compliance.
+- [Can I Get a Loan from My Attorney? Insights for Clients](https://flashlegalfunding.com/posts/can-i-get-a-loan-from-my-attorney/index.md): Explore the possibilities and legalities of getting a loan from your attorney and discover alternative solutions with Flash Legal Funding.
+- [How Flash Legal Funding Can Help You Succeed in Your Legal Battle](https://flashlegalfunding.com/posts/how-flash-helps/index.md): Discover how Flash Legal Funding offers quick, non-recourse funding solutions to help you focus on winning your case without financial stress.
+- [Top Tips for Getting Approved for Lawsuit Funding](https://flashlegalfunding.com/posts/tips-for-approval/index.md): Discover the key steps to increasing your chances of getting approved for lawsuit funding, from hiring an experienced attorney to demonstrating financial need.
+- [What Happens If You Lose Your Case After Getting Funding?](https://flashlegalfunding.com/posts/what-happens-if-you-lose/index.md): Worried about repayment risks? Learn how non-recourse funding protects you if your lawsuit doesn&#39;t go the way you planned.
+- [Understanding the Benefits of Pre-Settlement Funding](https://flashlegalfunding.com/posts/benefits-of-pre-settlement-funding/index.md): Explore how pre-settlement funding provides financial stability, covers living expenses, and levels the playing field during your lawsuit.
+- [How to Choose the Right Lawsuit Funding Company for Your Needs](https://flashlegalfunding.com/posts/how-to-choose-the-right-company/index.md): Not all funding companies are created equal. Learn exactly what to look for—from reputation to fee structures—before you sign.
+- [5 Common Misconceptions About Lawsuit Funding](https://flashlegalfunding.com/posts/5-common-misconceptions/index.md): Think you need good credit or a massive case to qualify? Think again. We debunk the biggest myths about pre-settlement funding.
+- [What Is a Motor Vehicle Accident (MVA)? A Guide for Victims](https://flashlegalfunding.com/posts/what-is-a-mva/index.md): From defining an MVA to the immediate steps you must take after a crash, this guide covers everything you need to know to protect your rights.
+- [The Truth About &#39;Fixed Fees&#39; in Lawsuit Funding](https://flashlegalfunding.com/posts/how-does-the-fixed-fee-work/index.md): Some lenders claim 0% interest but charge massive fixed fees. Learn how these multipliers work and why they can cost you thousands.
+- [How Will Interest Rates Be Calculated on a Lawsuit Loan?](https://flashlegalfunding.com/posts/how-interest-rates-are-calculated/index.md): Confused by interest rates? We break down the difference between simple interest and fixed fees so you don&#39;t get overcharged.
+- [How Does a Compounding Interest Rate Work?](https://flashlegalfunding.com/posts/how-compounding-interest-works/index.md): Compound interest acts like a snowball, turning a small loan into a large debt. Learn how the math works before you sign.
+- [What Is the Process for Pre-Settlement Funding?](https://flashlegalfunding.com/posts/process-for-pre-settlement-funding/index.md): Getting funding shouldn&#39;t be as hard as the lawsuit itself. Learn our simple 4-step process to get cash in as little as 24 hours.
+- [Is a Lawsuit Loan Actually a Loan?](https://flashlegalfunding.com/posts/is-a-lawsuit-loan-a-loan/index.md): It is technically a non-recourse advance, not a loan. Learn the critical difference that protects you from debt if you lose your case.
+- [Why Partner with a Funding Company? A Strategic Asset for Your Firm](https://flashlegalfunding.com/posts/why-partner-with-us/index.md): Client financial pressure is the enemy of maximum value. Learn how partnering with the right funding company buys you the time to litigate properly.
+- [Broker vs. Direct Lender: Why Cutting Out the Middleman Saves You Money](https://flashlegalfunding.com/posts/broker-vs-direct-lender/index.md): Don&#39;t pay extra fees to a middleman. Learn the critical difference between lawsuit funding brokers and direct lenders like Flash Legal Funding.
+- [How Much Pre-Settlement Funding Can I Get?](https://flashlegalfunding.com/posts/how-much-funding-can-i-get/index.md): Wondering how much cash you qualify for? Learn about the &#39;10% Rule&#39; and how we calculate a safe amount for your case.
+- [How to Speed Up Your Lawsuit Funding Application](https://flashlegalfunding.com/posts/how-to-speed-up-application/index.md): Need cash fast? Here are the 3 simple steps you can take to ensure your funding request gets approved in 24 hours or less.
+- [What Happens After You Are Approved? From Contract to Cash](https://flashlegalfunding.com/posts/what-happens-after-approval/index.md): You&#39;ve been approved! Now what? Learn about the final steps to get your cash, including digital contracts and payment options.
+- [How Pre-Settlement Funding Increases Case Value](https://flashlegalfunding.com/posts/how-funding-increases-case-value/index.md): Stop settling for less because your client is desperate. See how funding gives you the leverage to fight for policy limits.
+
+## Optional
+
+- [Privacy Policy](https://flashlegalfunding.com/privacy-policy/index.md)
+- [Terms of Use](https://flashlegalfunding.com/terms-of-use/index.md)

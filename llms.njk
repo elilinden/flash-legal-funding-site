@@ -1,0 +1,46 @@
+---
+permalink: /llms.txt
+eleventyExcludeFromCollections: true
+---
+{%- set site = "https://flashlegalfunding.com" -%}
+# Flash Legal Funding
+
+> Non-recourse pre-settlement funding for personal injury plaintiffs in the United States. No credit check, no monthly payments — if the case is lost, the client owes $0.
+
+This site provides cash advances against pending personal injury settlements. Markdown mirrors of every page are available by appending `.md` (or replacing `index.html` with `index.md`) on any URL. A concatenated copy of all content is at {{ site }}/llms-full.txt.
+
+## Core pages
+
+- [Home — Flash Legal Funding]({{ site }}/index.md): Overview of pre-settlement funding, how it works, and case types funded.
+- [How to Apply]({{ site }}/apply/index.md): Online application for pre-settlement funding.
+- [Contact]({{ site }}/contact/index.md): Phone, email, and contact form for Flash Legal Funding.
+- [FAQ]({{ site }}/faq/index.md): Detailed answers to common questions about lawsuit funding.
+- [For Attorneys]({{ site }}/for-attorneys/index.md): Information for personal injury attorneys partnering with Flash Legal Funding.
+
+## Case types funded
+
+- [Car Accident Funding]({{ site }}/car-accident-funding/index.md)
+- [Truck Accident Funding]({{ site }}/truck-accident-funding/index.md)
+- [Motorcycle Accident Funding]({{ site }}/motorcycle-accident-funding/index.md)
+- [Slip and Fall Funding]({{ site }}/slip-and-fall-funding/index.md)
+- [Workplace Injury Funding]({{ site }}/workplace-injury-funding/index.md)
+- [Medical Malpractice Funding]({{ site }}/medical-malpractice-funding/index.md)
+- [Dog Bite Funding]({{ site }}/dog-bite-funding/index.md)
+- [Pedestrian Accident Funding]({{ site }}/pedestrian-accident-funding/index.md)
+- [Rideshare Accident Funding]({{ site }}/rideshare-accident-funding/index.md)
+- [Wrongful Death Funding]({{ site }}/wrongful-death-funding/index.md)
+- [Product Liability Funding]({{ site }}/product-liability-funding/index.md)
+
+## Blog
+
+- [Blog index]({{ site }}/blog/index.md): All articles about pre-settlement funding.
+{% for page in collections.all -%}
+{%- if page.url and page.url.startsWith("/posts/") and page.outputPath and page.outputPath.endsWith(".html") %}
+- [{{ page.data.title }}]({{ site }}{{ page.url }}index.md){% if page.data.description %}: {{ page.data.description }}{% endif %}
+{%- endif -%}
+{%- endfor %}
+
+## Optional
+
+- [Privacy Policy]({{ site }}/privacy-policy/index.md)
+- [Terms of Use]({{ site }}/terms-of-use/index.md)
