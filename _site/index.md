@@ -1,4 +1,4 @@
-# Non-Recourse Pre-Settlement Funding for Personal Injury Cases | Flash Legal Funding
+# Pre-Settlement Funding for Injury Cases | Flash Legal Funding
 
 > Get non-recourse pre-settlement funding for personal injury cases. No credit check, no monthly payments. Car accidents, slip and fall, work injuries. If you lose, you owe $0. Apply in minutes.
 

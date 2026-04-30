@@ -58,31 +58,34 @@ draw.text(
     fill=(220, 228, 255),
 )
 
-chip_text = "flashlegalfunding.com"
-chip_bbox = draw.textbbox((0, 0), chip_text, font=f_chip)
-cw = chip_bbox[2] - chip_bbox[0]
-ch = chip_bbox[3] - chip_bbox[1]
-pad_x, pad_y = 22, 12
-chip_x = 60
-chip_y = H - 60 - (ch + pad_y * 2)
-draw.rounded_rectangle(
-    (chip_x, chip_y, chip_x + cw + pad_x * 2, chip_y + ch + pad_y * 2),
-    radius=999,
-    fill=(255, 255, 255, 235),
-)
-draw.text((chip_x + pad_x, chip_y + pad_y - 4), chip_text, font=f_chip, fill=BRAND_DARK)
+f_cta = ImageFont.truetype(bold, 30)
 
-phone_text = "(859) 81-FLASH"
-phone_bbox = draw.textbbox((0, 0), phone_text, font=f_chip)
-pw = phone_bbox[2] - phone_bbox[0]
-ph = phone_bbox[3] - phone_bbox[1]
-phone_x = chip_x + cw + pad_x * 2 + 16
+cta_text = "Apply Now →"
+cta_bbox = draw.textbbox((0, 0), cta_text, font=f_cta)
+ctw = cta_bbox[2] - cta_bbox[0]
+cth = cta_bbox[3] - cta_bbox[1]
+cta_pad_x, cta_pad_y = 32, 18
+cta_x = 60
+cta_y = H - 60 - (cth + cta_pad_y * 2)
 draw.rounded_rectangle(
-    (phone_x, chip_y, phone_x + pw + pad_x * 2, chip_y + ph + pad_y * 2),
+    (cta_x, cta_y, cta_x + ctw + cta_pad_x * 2, cta_y + cth + cta_pad_y * 2),
     radius=999,
-    fill=(0, 165, 156, 230),
+    fill=WHITE,
 )
-draw.text((phone_x + pad_x, chip_y + pad_y - 4), phone_text, font=f_chip, fill=WHITE)
+draw.text(
+    (cta_x + cta_pad_x, cta_y + cta_pad_y - 6),
+    cta_text,
+    font=f_cta,
+    fill=BRAND,
+)
+
+info_text = "flashlegalfunding.com  ·  (859) 81-FLASH"
+info_bbox = draw.textbbox((0, 0), info_text, font=f_chip)
+iw = info_bbox[2] - info_bbox[0]
+ih = info_bbox[3] - info_bbox[1]
+info_x = cta_x + ctw + cta_pad_x * 2 + 24
+info_y = cta_y + (cth + cta_pad_y * 2 - ih) // 2 - 4
+draw.text((info_x, info_y), info_text, font=f_chip, fill=(220, 228, 255))
 
 img.save("assets/og-image.png", "PNG", optimize=True)
 print(f"wrote assets/og-image.png  {img.size}")
