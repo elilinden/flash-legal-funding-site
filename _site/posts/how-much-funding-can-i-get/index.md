@@ -4,6 +4,8 @@
 
 Source: https://flashlegalfunding.com/posts/how-much-funding-can-i-get/
 
+By Flash Legal Funding Editorial Team · Published May 5, 2026
+
 Funding Basics
 
 # How Much Pre-Settlement Funding Can I Get?

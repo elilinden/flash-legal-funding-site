@@ -4,6 +4,8 @@
 
 Source: https://flashlegalfunding.com/posts/how-to-choose-the-right-company/
 
+By Flash Legal Funding Editorial Team · Published March 15, 2026
+
 Funding Basics
 
 # How to Choose the Right Lawsuit Funding Company for Your Needs

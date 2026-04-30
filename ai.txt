@@ -1,0 +1,100 @@
+# ai.txt — Spawning AI opt-in/out signals for Flash Legal Funding
+# Spec: https://site.spawning.ai/spaces/ai-txt
+#
+# This file expresses preferences for AI use of this site's content,
+# separately from search-crawler directives in /robots.txt.
+# Two purposes are addressed independently:
+#   - training:  use of content to train AI models
+#   - inference: use of content for retrieval / answer-generation at query time
+
+# ----------------------------------------------------------------------
+# Default: all content on this site may be used for both AI training
+# and AI inference. Override per-agent below.
+# ----------------------------------------------------------------------
+User-Agent: *
+Allow: /
+Permissions-AI: train=allow, inference=allow
+
+# ----------------------------------------------------------------------
+# Anthropic
+# ----------------------------------------------------------------------
+User-Agent: ClaudeBot
+Allow: /
+Permissions-AI: train=allow, inference=allow
+
+User-Agent: Claude-Web
+Allow: /
+Permissions-AI: train=allow, inference=allow
+
+User-Agent: anthropic-ai
+Allow: /
+Permissions-AI: train=allow, inference=allow
+
+# ----------------------------------------------------------------------
+# OpenAI
+# ----------------------------------------------------------------------
+User-Agent: GPTBot
+Allow: /
+Permissions-AI: train=allow, inference=allow
+
+User-Agent: OAI-SearchBot
+Allow: /
+Permissions-AI: train=disallow, inference=allow
+
+User-Agent: ChatGPT-User
+Allow: /
+Permissions-AI: train=disallow, inference=allow
+
+# ----------------------------------------------------------------------
+# Google (Gemini / Vertex training opt-in is gated by Google-Extended)
+# ----------------------------------------------------------------------
+User-Agent: Google-Extended
+Allow: /
+Permissions-AI: train=allow, inference=allow
+
+# ----------------------------------------------------------------------
+# Perplexity
+# ----------------------------------------------------------------------
+User-Agent: PerplexityBot
+Allow: /
+Permissions-AI: train=allow, inference=allow
+
+User-Agent: Perplexity-User
+Allow: /
+Permissions-AI: train=disallow, inference=allow
+
+# ----------------------------------------------------------------------
+# Apple
+# ----------------------------------------------------------------------
+User-Agent: Applebot-Extended
+Allow: /
+Permissions-AI: train=allow, inference=allow
+
+# ----------------------------------------------------------------------
+# Common Crawl (feeds many third-party training sets)
+# ----------------------------------------------------------------------
+User-Agent: CCBot
+Allow: /
+Permissions-AI: train=allow, inference=allow
+
+# ----------------------------------------------------------------------
+# Meta
+# ----------------------------------------------------------------------
+User-Agent: Meta-ExternalAgent
+Allow: /
+Permissions-AI: train=allow, inference=allow
+
+# ----------------------------------------------------------------------
+# ByteDance / Mistral / Cohere
+# ----------------------------------------------------------------------
+User-Agent: Bytespider
+Allow: /
+Permissions-AI: train=allow, inference=allow
+
+User-Agent: MistralAI-User
+Allow: /
+Permissions-AI: train=allow, inference=allow
+
+User-Agent: cohere-ai
+Allow: /
+Permissions-AI: train=allow, inference=allow

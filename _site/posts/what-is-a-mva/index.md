@@ -4,6 +4,8 @@
 
 Source: https://flashlegalfunding.com/posts/what-is-a-mva/
 
+By Flash Legal Funding Editorial Team · Published March 25, 2026
+
 Legal Guide
 
 # What Is a Motor Vehicle Accident (MVA)? A Guide for Victims

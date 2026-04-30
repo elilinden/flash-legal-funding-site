@@ -4,6 +4,8 @@
 
 Source: https://flashlegalfunding.com/posts/how-compounding-interest-works/
 
+By Flash Legal Funding Editorial Team · Published April 10, 2026
+
 Funding Basics
 
 # How Does a Compounding Interest Rate Work?

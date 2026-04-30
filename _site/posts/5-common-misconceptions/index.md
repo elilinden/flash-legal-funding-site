@@ -4,6 +4,8 @@
 
 Source: https://flashlegalfunding.com/posts/5-common-misconceptions/
 
+By Flash Legal Funding Editorial Team · Published March 20, 2026
+
 Funding Basics
 
 # 5 Common Misconceptions About Lawsuit Funding

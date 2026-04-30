@@ -4,6 +4,8 @@
 
 Source: https://flashlegalfunding.com/posts/what-happens-if-you-lose/
 
+By Flash Legal Funding Editorial Team · Published March 5, 2026
+
 Funding Basics
 
 # What Happens If You Lose Your Case After Getting Funding?

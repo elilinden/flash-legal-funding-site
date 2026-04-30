@@ -6,14 +6,29 @@
   <title>What Happens After You Are Approved? From Contract to Cash | Flash Legal Funding</title>
   <meta name="description" content="You&#39;ve been approved! Now what? Learn about the final steps to get your cash, including digital contracts and payment options." />
   <link rel="canonical" href="https://flashlegalfunding.com/posts/what-happens-after-approval/" />
+  <link rel="alternate" hreflang="en-us" href="https://flashlegalfunding.com/posts/what-happens-after-approval/" />
+  <link rel="alternate" hreflang="x-default" href="https://flashlegalfunding.com/posts/what-happens-after-approval/" />
+  <meta name="geo.region" content="US" />
+  <meta name="geo.placename" content="United States" />
 
-  <!-- Google tag (gtag.js) -->
-  <script async src="https://www.googletagmanager.com/gtag/js?id=G-F67CETK8Y8"></script>
+  <!-- Google tag (gtag.js) — deferred to idle time so it doesn't block LCP -->
   <script>
     window.dataLayer = window.dataLayer || [];
     function gtag(){dataLayer.push(arguments);}
-    gtag('js', new Date());
-    gtag('config', 'G-F67CETK8Y8');
+    function loadGA(){
+      if (window.__gaLoaded) return; window.__gaLoaded = true;
+      var s = document.createElement('script');
+      s.async = true;
+      s.src = 'https://www.googletagmanager.com/gtag/js?id=G-F67CETK8Y8';
+      document.head.appendChild(s);
+      gtag('js', new Date());
+      gtag('config', 'G-F67CETK8Y8');
+    }
+    if ('requestIdleCallback' in window) {
+      requestIdleCallback(loadGA, { timeout: 3000 });
+    } else {
+      window.addEventListener('load', function(){ setTimeout(loadGA, 1500); });
+    }
   </script>
 
   <!-- Favicon -->
@@ -31,14 +46,18 @@
   <meta property="og:description" content="You&#39;ve been approved! Now what? Learn about the final steps to get your cash, including digital contracts and payment options." />
   <meta property="og:url" content="https://flashlegalfunding.com/posts/what-happens-after-approval/" />
   <meta property="og:site_name" content="Flash Legal Funding" />
-  <meta property="og:image" content="https://flashlegalfunding.com/assets/logo.png" />
+  <meta property="og:image" content="https://flashlegalfunding.com/assets/og-image.png" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
+  <meta property="og:image:alt" content="Flash Legal Funding — Pre-Settlement Funding for Personal Injury Cases" />
   <meta property="og:locale" content="en_US" />
 
   <!-- Twitter Card -->
   <meta name="twitter:card" content="summary_large_image" />
   <meta name="twitter:title" content="What Happens After You Are Approved? From Contract to Cash | Flash Legal Funding" />
   <meta name="twitter:description" content="You&#39;ve been approved! Now what? Learn about the final steps to get your cash, including digital contracts and payment options." />
-  <meta name="twitter:image" content="https://flashlegalfunding.com/assets/logo.png" />
+  <meta name="twitter:image" content="https://flashlegalfunding.com/assets/og-image.png" />
+  <meta name="twitter:image:alt" content="Flash Legal Funding — Pre-Settlement Funding for Personal Injury Cases" />
 
   
   <!-- Article dates for Open Graph -->
@@ -54,12 +73,14 @@
     "headline": "What Happens After You Are Approved? From Contract to Cash",
     "description": "You&#39;ve been approved! Now what? Learn about the final steps to get your cash, including digital contracts and payment options.",
     "url": "https://flashlegalfunding.com/posts/what-happens-after-approval/",
+    "image": [
+      "https://flashlegalfunding.com/assets/og-image.png"
+    ],
     "datePublished": "2026-05-15T00:00:00.000Z",
     "dateModified": "2026-05-15T00:00:00.000Z",
     "author": {
-      "@type": "Organization",
-      "name": "Flash Legal Funding",
-      "url": "https://flashlegalfunding.com"
+      "@type": "Person",
+      "name": "Flash Legal Funding Editorial Team"
     },
     "publisher": {
       "@type": "Organization",
@@ -362,6 +383,13 @@
   
 
   <main>
+    
+    <div style="max-width:800px; margin:0 auto; padding:8px 24px 0; font-size:14px; color:var(--muted);">
+      By <span rel="author" style="font-weight:600; color:var(--ink-soft);">Flash Legal Funding Editorial Team</span>
+      &nbsp;&middot;&nbsp;
+      <time datetime="2026-05-15T00:00:00.000Z">Published May 15, 2026</time>
+    </div>
+    
     <style>
   /* --- 1. Force Light Theme Variables (Matches Main Site) --- */
   :root {

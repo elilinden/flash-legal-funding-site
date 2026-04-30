@@ -4,6 +4,8 @@
 
 Source: https://flashlegalfunding.com/posts/what-happens-after-approval/
 
+By Flash Legal Funding Editorial Team · Published May 15, 2026
+
 Process
 
 # What Happens After You Are Approved? From Contract to Cash

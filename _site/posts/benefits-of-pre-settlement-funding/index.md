@@ -4,6 +4,8 @@
 
 Source: https://flashlegalfunding.com/posts/benefits-of-pre-settlement-funding/
 
+By Flash Legal Funding Editorial Team · Published March 10, 2026
+
 Funding Basics
 
 # Understanding the Benefits of Pre-Settlement Funding

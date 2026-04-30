@@ -5,11 +5,24 @@ const { htmlToMarkdown, getTitle, getMetaDescription } = require("./lib/html-to-
 const SITE_URL = "https://flashlegalfunding.com";
 
 module.exports = function (eleventyConfig) {
+  // Returns the source file's last-modified time as an ISO string.
+  // Used as a real "last edited" signal for sitemap <lastmod> when a
+  // page hasn't set an explicit `dateModified` in front matter.
+  eleventyConfig.addFilter("mtime", function (inputPath) {
+    try {
+      return fs.statSync(inputPath).mtime.toISOString();
+    } catch (e) {
+      return null;
+    }
+  });
+
   // Copy assets folder
   eleventyConfig.addPassthroughCopy("assets");
 
   // Copy root static files
   eleventyConfig.addPassthroughCopy("robots.txt");
+  eleventyConfig.addPassthroughCopy("ai.txt");
+  eleventyConfig.addPassthroughCopy("8795ec2f7700d6408b91ea8b5f772711.txt");
   eleventyConfig.addPassthroughCopy("favicon.ico");
   eleventyConfig.addPassthroughCopy("site.webmanifest");
   eleventyConfig.addPassthroughCopy(".well-known");

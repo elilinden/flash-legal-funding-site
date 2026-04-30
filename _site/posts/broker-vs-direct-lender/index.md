@@ -4,6 +4,8 @@
 
 Source: https://flashlegalfunding.com/posts/broker-vs-direct-lender/
 
+By Flash Legal Funding Editorial Team · Published May 1, 2026
+
 Funding Basics
 
 # Broker vs. Direct Lender: Why Cutting Out the Middleman Saves You Money

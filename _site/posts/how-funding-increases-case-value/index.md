@@ -4,6 +4,8 @@
 
 Source: https://flashlegalfunding.com/posts/how-funding-increases-case-value/
 
+By Flash Legal Funding Editorial Team · Published May 20, 2026
+
 For Attorneys
 
 # How Pre-Settlement Funding Increases Case Value
