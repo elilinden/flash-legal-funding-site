@@ -58,8 +58,8 @@
     "dateModified": "{{ (dateModified or date).toISOString() }}",
     "author": {
       "@type": "Person",
-      "name": "{{ author or 'Flash Legal Funding Editorial Team' }}",
-      "url": "{{ authorUrl or 'https://flashlegalfunding.com/about/' }}"{% if authorJobTitle %},
+      "name": "{{ author or 'Flash Legal Funding Editorial Team' }}"{% if authorUrl %},
+      "url": "{{ authorUrl }}"{% endif %}{% if authorJobTitle %},
       "jobTitle": "{{ authorJobTitle }}"{% endif %}
     },
     "publisher": {
@@ -365,7 +365,7 @@
   <main>
     {% if tags and 'blog' in tags %}
     <div style="max-width:800px; margin:0 auto; padding:8px 24px 0; font-size:14px; color:var(--muted);">
-      By <a href="{{ authorUrl or '/about/' }}" rel="author" style="color:var(--brand); text-decoration:none; font-weight:600;">{{ author or 'Flash Legal Funding Editorial Team' }}</a>
+      By {% if authorUrl %}<a href="{{ authorUrl }}" rel="author" style="color:var(--brand); text-decoration:none; font-weight:600;">{{ author or 'Flash Legal Funding Editorial Team' }}</a>{% else %}<span rel="author" style="font-weight:600; color:var(--ink-soft);">{{ author or 'Flash Legal Funding Editorial Team' }}</span>{% endif %}
       {%- if authorJobTitle %}, {{ authorJobTitle }}{% endif %}
       &nbsp;&middot;&nbsp;
       <time datetime="{{ date.toISOString() }}">Published {{ date.toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric' }) }}</time>

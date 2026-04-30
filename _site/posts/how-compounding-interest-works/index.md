@@ -4,7 +4,7 @@
 
 Source: https://flashlegalfunding.com/posts/how-compounding-interest-works/
 
-By [Flash Legal Funding Editorial Team](/about/) · Published April 10, 2026
+By Flash Legal Funding Editorial Team · Published April 10, 2026
 
 Funding Basics
 

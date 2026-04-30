@@ -4,7 +4,7 @@
 
 Source: https://flashlegalfunding.com/posts/why-partner-with-us/
 
-By [Flash Legal Funding Editorial Team](/about/) · Published April 25, 2026
+By Flash Legal Funding Editorial Team · Published April 25, 2026
 
 For Attorneys
 

@@ -4,7 +4,7 @@
 
 Source: https://flashlegalfunding.com/posts/tips-for-approval/
 
-By [Flash Legal Funding Editorial Team](/about/) · Published March 1, 2026
+By Flash Legal Funding Editorial Team · Published March 1, 2026
 
 Process
 

@@ -4,7 +4,7 @@
 
 Source: https://flashlegalfunding.com/posts/process-for-pre-settlement-funding/
 
-By [Flash Legal Funding Editorial Team](/about/) · Published April 15, 2026
+By Flash Legal Funding Editorial Team · Published April 15, 2026
 
 Process
 

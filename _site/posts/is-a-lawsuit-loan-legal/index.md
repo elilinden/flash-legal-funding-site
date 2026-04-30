@@ -4,7 +4,7 @@
 
 Source: https://flashlegalfunding.com/posts/is-a-lawsuit-loan-legal/
 
-By [Flash Legal Funding Editorial Team](/about/) · Published February 15, 2026
+By Flash Legal Funding Editorial Team · Published February 15, 2026
 
 Funding Basics
 

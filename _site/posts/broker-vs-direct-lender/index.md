@@ -4,7 +4,7 @@
 
 Source: https://flashlegalfunding.com/posts/broker-vs-direct-lender/
 
-By [Flash Legal Funding Editorial Team](/about/) · Published May 1, 2026
+By Flash Legal Funding Editorial Team · Published May 1, 2026
 
 Funding Basics
 

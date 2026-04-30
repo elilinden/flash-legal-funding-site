@@ -4,7 +4,7 @@
 
 Source: https://flashlegalfunding.com/posts/how-interest-rates-are-calculated/
 
-By [Flash Legal Funding Editorial Team](/about/) · Published April 5, 2026
+By Flash Legal Funding Editorial Team · Published April 5, 2026
 
 Funding Basics
 

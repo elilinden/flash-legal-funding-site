@@ -4,7 +4,7 @@
 
 Source: https://flashlegalfunding.com/posts/what-happens-after-approval/
 
-By [Flash Legal Funding Editorial Team](/about/) · Published May 15, 2026
+By Flash Legal Funding Editorial Team · Published May 15, 2026
 
 Process
 

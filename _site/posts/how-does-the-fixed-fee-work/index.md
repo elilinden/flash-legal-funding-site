@@ -4,7 +4,7 @@
 
 Source: https://flashlegalfunding.com/posts/how-does-the-fixed-fee-work/
 
-By [Flash Legal Funding Editorial Team](/about/) · Published March 30, 2026
+By Flash Legal Funding Editorial Team · Published March 30, 2026
 
 Funding Basics
 

@@ -4,7 +4,7 @@
 
 Source: https://flashlegalfunding.com/posts/how-flash-helps/
 
-By [Flash Legal Funding Editorial Team](/about/) · Published February 25, 2026
+By Flash Legal Funding Editorial Team · Published February 25, 2026
 
 Funding Basics
 

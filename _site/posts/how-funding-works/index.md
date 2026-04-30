@@ -4,7 +4,7 @@
 
 Source: https://flashlegalfunding.com/posts/how-funding-works/
 
-By [Flash Legal Funding Editorial Team](/about/) · Published February 10, 2026
+By Flash Legal Funding Editorial Team · Published February 10, 2026
 
 Funding Basics
 

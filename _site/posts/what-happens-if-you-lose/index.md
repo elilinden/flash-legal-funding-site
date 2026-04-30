@@ -4,7 +4,7 @@
 
 Source: https://flashlegalfunding.com/posts/what-happens-if-you-lose/
 
-By [Flash Legal Funding Editorial Team](/about/) · Published March 5, 2026
+By Flash Legal Funding Editorial Team · Published March 5, 2026
 
 Funding Basics
 

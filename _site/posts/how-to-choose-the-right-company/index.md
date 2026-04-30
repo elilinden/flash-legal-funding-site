@@ -4,7 +4,7 @@
 
 Source: https://flashlegalfunding.com/posts/how-to-choose-the-right-company/
 
-By [Flash Legal Funding Editorial Team](/about/) · Published March 15, 2026
+By Flash Legal Funding Editorial Team · Published March 15, 2026
 
 Funding Basics
 

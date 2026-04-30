@@ -4,7 +4,7 @@
 
 Source: https://flashlegalfunding.com/posts/what-is-a-mva/
 
-By [Flash Legal Funding Editorial Team](/about/) · Published March 25, 2026
+By Flash Legal Funding Editorial Team · Published March 25, 2026
 
 Legal Guide
 

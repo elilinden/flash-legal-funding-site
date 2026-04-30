@@ -4,7 +4,7 @@
 
 Source: https://flashlegalfunding.com/posts/5-common-misconceptions/
 
-By [Flash Legal Funding Editorial Team](/about/) · Published March 20, 2026
+By Flash Legal Funding Editorial Team · Published March 20, 2026
 
 Funding Basics
 

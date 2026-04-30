@@ -4,7 +4,7 @@
 
 Source: https://flashlegalfunding.com/posts/how-funding-increases-case-value/
 
-By [Flash Legal Funding Editorial Team](/about/) · Published May 20, 2026
+By Flash Legal Funding Editorial Team · Published May 20, 2026
 
 For Attorneys
 
