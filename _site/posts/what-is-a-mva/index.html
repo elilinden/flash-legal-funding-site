@@ -7,13 +7,24 @@
   <meta name="description" content="From defining an MVA to the immediate steps you must take after a crash, this guide covers everything you need to know to protect your rights." />
   <link rel="canonical" href="https://flashlegalfunding.com/posts/what-is-a-mva/" />
 
-  <!-- Google tag (gtag.js) -->
-  <script async src="https://www.googletagmanager.com/gtag/js?id=G-F67CETK8Y8"></script>
+  <!-- Google tag (gtag.js) — deferred to idle time so it doesn't block LCP -->
   <script>
     window.dataLayer = window.dataLayer || [];
     function gtag(){dataLayer.push(arguments);}
-    gtag('js', new Date());
-    gtag('config', 'G-F67CETK8Y8');
+    function loadGA(){
+      if (window.__gaLoaded) return; window.__gaLoaded = true;
+      var s = document.createElement('script');
+      s.async = true;
+      s.src = 'https://www.googletagmanager.com/gtag/js?id=G-F67CETK8Y8';
+      document.head.appendChild(s);
+      gtag('js', new Date());
+      gtag('config', 'G-F67CETK8Y8');
+    }
+    if ('requestIdleCallback' in window) {
+      requestIdleCallback(loadGA, { timeout: 3000 });
+    } else {
+      window.addEventListener('load', function(){ setTimeout(loadGA, 1500); });
+    }
   </script>
 
   <!-- Favicon -->
