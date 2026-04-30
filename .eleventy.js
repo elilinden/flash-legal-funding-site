@@ -11,6 +11,7 @@ module.exports = function (eleventyConfig) {
   // Copy root static files
   eleventyConfig.addPassthroughCopy("robots.txt");
   eleventyConfig.addPassthroughCopy("ai.txt");
+  eleventyConfig.addPassthroughCopy("8795ec2f7700d6408b91ea8b5f772711.txt");
   eleventyConfig.addPassthroughCopy("favicon.ico");
   eleventyConfig.addPassthroughCopy("site.webmanifest");
   eleventyConfig.addPassthroughCopy(".well-known");

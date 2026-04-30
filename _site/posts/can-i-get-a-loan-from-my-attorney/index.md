@@ -4,6 +4,8 @@
 
 Source: https://flashlegalfunding.com/posts/can-i-get-a-loan-from-my-attorney/
 
+By [Flash Legal Funding Editorial Team](/about/) · Published February 20, 2026
+
 Funding Basics
 
 # Can I Get a Loan from My Attorney? Insights for Clients

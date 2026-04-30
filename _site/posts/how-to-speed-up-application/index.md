@@ -4,6 +4,8 @@
 
 Source: https://flashlegalfunding.com/posts/how-to-speed-up-application/
 
+By [Flash Legal Funding Editorial Team](/about/) · Published May 10, 2026
+
 Process
 
 # How to Speed Up Your Lawsuit Funding Application

@@ -4,6 +4,8 @@
 
 Source: https://flashlegalfunding.com/posts/is-a-lawsuit-loan-a-loan/
 
+By [Flash Legal Funding Editorial Team](/about/) · Published April 20, 2026
+
 Funding Basics
 
 # Is a Lawsuit Loan Actually a Loan?

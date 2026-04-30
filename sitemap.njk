@@ -15,7 +15,7 @@ eleventyExcludeFromCollections: true
   %}
   <url>
     <loc>{{ site }}{{ page.url }}</loc>
-    <lastmod>{{ page.date.toISOString() }}</lastmod>
+    <lastmod>{{ (page.data.dateModified or page.date).toISOString() }}</lastmod>
     {%- if page.url == "/" %}
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
