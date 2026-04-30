@@ -77,3 +77,6 @@ User-agent: cohere-ai
 Allow: /
 
 Sitemap: https://flashlegalfunding.com/sitemap.xml
+
+# AI training/inference preferences (Spawning ai.txt spec):
+# https://flashlegalfunding.com/ai.txt
